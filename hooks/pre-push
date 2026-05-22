@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+REPO="$(git rev-parse --show-toplevel)"
+echo "[pre-push] Deploying configs to Windows..."
+"$REPO/deploy.sh" deploy || echo "[pre-push] Deploy had errors — push will still continue"
+exit 0

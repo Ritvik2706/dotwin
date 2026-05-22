@@ -1,0 +1,253 @@
+general:
+  startup_commands: ["shell-exec zebar"]
+  focus_follows_cursor: false
+  toggle_workspace_on_refocus: false
+  cursor_jump:
+    enabled: true
+    trigger: "monitor_focus"
+  hide_method: "cloak"
+  show_all_in_taskbar: false
+
+gaps:
+  scale_with_dpi: true
+  inner_gap: "5px"
+  outer_gap:
+    top: "6px"
+    right: "6px"
+    bottom: "6px"
+    left: "6px"
+
+window_effects:
+  focused_window:
+    border:
+      enabled: true
+      color: "#c084fc"
+    hide_title_bar:
+      enabled: false
+    corner_style:
+      enabled: false
+      style: "square"
+    transparency:
+      enabled: false
+      opacity: "95%"
+  other_windows:
+    border:
+      enabled: true
+      color: "#a1a1a1"
+    hide_title_bar:
+      enabled: false
+    corner_style:
+      enabled: false
+      style: "square"
+    transparency:
+      enabled: false
+      opacity: "0%"
+
+window_behavior:
+  initial_state: "tiling"
+  state_defaults:
+    floating:
+      centered: true
+      shown_on_top: false
+    fullscreen:
+      maximized: false
+      shown_on_top: false
+
+workspaces:
+  - name: "1"
+    bind_to_monitor: 1
+  - name: "2"
+    bind_to_monitor: 1
+  - name: "3"
+    bind_to_monitor: 1
+  - name: "4"
+    bind_to_monitor: 1
+  - name: "5"
+    bind_to_monitor: 1
+  - name: "6"
+    bind_to_monitor: 1
+  - name: "7"
+    bind_to_monitor: 0
+  - name: "8"
+    bind_to_monitor: 0
+  - name: "9"
+    bind_to_monitor: 0
+
+window_rules:
+  - commands: ["move --workspace 1", "focus --workspace 1"]
+    match:
+      - window_title: { regex: "(?i) - Helium$" }
+        window_process: { equals: "chrome" }
+
+  - commands: ["move --workspace 2", "focus --workspace 2"]
+    match:
+      - window_process: { equals: "wezterm-gui" }
+
+  - commands: ["move --workspace 7", "focus --workspace 7"]
+    match:
+      - window_process: { equals: "SumatraPDF" }
+
+  - commands: ["ignore"]
+    match:
+      - window_process: { equals: "zebar" }
+      - window_process: { equals: "claude" }
+      - window_title: { regex: "[Pp]icture.in.[Pp]icture" }
+        window_class: { regex: "Chrome_WidgetWin_1|MozillaDialogClass" }
+      - window_process: { equals: "PowerToys" }
+        window_class: { regex: 'HwndWrapper\[PowerToys\.PowerAccent.*?\]' }
+      - window_process: { equals: "PowerToys" }
+        window_title: { regex: ".*? - Peek" }
+      - window_process: { equals: "Lively" }
+        window_class: { regex: "HwndWrapper" }
+      - window_process: { equals: "EXCEL" }
+        window_class: { not_regex: "XLMAIN" }
+      - window_process: { equals: "WINWORD" }
+        window_class: { not_regex: "OpusApp" }
+      - window_process: { equals: "POWERPNT" }
+        window_class: { not_regex: "PPTFrameClass" }
+      - window_process: { equals: "mpv" }
+
+  # Gaming launchers — not tiled, keybindings pass through.
+  - commands: ["ignore"]
+    match:
+      - window_process: { equals: "Battle.net" }
+      - window_process: { regex: "(?i)^Battle\\.net\\.exe$" }
+      - window_title: { regex: "(?i)^Battle\\.net" }
+      - window_process: { equals: "EADesktop.exe" }
+      - window_process: { equals: "EALauncher.exe" }
+      - window_process: { equals: "EpicGamesLauncher.exe" }
+      - window_process: { equals: "steam.exe" }
+      - window_process: { equals: "steamwebhelper.exe" }
+      - window_process: { equals: "UbisoftConnect.exe" }
+      - window_process: { equals: "GalaxyClient.exe" }
+      - window_process: { equals: "RiotClientServices.exe" }
+      - window_process: { equals: "RockstarService.exe" }
+      - window_process: { equals: "XboxApp.exe" }
+      - window_process: { equals: "GameBar.exe" }
+      - window_process: { equals: "XboxGameBarWidgets.exe" }
+      - window_process: { equals: "itch.exe" }
+      - window_process: { regex: "(?i)^Amazon Games" }
+
+  # Games — GlazeWM skips keybinding interception when any of these are focused.
+  # Use alt+\ to toggle-pause as a fallback if a game window slips through.
+  - commands: ["ignore"]
+    match:
+      - window_process: { regex: "(?i)^cod\\.exe$" }
+      - window_process: { regex: "(?i)^(warzone|modernwarfare|blackops)" }
+      - window_title: { regex: "(?i)call of duty" }
+      - window_process: { regex: "(?i)^(The_Finals|FINALS)" }
+      - window_title: { regex: "(?i)the finals" }
+      - window_process: { equals: "FPSAimTrainer.exe" }
+      - window_class: { regex: "SDL_app|UnityWndClass|UnrealWindow" }
+
+binding_modes:
+  - name: "resize"
+    keybindings:
+      - commands: ["resize --width -2%"]
+        bindings: ["h", "left"]
+      - commands: ["resize --width +2%"]
+        bindings: ["l", "right"]
+      - commands: ["resize --height +2%"]
+        bindings: ["k", "up"]
+      - commands: ["resize --height -2%"]
+        bindings: ["j", "down"]
+      - commands: ["wm-disable-binding-mode --name resize"]
+        bindings: ["escape", "enter"]
+
+keybindings:
+  - commands: ["focus --direction left"]
+    bindings: ["alt+h", "alt+left"]
+  - commands: ["focus --direction right"]
+    bindings: ["alt+l", "alt+right"]
+  - commands: ["focus --direction up"]
+    bindings: ["alt+k", "alt+up"]
+  - commands: ["focus --direction down"]
+    bindings: ["alt+j", "alt+down"]
+
+  - commands: ["move --direction left"]
+    bindings: ["alt+shift+h", "alt+shift+left"]
+  - commands: ["move --direction right"]
+    bindings: ["alt+shift+l", "alt+shift+right"]
+  - commands: ["move --direction up"]
+    bindings: ["alt+shift+k", "alt+shift+up"]
+  - commands: ["move --direction down"]
+    bindings: ["alt+shift+j", "alt+shift+down"]
+
+  - commands: ["resize --width -2%"]
+    bindings: ["alt+ctrl+h"]
+  - commands: ["resize --width +2%"]
+    bindings: ["alt+ctrl+l"]
+  - commands: ["resize --height +2%"]
+    bindings: ["alt+ctrl+j"]
+  - commands: ["resize --height -2%"]
+    bindings: ["alt+ctrl+k"]
+
+  - commands: ["wm-enable-binding-mode --name resize"]
+    bindings: ["alt+r"]
+  - commands: ["wm-toggle-pause"]
+    bindings: ["alt+\\"]
+  - commands: ["shell-exec powershell -WindowStyle Hidden -ExecutionPolicy Bypass -File C:/Users/Ritvik/Documents/AutoHotkey/toggle_ahk.ps1"]
+    bindings: ["alt+F8"]
+  - commands: ["toggle-tiling-direction"]
+    bindings: ["alt+v"]
+  - commands: ["wm-cycle-focus"]
+    bindings: ["alt+space"]
+  - commands: ["toggle-floating --centered"]
+    bindings: ["alt+shift+space"]
+  - commands: ["toggle-tiling"]
+    bindings: ["alt+p"]
+  - commands: ["toggle-fullscreen"]
+    bindings: ["alt+f"]
+  - commands: ["toggle-minimized"]
+    bindings: ["alt+m"]
+  - commands: ["close"]
+    bindings: ["alt+q"]
+  - commands: ["wm-exit"]
+    bindings: ["alt+shift+e"]
+  - commands: ["wm-reload-config"]
+    bindings: ["alt+shift+r"]
+  - commands: ["wm-redraw"]
+    bindings: ["alt+shift+w"]
+
+  - commands: ["focus --prev-workspace"]
+    bindings: ["alt+["]
+  - commands: ["focus --next-workspace"]
+    bindings: ["alt+]"]
+
+  - commands: ["focus --workspace 1"]
+    bindings: ["alt+1"]
+  - commands: ["focus --workspace 2"]
+    bindings: ["alt+2"]
+  - commands: ["focus --workspace 3"]
+    bindings: ["alt+3"]
+  - commands: ["focus --workspace 4"]
+    bindings: ["alt+4"]
+  - commands: ["focus --workspace 5"]
+    bindings: ["alt+5"]
+  - commands: ["focus --workspace 6"]
+    bindings: ["alt+6"]
+  - commands: ["focus --workspace 7"]
+    bindings: ["alt+7"]
+  - commands: ["focus --workspace 8"]
+    bindings: ["alt+8"]
+  - commands: ["focus --workspace 9"]
+    bindings: ["alt+9"]
+
+  - commands: ["move --workspace 1", "focus --workspace 1"]
+    bindings: ["alt+shift+1"]
+  - commands: ["move --workspace 2", "focus --workspace 2"]
+    bindings: ["alt+shift+2"]
+  - commands: ["move --workspace 3", "focus --workspace 3"]
+    bindings: ["alt+shift+3"]
+  - commands: ["move --workspace 4", "focus --workspace 4"]
+    bindings: ["alt+shift+4"]
+  - commands: ["move --workspace 5", "focus --workspace 5"]
+    bindings: ["alt+shift+5"]
+  - commands: ["move --workspace 6", "focus --workspace 6"]
+    bindings: ["alt+shift+6"]
+  - commands: ["move --workspace 7", "focus --workspace 7"]
+    bindings: ["alt+shift+7"]
+  - commands: ["move --workspace 8", "focus --workspace 8"]
+    bindings: ["alt+shift+8"]
+  - commands: ["move --workspace 9", "focus --workspace 9"]
+    bindings: ["alt+shift+9"]

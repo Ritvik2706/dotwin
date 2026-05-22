@@ -1,0 +1,10 @@
+# Claude Code project config
+.claude/
+
+# Runtime artifacts
+*.log
+*.bak
+glazewm/.claude/
+zebar/.marketplace/
+zebar/ritvik-bar/_app/
+mpv/cache/

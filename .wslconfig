@@ -1,0 +1,9 @@
+[wsl2]
+# Use all 20 logical CPU cores
+processors=20
+
+[experimental]
+# Gradually reclaim unused Linux memory back to Windows when idle
+autoMemoryReclaim=gradual
+# Use sparse virtual disk for faster operations and less host disk usage
+sparseVhd=true
