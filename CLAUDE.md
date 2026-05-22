@@ -62,6 +62,28 @@ The hook always exits 0 so a deploy failure never blocks a push.
 - `glazewm/.claude/`, `zebar/.marketplace/` — app-internal dirs that land in those folders on Windows
 - `.claude/` — Claude Code project metadata
 
+## Sioyek config
+
+Sioyek is a keyboard-driven PDF viewer. Its config files live in `C:\Program Files\sioyek\` (mapped from `sioyek/` in this repo):
+
+- `prefs.config` / `keys.config` — base defaults shipped with sioyek; tracked here as-is
+- `prefs_user.config` / `keys_user.config` — user overrides; these take priority and are where all customization goes
+
+**Key concepts:**
+- `:` opens the command palette
+- `j`/`k` move the visual mark (reading ruler) line-by-line; right-click to place it
+- `space`/`S-space` scroll pages; `/` or `C-f` to search
+- `F8` dark mode, `F11` fullscreen, `F5` presentation mode
+- **Portals** (`p`) — link two locations in a document (e.g. citation ↔ reference); opens both in a helper window side-by-side
+- **Marks** — `m`+letter to set, `` ` ``+letter to jump back; lowercase = document-local, uppercase = global
+- **Bookmarks** — `b` to add, `gb` to list
+- **Highlights** — select text, press `h`, then a letter (a–z, 26 color types)
+- `f` opens PDF links via keyboard (vimium-style)
+
+**Color format in prefs:** 0.0–1.0 per channel (not 0–255).
+
+**Setting as Windows default:** Settings → Apps → Default apps → search "pdf" → change `.pdf` association to `sioyek.exe`.
+
 ## Git identity
 
 Commits use account `Ritvik2706`. Do not add `Co-Authored-By` trailers to commits.
