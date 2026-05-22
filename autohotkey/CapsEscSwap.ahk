@@ -313,6 +313,21 @@ ShouldRemap() {
     Run("C:\Program Files\glzr.io\Zebar\zebar.exe")
 }
 
+; ── Sioyek: black titlebar via DWM DWMWA_CAPTION_COLOR ───
+SetTimer(ApplySioyekCaptionColor, 2000)
+
+ApplySioyekCaptionColor() {
+    hwnd := WinExist("ahk_exe sioyek.exe")
+    if !hwnd
+        return
+    black := 0x000000
+    DllCall("dwmapi\DwmSetWindowAttribute",
+        "ptr",  hwnd,
+        "uint", 35,
+        "uint*", &black,
+        "uint", 4)
+}
+
 ; ── WZ: Master toggle Alt+/ — only active inside Warzone ──
 ; Not gated on wzMacroActive so you can always re-enable.
 #HotIf isWZProcess

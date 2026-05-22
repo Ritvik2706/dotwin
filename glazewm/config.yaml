@@ -25,8 +25,8 @@ window_effects:
     hide_title_bar:
       enabled: false
     corner_style:
-      enabled: false
-      style: "square"
+      enabled: true
+      style: "rounded"
     transparency:
       enabled: false
       opacity: "95%"
@@ -37,8 +37,8 @@ window_effects:
     hide_title_bar:
       enabled: false
     corner_style:
-      enabled: false
-      style: "square"
+      enabled: true
+      style: "rounded"
     transparency:
       enabled: false
       opacity: "0%"
