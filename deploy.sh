@@ -10,7 +10,7 @@ REPO_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 WIN_USER="/mnt/c/Users/Ritvik"
 WIN_ROAMING="$WIN_USER/AppData/Roaming"
 WIN_LOCAL="$WIN_USER/AppData/Local"
-SIOYEK_DIR="/mnt/c/Program Files/sioyek"
+SIOYEK_DIR="$WIN_LOCAL/Programs/sioyek"
 MPV_DIR="/mnt/c/Program Files (x86)/mpv/portable_config"
 
 # Copy contents of src/ into dest/ (creating dest if needed).
@@ -85,15 +85,8 @@ deploy() {
     copy_dir "$REPO_DIR/obs-studio/basic/scenes"   "$WIN_ROAMING/obs-studio/basic/scenes"
     copy_dir "$REPO_DIR/obs-studio/basic/profiles" "$WIN_ROAMING/obs-studio/basic/profiles"
 
-    echo "  sioyek (requires admin)..."
-    if cp "$REPO_DIR/sioyek/keys.config"  "$SIOYEK_DIR/keys.config"  2>/dev/null \
-    && cp "$REPO_DIR/sioyek/prefs.config" "$SIOYEK_DIR/prefs.config" 2>/dev/null; then
-        echo "    OK"
-    else
-        echo "    SKIPPED — no write access. Run from an elevated shell:"
-        printf '    cp "%s/sioyek/keys.config"  "%s/"\n' "$REPO_DIR" "$SIOYEK_DIR"
-        printf '    cp "%s/sioyek/prefs.config" "%s/"\n' "$REPO_DIR" "$SIOYEK_DIR"
-    fi
+    echo "  sioyek"
+    copy_dir "$REPO_DIR/sioyek" "$SIOYEK_DIR"
 
     try_privileged_copy "$REPO_DIR/mpv" "$MPV_DIR" "mpv"
 
@@ -139,8 +132,7 @@ sync() {
     clean_after_copy "$REPO_DIR/obs-studio" -name "*.bak" -o -name "*.log"
 
     echo "  sioyek"
-    cp "$SIOYEK_DIR/keys.config"  "$REPO_DIR/sioyek/keys.config"
-    cp "$SIOYEK_DIR/prefs.config" "$REPO_DIR/sioyek/prefs.config"
+    copy_dir "$SIOYEK_DIR" "$REPO_DIR/sioyek"
 
     echo "  mpv"
     copy_dir "$MPV_DIR" "$REPO_DIR/mpv" "cache"

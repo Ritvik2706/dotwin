@@ -30,7 +30,7 @@ Each top-level directory maps to a Windows config location:
 | `powertoys/keyboard-manager/default.json` | `C:\Users\Ritvik\AppData\Local\Microsoft\PowerToys\Keyboard Manager\default.json` |
 | `powertoys/fancyzones-settings.json` | `C:\Users\Ritvik\AppData\Local\Microsoft\PowerToys\FancyZones\settings.json` |
 | `obs-studio/` | `C:\Users\Ritvik\AppData\Roaming\obs-studio\` |
-| `sioyek/` | `C:\Program Files\sioyek\` |
+| `sioyek/` | `C:\Users\Ritvik\AppData\Local\Programs\sioyek\` |
 | `mpv/` | `C:\Program Files (x86)\mpv\portable_config\` |
 
 ## deploy.sh internals
@@ -42,7 +42,9 @@ Each top-level directory maps to a Windows config location:
 
 ## Elevation requirement
 
-`sioyek/` and `mpv/` deploy to `Program Files` / `Program Files (x86)`, which requires admin privileges from WSL. The deploy script handles this gracefully: it prints manual copy instructions if the write fails rather than aborting. The `sync` direction (Windows → repo) always works without elevation since those paths are readable.
+`mpv/` deploys to `Program Files (x86)`, which requires admin privileges from WSL. The deploy script handles this gracefully: it prints manual copy instructions if the write fails rather than aborting. The `sync` direction (Windows → repo) always works without elevation since those paths are readable.
+
+`sioyek/` was moved to `AppData\Local\Programs\sioyek\` specifically to avoid this — no elevation needed.
 
 ## Git hook setup
 
