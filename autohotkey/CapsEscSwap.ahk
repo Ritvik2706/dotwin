@@ -114,7 +114,7 @@ excludePrefix := ["cod"]
         WinActivate("ahk_id " hwnd)
         return
     }
-    Run("OneCommander.exe")
+    Run("C:\Program Files\OneCommander\OneCommander.exe")
 }
 
 !g:: {  ; Alt+G → Zen Browser (focus-or-launch)
