@@ -78,6 +78,7 @@ window_rules:
     match:
       - window_title: { regex: "(?i) - Helium$" }
         window_process: { equals: "chrome" }
+      - window_process: { equals: "zen" }
 
   - commands: ["move --workspace 2", "focus --workspace 2"]
     match:
@@ -91,7 +92,7 @@ window_rules:
     match:
       - window_process: { equals: "zebar" }
       - window_process: { equals: "claude" }
-      - window_title: { regex: "[Pp]icture.in.[Pp]icture" }
+      - window_title: { regex: "(?i)^picture.in.picture$" }
         window_class: { regex: "Chrome_WidgetWin_1|MozillaDialogClass" }
       - window_process: { equals: "PowerToys" }
         window_class: { regex: 'HwndWrapper\[PowerToys\.PowerAccent.*?\]' }

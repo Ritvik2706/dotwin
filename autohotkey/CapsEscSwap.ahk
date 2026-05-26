@@ -106,15 +106,15 @@ excludePrefix := ["cod"]
 
 ; ── App Launchers ──────────────────────────────────────────
 
-!y:: {  ; Alt+Y → File Explorer (focus-or-launch)
+!y:: {  ; Alt+Y → OneCommander (focus-or-launch)
     if !ShouldRemap()
         return
-    hwnd := WinExist("ahk_class CabinetWClass")
+    hwnd := WinExist("ahk_exe OneCommander.exe")
     if hwnd {
         WinActivate("ahk_id " hwnd)
         return
     }
-    Run("explorer.exe")
+    Run("OneCommander.exe")
 }
 
 !g:: {  ; Alt+G → Zen Browser (focus-or-launch)
