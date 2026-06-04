@@ -304,13 +304,26 @@ ShouldRemap() {
     WinActivate("ahk_id " claudeHwnd)
 }
 
-; ── Alt+Z: Restart Zebar ──────────────────────────────────
+; ── Alt+F7: Restart Zebar ─────────────────────────────────
 !F7:: {
     if !ShouldRemap()
         return
     ProcessClose("zebar.exe")
     Sleep(300)
     Run("C:\Program Files\glzr.io\Zebar\zebar.exe")
+}
+
+; ── Alt+F9: Restart GlazeWM ───────────────────────────────
+; Hard-kills the WM (and its watcher) then relaunches. The main
+; exe spawns its own watcher, so we only need to Run the one.
+!F9:: {
+    if !ShouldRemap()
+        return
+    ProcessClose("glazewm.exe")
+    ProcessClose("glazewm-watcher.exe")
+    Sleep(300)
+    Run("C:\Program Files\glzr.io\GlazeWM\glazewm.exe")
+    TrayTip("GlazeWM restarted", "GlazeWM", 1)
 }
 
 ; ── Sioyek: black titlebar via DWM DWMWA_CAPTION_COLOR ───
