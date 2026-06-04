@@ -106,7 +106,6 @@ window_rules:
         window_class: { not_regex: "OpusApp" }
       - window_process: { equals: "POWERPNT" }
         window_class: { not_regex: "PPTFrameClass" }
-      - window_process: { equals: "mpv" }
 
   # Gaming launchers — not tiled, keybindings pass through.
   - commands: ["ignore"]
