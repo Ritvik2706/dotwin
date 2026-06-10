@@ -32,7 +32,7 @@ config.font_size = 18.0
 config.window_padding = {
 	left = 0,
 	right = 0,
-	top = 0,
+	top = 4,
 	bottom = 0,
 }
 
