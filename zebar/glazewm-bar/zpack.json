@@ -3,7 +3,9 @@
   "name": "glazewm-bar",
   "version": "1.0.0",
   "description": "Ritvik's glazewm bar (zebar-glazewm repo).",
-  "tags": ["topbar"],
+  "tags": [
+    "topbar"
+  ],
   "previewImages": [],
   "widgets": [
     {
@@ -14,13 +16,42 @@
       "focused": false,
       "resizable": false,
       "transparent": true,
-      "includeFiles": ["index.html", "assets/*.js", "assets/*.css"],
+      "includeFiles": [
+        "index.html",
+        "assets/*.js",
+        "assets/*.css"
+      ],
       "caching": {
         "defaultDuration": 0,
         "rules": []
       },
       "privileges": {
-        "shellCommands": []
+        "shellCommands": [
+          {
+            "program": "powershell",
+            "argsRegex": "bluetooth\\.ps1 (status|toggle)$"
+          },
+          {
+            "program": "rundll32",
+            "argsRegex": "^user32\\.dll,LockWorkStation$"
+          },
+          {
+            "program": "shutdown",
+            "argsRegex": "^(/l|/r /t 0|/s /t 0)$"
+          },
+          {
+            "program": "powershell",
+            "argsRegex": "^-NoProfile -NonInteractive -Command Add-Type -AssemblyName System\\.Windows\\.Forms; \\[System\\.Windows\\.Forms\\.Application\\]::SetSuspendState\\('Suspend', \\$false, \\$false\\) \\| Out-Null$"
+          },
+          {
+            "program": "powershell",
+            "argsRegex": "state\\.ps1 (get|set [A-Za-z0-9+/=]+)$"
+          },
+          {
+            "program": "powershell",
+            "argsRegex": "appicon\\.ps1 [\\w .()+-]+$"
+          }
+        ]
       },
       "presets": [
         {
@@ -29,7 +60,7 @@
           "offsetX": "0px",
           "offsetY": "0px",
           "width": "100%",
-          "height": "48px",
+          "height": "32px",
           "monitorSelection": {
             "type": "primary"
           },

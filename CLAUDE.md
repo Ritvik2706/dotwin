@@ -24,7 +24,7 @@ Each top-level directory maps to a Windows config location:
 | `wezterm.lua` | `C:\Users\Ritvik\.wezterm.lua` |
 | `.wslconfig` | `C:\Users\Ritvik\.wslconfig` |
 | `zebar/settings.json` | `C:\Users\Ritvik\.glzr\zebar\settings.json` |
-| `zebar/ritvik-bar/` | `C:\Users\Ritvik\.glzr\zebar\ritvik-bar\` |
+| `zebar/glazewm-bar/` (`zpack.json`, `index.html`, `*.ps1`, `nvidia.png`) | `C:\Users\Ritvik\AppData\Roaming\zebar\downloads\ritvik.glazewm-bar@1.0.0\` |
 | `flowlauncher/settings.json` | `C:\Users\Ritvik\AppData\Roaming\FlowLauncher\Settings\Settings.json` |
 | `powertoys/settings.json` | `C:\Users\Ritvik\AppData\Local\Microsoft\PowerToys\settings.json` |
 | `powertoys/keyboard-manager/default.json` | `C:\Users\Ritvik\AppData\Local\Microsoft\PowerToys\Keyboard Manager\default.json` |
@@ -56,10 +56,13 @@ After cloning on a new machine, run `git config core.hooksPath hooks` once to re
 
 The hook always exits 0 so a deploy failure never blocks a push.
 
+## Zebar bar
+
+`zebar/settings.json` starts pack `ritvik.glazewm-bar`, which Zebar loads from its downloads dir (not `.glzr\zebar\`). Only `zpack.json`, `index.html`, `bluetooth.ps1` (Bluetooth status/toggle, run by the bar via a `shellCommands` privilege), `appicon.ps1` (extracts the focused app's exe icon; cached by the bar), `state.ps1` (persists tray order/hidden icons and cached app icons to `%APPDATA%\zebar\ritvik-bar-state.json`, because WebView2 localStorage is corrupted whenever Zebar exits) and `nvidia.png` (stand-in tray icon) are tracked; `assets/` is the compiled build from the separate zebar-glazewm repo and is left in place on Windows. `zOrder: bottom_most` keeps fullscreen windows above the bar; `monitorSelection: primary` keeps it visible with one monitor.
+
 ## Gitignored intentionally
 
 - `*.log`, `*.bak` — runtime noise from Windows apps
-- `zebar/ritvik-bar/_app/` — compiled SvelteKit build artifacts managed by Zebar, not hand-edited
 - `mpv/cache/` — mpv watch history and thumbnail cache
 - `glazewm/.claude/`, `zebar/.marketplace/` — app-internal dirs that land in those folders on Windows
 - `.claude/` — Claude Code project metadata
