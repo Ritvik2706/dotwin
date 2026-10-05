@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Custom 00h37</title>
+    <link rel="stylesheet" type="text/css" href="../normalize.css" />
+    <link rel="icon" href="data:;" />
+  <script type="module" crossorigin src="./assets/index-GQ2izhXU.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/index-DzAgVIEl.css">
+  <script type="module">
+    import * as zebar from 'https://esm.sh/zebar@3';
+
+    function injectDot() {
+      if (document.getElementById('glazewm-status-dot')) return true;
+      const settings = document.querySelector('.settings');
+      if (!settings) return false;
+      const dot = document.createElement('span');
+      dot.id = 'glazewm-status-dot';
+      dot.style.cssText = 'display:block;width:6px;height:6px;border-radius:50%;background:#eb6f92;flex-shrink:0;transition:background 0.3s ease;margin-right:20px;';
+      settings.insertAdjacentElement('afterend', dot);
+      return true;
+    }
+
+    const observer = new MutationObserver(() => {
+      if (injectDot()) {
+        observer.disconnect();
+        const providers = zebar.createProviderGroup({ glazewm: { type: 'glazewm' } });
+        providers.onOutput(() => {
+          const dot = document.getElementById('glazewm-status-dot');
+          if (dot) {
+            const { glazewm } = providers.outputMap;
+            dot.style.background = (glazewm && !glazewm.isPaused) ? '#31748f' : '#eb6f92';
+          }
+        });
+      }
+    });
+    observer.observe(document.body, { childList: true, subtree: true });
+  </script>
+</head>
+
+<body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"></div>
+</body>
+
+</html>

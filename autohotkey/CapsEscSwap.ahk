@@ -2,12 +2,21 @@
 #SingleInstance Force
 
 ; ── Performance Settings ──────────────────────────────────
-A_MaxHotkeysPerInterval := 200
+; High per-interval cap so rapid WheelUp auto-fire never trips
+; AHK's runaway-hotkey warning dialog mid-game. A true infinite
+; loop fires thousands/sec and is still caught; our fire rate is
+; hard-capped far below this by FIRE_HOLD_MS + MaxThreadsPerHotkey.
+A_HotkeyInterval        := 1000
+A_MaxHotkeysPerInterval := 500
 KeyHistory(0)
 ListLines(false)
 ProcessSetPriority("High")
 SetKeyDelay(-1, -1)
 SetMouseDelay(-1)
+
+; Safety: release the left button on exit/reload so auto-fire can
+; never leave it stuck down if the script dies mid-click.
+OnExit((*) => Send("{Blind}{LButton up}"))
 
 ; ── General Remap State ───────────────────────────────────
 remapsActive := true
@@ -16,13 +25,21 @@ cachedResult := true
 cachedTick   := 0
 CACHE_MS     := 150
 
-; ── WZ Live Ping State ────────────────────────────────────
-PING_DELAY_MS  := 50     ; ms between the two MButton clicks
-wzMacroActive  := true   ; toggled by Alt+/
+; ── WZ Macro State ────────────────────────────────────────
+PING_DELAY_MS  := 50     ; ms between the two MButton clicks (ping)
+FIRE_HOLD_MS   := 8      ; ms the button is held down each shot (raise if shots don't register)
+FIRE_GAP_MS    := 5      ; ms between shots (lower = faster fire)
+FIRE_MAX_MS    := 4000   ; auto-fire stops after this per WheelUp (≈ one mag) even if ADS is still held
+; Keys that may be pressed during auto-fire without cancelling it. Any other
+; keyboard key (or a side/middle mouse button, wheel down) stops it instantly.
+FIRE_ALLOWED_KEYS := "asdwxc{Alt}{LAlt}{RAlt}{Ctrl}{LCtrl}{RCtrl}{Shift}{LShift}{RShift}{CapsLock}"
+fireActive     := false  ; true while an auto-fire run is in progress
+fireCancel     := false  ; set by any non-whitelisted key/button press during a run
+wzMacroActive  := true   ; master toggle — Alt+/
+wzFireActive   := false  ; rapid-fire toggle — Alt+' (off by default; also needs wzMacroActive)
 isWZProcess    := false  ; maintained by timer — never touched on keypress
 wzLastSeenTick := 0      ; last tick WZ was the active window
 WZ_DEBOUNCE_MS := 500    ; stay true this long after losing WZ focus
-
 
 ; ── Warzone process whitelist ──────────────────────────────
 wzProcesses := Map()
@@ -106,15 +123,15 @@ excludePrefix := ["cod"]
 
 ; ── App Launchers ──────────────────────────────────────────
 
-!y:: {  ; Alt+Y → OneCommander (focus-or-launch)
+!y:: {  ; Alt+Y → File Explorer (focus-or-launch)
     if !ShouldRemap()
         return
-    hwnd := WinExist("ahk_exe OneCommander.exe")
+    hwnd := WinExist("ahk_class CabinetWClass")
     if hwnd {
         WinActivate("ahk_id " hwnd)
         return
     }
-    Run("C:\Program Files\OneCommander\OneCommander.exe")
+    Run("explorer.exe")
 }
 
 !g:: {  ; Alt+G → Zen Browser (focus-or-launch)
@@ -152,12 +169,14 @@ excludePrefix := ["cod"]
 }
 
 ; ── Toggle: Win+F1 (general remaps) ───────────────────────
-#F1:: {
+ToggleRemaps() {
     global remapsActive, cachedPID
     remapsActive := !remapsActive
     cachedPID := 0
     TrayTip(remapsActive ? "Remaps ON" : "Remaps OFF", "Keyboard Remaps", 1)
+    UpdateTray()
 }
+#F1:: ToggleRemaps()
 
 ; ── Reload script: Win+F3 ─────────────────────────────────
 #F3:: Reload()
@@ -341,15 +360,31 @@ ApplySioyekCaptionColor() {
         "uint", 4)
 }
 
-; ── WZ: Master toggle Alt+/ — only active inside Warzone ──
-; Not gated on wzMacroActive so you can always re-enable.
-#HotIf isWZProcess
-!/:: {
+; ── WZ: Toggles — Alt+/ (master), Alt+' (rapid fire) ─────
+; Hotkeys only active inside Warzone; the tray menu calls the
+; functions directly so they work from anywhere. Neither hotkey is
+; gated on its own flag so you can always re-enable.
+ToggleWZMacros() {
     global wzMacroActive
     wzMacroActive := !wzMacroActive
+    if !wzMacroActive
+        Send "{Blind}{LButton up}"   ; safety: never leave the fire button held when disabling
     TrayTip(wzMacroActive ? "WZ Macros ON" : "WZ Macros OFF", "WZ Macros", 1)
     UpdateTray()
 }
+
+ToggleWZFire() {
+    global wzFireActive
+    wzFireActive := !wzFireActive
+    if !wzFireActive
+        Send "{Blind}{LButton up}"   ; safety: never leave the fire button held when disabling
+    TrayTip(wzFireActive ? "Rapid Fire ON" : "Rapid Fire OFF", "WZ Macros", 1)
+    UpdateTray()
+}
+
+#HotIf isWZProcess
+!/:: ToggleWZMacros()
+!':: ToggleWZFire()
 #HotIf
 
 ; ── WZ: Live Ping — only when in Warzone AND macro is on ──
@@ -360,39 +395,99 @@ ApplySioyekCaptionColor() {
 #HotIf isWZProcess && wzMacroActive
 c:: {
     global PING_DELAY_MS
-    Click "Middle"
+    Send "{Blind}{MButton}"
     Sleep PING_DELAY_MS
-    Click "Middle"
+    Send "{Blind}{MButton}"
+}
+
+#HotIf
+
+; WheelUp → one notch starts continuous auto-fire that keeps going until
+; RButton (ADS) is released, so a single flick empties the mag. Each shot
+; is down → hold → up so Warzone samples the press in its own frame.
+; #MaxThreadsPerHotkey 1 (set above) drops any notch that arrives while
+; already firing, so runs never overlap and the button cannot stick.
+; Only armed while RButton is physically held (ADS) — otherwise WheelUp
+; passes through untouched. FIRE_MAX_MS is a hard ceiling in case ADS is
+; held indefinitely. Any key outside FIRE_ALLOWED_KEYS, or a side/middle
+; mouse button or wheel-down, cancels the run immediately (see below).
+; Requires both the master toggle (Alt+/) and the rapid-fire toggle (Alt+').
+#HotIf isWZProcess && wzMacroActive && wzFireActive && GetKeyState("RButton", "P")
+WheelUp:: {
+    global FIRE_HOLD_MS, FIRE_GAP_MS, FIRE_MAX_MS, FIRE_ALLOWED_KEYS, fireActive, fireCancel
+    fireCancel := false
+    fireActive := true
+    ; Visible (V) so keys still reach the game; ignore script-sent input (I).
+    ; Notify on every key except the whitelist.
+    ih := InputHook("V I")
+    ih.KeyOpt("{All}", "N")
+    ih.KeyOpt(FIRE_ALLOWED_KEYS, "-N")
+    ih.OnKeyDown := FireCancelOnKey
+    start := A_TickCount
+    try {
+        ih.Start()
+        Loop {
+            if (fireCancel || !GetKeyState("RButton", "P") || (A_TickCount - start) > FIRE_MAX_MS)
+                break
+            Send "{Blind}{LButton down}"
+            Sleep FIRE_HOLD_MS
+            Send "{Blind}{LButton up}"
+            if (fireCancel || !GetKeyState("RButton", "P"))
+                break
+            Sleep FIRE_GAP_MS
+        }
+    } finally {
+        ih.Stop()
+        fireActive := false
+        Send "{Blind}{LButton up}"   ; guarantee release even if a shot errors or the thread unwinds
+    }
+}
+#HotIf
+
+FireCancelOnKey(ih, vk, sc) {
+    global fireCancel := true
+}
+
+; Mouse buttons aren't seen by InputHook, so these pass-through (~) hotkeys
+; only exist while a run is active and just raise the cancel flag.
+#HotIf fireActive
+~*XButton1::
+~*XButton2::
+~*MButton::
+~*WheelDown:: {
+    global fireCancel := true
 }
 #HotIf
 #MaxThreadsPerHotkey 1  ; reset to default
 
-; ── WZ: Enter toggles macro off/on (for chat) ─────────────
-; First Enter opens chat and disables the ping macro so keys
-; aren't intercepted while typing. Second Enter sends the
-; message and re-enables it.
-#HotIf isWZProcess
-Enter:: {
-    global wzMacroActive
-    Send "{Enter}"
-    wzMacroActive := !wzMacroActive
-    TrayTip(wzMacroActive ? "WZ Macros ON" : "WZ Macros OFF", "WZ Macros", 1)
-    UpdateTray()
-}
-#HotIf
-
 ; ── Tray ──────────────────────────────────────────────────
+TRAY_REMAPS := "Remaps`tWin+F1"
+TRAY_WZ     := "WZ Macros`tAlt+/"
+TRAY_FIRE   := "WZ Rapid Fire`tAlt+'"
+
 UpdateTray() {
-    global wzMacroActive
+    global remapsActive, wzMacroActive, wzFireActive, TRAY_REMAPS, TRAY_WZ, TRAY_FIRE
     A_IconTip := "CapsLock Remap | WZ Macros (" . (wzMacroActive ? "ON" : "OFF") . ")"
+              . " | Rapid Fire (" . (wzFireActive ? "ON" : "OFF") . ")"
+    SetTrayCheck(TRAY_REMAPS, remapsActive)
+    SetTrayCheck(TRAY_WZ,     wzMacroActive)
+    SetTrayCheck(TRAY_FIRE,   wzFireActive)
+}
+
+SetTrayCheck(item, on) {
+    if on
+        A_TrayMenu.Check(item)
+    else
+        A_TrayMenu.Uncheck(item)
 }
 
 A_TrayMenu.Delete()
-A_TrayMenu.Add("Toggle Remaps`tWin+F1",      (*) => Send("#F1"))
-A_TrayMenu.Add("Toggle WZ Macros`tAlt+/",    (*) => Send("!/"))
-A_TrayMenu.Add("Reload Script",               (*) => Reload())
-A_TrayMenu.Add("Edit Script",             (*) => Edit())
+A_TrayMenu.Add(TRAY_REMAPS,   (*) => ToggleRemaps())
+A_TrayMenu.Add(TRAY_WZ,       (*) => ToggleWZMacros())
+A_TrayMenu.Add(TRAY_FIRE,     (*) => ToggleWZFire())
+A_TrayMenu.Add("Reload Script", (*) => Reload())
+A_TrayMenu.Add("Edit Script",   (*) => Edit())
 A_TrayMenu.Add()
-A_TrayMenu.Add("Exit",                     (*) => ExitApp())
+A_TrayMenu.Add("Exit",          (*) => ExitApp())
 
 UpdateTray()
