@@ -345,6 +345,82 @@ ShouldRemap() {
     TrayTip("GlazeWM restarted", "GlazeWM", 1)
 }
 
+; ── Windows taskbar: hidden (Zebar replaces it) — Win+F4 ──
+; Auto-hide releases the taskbar's reserved strip; hiding the window
+; stops the bottom-edge peek. A 1 s timer re-hides it if Explorer
+; brings it back (Explorer restart). While hidden, Win+T / Win+B (taskbar
+; and tray focus) are blocked and a lone Win tap no longer opens Start
+; (Win+key combos still work). Restored on script exit.
+; Zebar toggles/queries this through taskbar.ahk (WM_APP+1 message).
+TASKBAR_CLASSES := ["Shell_TrayWnd", "Shell_SecondaryTrayWnd"]
+taskbarHidden   := true
+
+SetTaskbarAutoHide(on) {
+    ; APPBARDATA (x64): cbSize@0, hWnd@8, uCallbackMessage@16, uEdge@20, rc@24, lParam@40
+    abd := Buffer(48, 0)
+    NumPut("UInt", abd.Size, abd, 0)
+    NumPut("Ptr", WinExist("ahk_class Shell_TrayWnd"), abd, 8)
+    NumPut("Ptr", on ? 0x1 : 0x2, abd, 40)   ; ABS_AUTOHIDE : ABS_ALWAYSONTOP
+    DllCall("Shell32\SHAppBarMessage", "UInt", 0xA, "Ptr", abd)   ; ABM_SETSTATE
+}
+
+EnforceTaskbar() {
+    global taskbarHidden, TASKBAR_CLASSES
+    if !taskbarHidden
+        return
+    for cls in TASKBAR_CLASSES
+        for hwnd in WinGetList("ahk_class " cls)   ; visible windows only
+            WinHide("ahk_id " hwnd)
+}
+
+SetTaskbarHidden(hide) {
+    global taskbarHidden, TASKBAR_CLASSES, TRAY_TASKBAR
+    taskbarHidden := hide
+    SetTaskbarAutoHide(hide)
+    if hide {
+        EnforceTaskbar()
+    } else {
+        prev := DetectHiddenWindows(true)
+        for cls in TASKBAR_CLASSES
+            for hwnd in WinGetList("ahk_class " cls)
+                WinShow("ahk_id " hwnd)
+        DetectHiddenWindows(prev)
+    }
+    if IsSet(TRAY_TASKBAR)
+        SetTrayCheck(TRAY_TASKBAR, hide)
+}
+
+ToggleTaskbar() {
+    global taskbarHidden
+    SetTaskbarHidden(!taskbarHidden)
+    TrayTip(taskbarHidden ? "Taskbar hidden" : "Taskbar shown", "Windows Taskbar", 1)
+}
+
+#F4:: ToggleTaskbar()
+
+#HotIf taskbarHidden
+#t::return
+#b::return
+; Masking the Win release with an unassigned key stops Start from opening.
+~LWin::Send("{Blind}{vkE8}")
+~RWin::Send("{Blind}{vkE8}")
+#HotIf
+
+; WM_APP+1 from taskbar.ahk: wParam 1 = toggle, 0 = query.
+; Replies 1 when the taskbar is hidden, 2 when shown.
+WM_TASKBAR := 0x8001
+OnMessage(WM_TASKBAR, OnTaskbarMessage)
+OnTaskbarMessage(wParam, *) {
+    global taskbarHidden
+    if wParam = 1
+        ToggleTaskbar()
+    return taskbarHidden ? 1 : 2
+}
+
+SetTaskbarHidden(true)
+SetTimer(EnforceTaskbar, 1000)
+OnExit((*) => SetTaskbarHidden(false))
+
 ; ── Sioyek: black titlebar via DWM DWMWA_CAPTION_COLOR ───
 SetTimer(ApplySioyekCaptionColor, 2000)
 
@@ -464,14 +540,16 @@ FireCancelOnKey(ih, vk, sc) {
 TRAY_REMAPS := "Remaps`tWin+F1"
 TRAY_WZ     := "WZ Macros`tAlt+/"
 TRAY_FIRE   := "WZ Rapid Fire`tAlt+'"
+TRAY_TASKBAR := "Hide Windows Taskbar`tWin+F4"
 
 UpdateTray() {
-    global remapsActive, wzMacroActive, wzFireActive, TRAY_REMAPS, TRAY_WZ, TRAY_FIRE
+    global remapsActive, wzMacroActive, wzFireActive, taskbarHidden, TRAY_REMAPS, TRAY_WZ, TRAY_FIRE, TRAY_TASKBAR
     A_IconTip := "CapsLock Remap | WZ Macros (" . (wzMacroActive ? "ON" : "OFF") . ")"
               . " | Rapid Fire (" . (wzFireActive ? "ON" : "OFF") . ")"
     SetTrayCheck(TRAY_REMAPS, remapsActive)
     SetTrayCheck(TRAY_WZ,     wzMacroActive)
     SetTrayCheck(TRAY_FIRE,   wzFireActive)
+    SetTrayCheck(TRAY_TASKBAR, taskbarHidden)
 }
 
 SetTrayCheck(item, on) {
@@ -485,6 +563,7 @@ A_TrayMenu.Delete()
 A_TrayMenu.Add(TRAY_REMAPS,   (*) => ToggleRemaps())
 A_TrayMenu.Add(TRAY_WZ,       (*) => ToggleWZMacros())
 A_TrayMenu.Add(TRAY_FIRE,     (*) => ToggleWZFire())
+A_TrayMenu.Add(TRAY_TASKBAR,  (*) => ToggleTaskbar())
 A_TrayMenu.Add("Reload Script", (*) => Reload())
 A_TrayMenu.Add("Edit Script",   (*) => Edit())
 A_TrayMenu.Add()

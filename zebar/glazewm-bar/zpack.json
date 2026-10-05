@@ -50,6 +50,10 @@
           {
             "program": "powershell",
             "argsRegex": "appicon\\.ps1 [\\w .()+-]+$"
+          },
+          {
+            "program": "C:\\Program Files\\AutoHotkey\\v2\\AutoHotkey64.exe",
+            "argsRegex": "^C:\\\\Users\\\\Ritvik\\\\Documents\\\\AutoHotkey\\\\taskbar\\.ahk (get|toggle)$"
           }
         ]
       },
