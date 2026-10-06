@@ -110,6 +110,7 @@ MonitorCodProcess() {
             TrayTip("CoD closed", "GlazeWM resumed automatically", 1)
             gGlazePausedByCod := false
         }
+        ScheduleZebarDockCheck(true)
     }
 }
 
@@ -327,9 +328,51 @@ ShouldRemap() {
 !F7:: {
     if !ShouldRemap()
         return
-    ProcessClose("zebar.exe")
+    RestartZebar()
+}
+
+RestartZebar() {
+    while ProcessExist("zebar.exe") {
+        ProcessClose("zebar.exe")
+        if !ProcessWaitClose("zebar.exe", 3)
+            break
+    }
     Sleep(300)
     Run("C:\Program Files\glzr.io\Zebar\zebar.exe")
+}
+
+; ── Zebar: re-dock after display changes ──────────────────
+; A resolution change (e.g. stretched-res CoD) or Explorer restart drops
+; the bar's reserved strip, so GlazeWM tiles under it. 2 s after things
+; settle, restart Zebar if the primary work area no longer starts below
+; the monitor top. Skipped while CoD runs. When CoD exits Zebar is always
+; restarted: the strip usually comes back by itself, but GlazeWM keeps the
+; work area it read at the game's resolution until Zebar re-registers it.
+global gZebarRestartForced := false
+OnMessage(0x7E, (*) => ScheduleZebarDockCheck())   ; WM_DISPLAYCHANGE
+OnMessage(DllCall("RegisterWindowMessage", "Str", "TaskbarCreated", "UInt"), (*) => ScheduleZebarDockCheck())
+
+ScheduleZebarDockCheck(force := false) {
+    global gZebarRestartForced
+    if force
+        gZebarRestartForced := true
+    SetTimer(CheckZebarDock, -3000)   ; re-arming resets the delay (debounce)
+}
+
+CheckZebarDock() {
+    global wzProcesses, gZebarRestartForced
+    for proc, _ in wzProcesses
+        if ProcessExist(proc)
+            return
+    force := gZebarRestartForced
+    gZebarRestartForced := false
+    if !ProcessExist("zebar.exe")
+        return
+    primary := MonitorGetPrimary()
+    MonitorGet(primary,, &monTop)
+    MonitorGetWorkArea(primary,, &workTop)
+    if force || workTop = monTop
+        RestartZebar()
 }
 
 ; ── Alt+F9: Restart GlazeWM ───────────────────────────────
@@ -347,8 +390,8 @@ ShouldRemap() {
 
 ; ── Windows taskbar: hidden (Zebar replaces it) — Win+F4 ──
 ; Auto-hide releases the taskbar's reserved strip; hiding the window
-; stops the bottom-edge peek. A 1 s timer re-hides it if Explorer
-; brings it back (Explorer restart). While hidden, Win+T / Win+B (taskbar
+; stops the bottom-edge peek. It is re-hidden on Explorer restart and
+; display changes, with a 10 s fallback timer for anything else. While hidden, Win+T / Win+B (taskbar
 ; and tray focus) are blocked and a lone Win tap no longer opens Start
 ; (Win+key combos still work). Restored on script exit.
 ; Zebar toggles/queries this through taskbar.ahk (WM_APP+1 message).
@@ -418,16 +461,47 @@ OnTaskbarMessage(wParam, *) {
 }
 
 SetTaskbarHidden(true)
-SetTimer(EnforceTaskbar, 1000)
+SetTimer(EnforceTaskbar, 10000)   ; fallback; events below do the real work
 OnExit((*) => SetTaskbarHidden(false))
 
-; ── Sioyek: black titlebar via DWM DWMWA_CAPTION_COLOR ───
-SetTimer(ApplySioyekCaptionColor, 2000)
+; Explorer restart / display change: hide now, and again once Explorer has
+; finished showing its new taskbar. A separate function so the one-shot
+; doesn't replace EnforceTaskbar's periodic timer.
+OnMessage(0x7E, OnTaskbarMayReappear)   ; WM_DISPLAYCHANGE
+OnMessage(DllCall("RegisterWindowMessage", "Str", "TaskbarCreated", "UInt"), OnTaskbarMayReappear)
+OnTaskbarMayReappear(*) {
+    EnforceTaskbar()
+    SetTimer(EnforceTaskbarLater, -1500)
+}
+EnforceTaskbarLater() {
+    EnforceTaskbar()
+}
 
-ApplySioyekCaptionColor() {
-    hwnd := WinExist("ahk_exe sioyek.exe")
-    if !hwnd
+; ── Shell hook: window created / activated notifications ──
+; Windows posts these to the script instead of us polling for windows.
+HSHELL_WINDOWCREATED     := 1
+HSHELL_WINDOWACTIVATED   := 4
+HSHELL_RUDEAPPACTIVATED  := 0x8004
+DllCall("RegisterShellHookWindow", "Ptr", A_ScriptHwnd)
+OnMessage(DllCall("RegisterWindowMessage", "Str", "SHELLHOOK", "UInt"), OnShellHook)
+
+OnShellHook(event, hwnd, *) {
+    if event != HSHELL_WINDOWCREATED && event != HSHELL_WINDOWACTIVATED && event != HSHELL_RUDEAPPACTIVATED
         return
+    try proc := WinGetProcessName("ahk_id " hwnd)
+    catch
+        return
+    if proc = "sioyek.exe"
+        ApplySioyekCaptionColor(hwnd)
+}
+
+; ── Sioyek: black titlebar via DWM DWMWA_CAPTION_COLOR ───
+; Applied when a Sioyek window is created or activated (shell hook above),
+; plus once at startup for windows that are already open.
+for hwnd in WinGetList("ahk_exe sioyek.exe")
+    ApplySioyekCaptionColor(hwnd)
+
+ApplySioyekCaptionColor(hwnd) {
     black := 0x000000
     DllCall("dwmapi\DwmSetWindowAttribute",
         "ptr",  hwnd,

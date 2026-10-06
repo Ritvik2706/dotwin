@@ -1,6 +1,8 @@
 [wsl2]
 # Use all 20 logical CPU cores
 processors=20
+# Disable WSLg (no Linux GUI apps used); stops msrdc.exe and its tray icon
+guiApplications=false
 
 [experimental]
 # Gradually reclaim unused Linux memory back to Windows when idle

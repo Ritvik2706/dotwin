@@ -49,7 +49,15 @@
           },
           {
             "program": "powershell",
-            "argsRegex": "appicon\\.ps1 [\\w .()+-]+$"
+            "argsRegex": "appicon\\.ps1 \\d+ [\\w.-]+$"
+          },
+          {
+            "program": "powershell",
+            "argsRegex": "endtask\\.ps1 \\d+$"
+          },
+          {
+            "program": "nvidia-smi",
+            "argsRegex": "^--query-gpu=temperature\\.gpu --format=csv,noheader,nounits$"
           },
           {
             "program": "C:\\Program Files\\AutoHotkey\\v2\\AutoHotkey64.exe",

@@ -58,7 +58,18 @@ The hook always exits 0 so a deploy failure never blocks a push.
 
 ## Zebar bar
 
-`zebar/settings.json` starts pack `ritvik.glazewm-bar`, which Zebar loads from its downloads dir (not `.glzr\zebar\`). Only `zpack.json`, `index.html`, `bluetooth.ps1` (Bluetooth status/toggle, run by the bar via a `shellCommands` privilege), `appicon.ps1` (extracts the focused app's exe icon; cached by the bar), `state.ps1` (persists tray order/hidden icons and cached app icons to `%APPDATA%\zebar\ritvik-bar-state.json`, because WebView2 localStorage is corrupted whenever Zebar exits) and `nvidia.png` (stand-in tray icon) are tracked; `assets/` is the compiled build from the separate zebar-glazewm repo and is left in place on Windows. `zOrder: bottom_most` keeps fullscreen windows above the bar; `monitorSelection: primary` keeps it visible with one monitor.
+`zebar/settings.json` starts pack `ritvik.glazewm-bar`, which Zebar loads from its downloads dir (not `.glzr\zebar\`). Only `zpack.json`, `index.html`, `bluetooth.ps1` (Bluetooth status/toggle, run by the bar via a `shellCommands` privilege), `appicon.ps1` (looks up a window's icon the way the Windows taskbar does — window icon, UWP app logo, Start Menu shortcut icon, then exe icon — for the focused-app indicator and the open-apps island; cached in `%APPDATA%\zebar\ritvik-bar-icons\`, delete it to refetch), `endtask.ps1` (kills the process owning a window handle — the open-apps island's right-click "End task"), `state.ps1` (persists tray order/hidden icons to `%APPDATA%\zebar\ritvik-bar-state.json`, because WebView2 localStorage is corrupted whenever Zebar exits) and `nvidia.png` (stand-in tray icon) are tracked; `assets/` is the compiled build from the separate zebar-glazewm repo and is left in place on Windows. `zOrder: bottom_most` keeps fullscreen windows above the bar; `monitorSelection: primary` keeps it visible with one monitor.
+
+**Changing the bar's UI:** the source lives at `C:\Users\Ritvik\Downloads\zebar-glazewm` (`/mnt/c/Users/Ritvik/Downloads/zebar-glazewm`; components in `src/components/`, styles in `styles.css`). `npm run build` writes `dist/`. To ship a build:
+1. Copy `dist/assets/*` into the pack's `assets\` folder (not tracked here, so `deploy.sh` doesn't do it).
+2. Copy `dist/index.html` over `zebar/glazewm-bar/index.html` here. It references the hashed asset filenames, which change on every build; a stale copy makes the next deploy point the bar at missing files and the bar goes invisible.
+3. Deploy `index.html` to the pack.
+
+Copy the new assets in **before** deleting old ones (or just leave old ones; they're harmless). New `shellCommands` privileges in `zpack.json` only take effect after Zebar restarts (Alt+F7). Zebar has no GPU provider; the status island's GPU temp runs `nvidia-smi` directly (privilege in `zpack.json`, polled every 5 s).
+
+## AutoHotkey: gaming / display behaviour
+
+`CapsEscSwap.ahk` pauses GlazeWM while CoD (`cod.exe`, `ModernWarfare.exe` — the `wzProcesses` map) runs, and resumes it when it exits. CoD runs at a custom resolution; afterwards Zebar's reserved strip comes back, but GlazeWM keeps tiling to the work area it read at the game's resolution until Zebar re-registers its appbar. So the script **always restarts Zebar ~3 s after CoD exits**. Other display changes (`WM_DISPLAYCHANGE`, Explorer restart) restart Zebar only if the primary monitor's work area has lost the strip. The running AutoHotkey instance doesn't reload on deploy — re-run the script (`#SingleInstance Force` replaces it) after changing it.
 
 ## Gitignored intentionally
 

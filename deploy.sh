@@ -69,6 +69,7 @@ deploy() {
     cp "$REPO_DIR/zebar/glazewm-bar/bluetooth.ps1" "$ZEBAR_PACK_DIR/bluetooth.ps1"
     cp "$REPO_DIR/zebar/glazewm-bar/state.ps1" "$ZEBAR_PACK_DIR/state.ps1"
     cp "$REPO_DIR/zebar/glazewm-bar/appicon.ps1" "$ZEBAR_PACK_DIR/appicon.ps1"
+    cp "$REPO_DIR/zebar/glazewm-bar/endtask.ps1" "$ZEBAR_PACK_DIR/endtask.ps1"
     cp "$REPO_DIR/zebar/glazewm-bar/nvidia.png" "$ZEBAR_PACK_DIR/nvidia.png"
 
     echo "  flowlauncher"
@@ -121,6 +122,7 @@ sync() {
     cp "$ZEBAR_PACK_DIR/bluetooth.ps1" "$REPO_DIR/zebar/glazewm-bar/bluetooth.ps1"
     cp "$ZEBAR_PACK_DIR/state.ps1" "$REPO_DIR/zebar/glazewm-bar/state.ps1"
     cp "$ZEBAR_PACK_DIR/appicon.ps1" "$REPO_DIR/zebar/glazewm-bar/appicon.ps1"
+    cp "$ZEBAR_PACK_DIR/endtask.ps1" "$REPO_DIR/zebar/glazewm-bar/endtask.ps1"
     cp "$ZEBAR_PACK_DIR/nvidia.png" "$REPO_DIR/zebar/glazewm-bar/nvidia.png"
 
     echo "  flowlauncher"
