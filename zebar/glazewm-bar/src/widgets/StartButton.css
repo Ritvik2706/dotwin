@@ -1,0 +1,41 @@
+/* Windows logo + name / power menu. */
+
+.start {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--text-bright);
+    font-family: var(--font-display);
+    font-size: 18px;
+    line-height: 1;
+
+    /* Power menus stay in the data font */
+    .inline-menu {
+        font-family: var(--font-data);
+        font-size: var(--font-size);
+    }
+}
+
+.start-button {
+    .glyph {
+        width: 18px;
+        height: 18px;
+        color: var(--silver);
+    }
+
+    &:hover .glyph,
+    &.open .glyph {
+        color: var(--text-bright);
+    }
+
+    /* The wings spread */
+    &:hover .glyph-wing-left,
+    &.open .glyph-wing-left {
+        rotate: 10deg;
+    }
+
+    &:hover .glyph-wing-right,
+    &.open .glyph-wing-right {
+        rotate: -10deg;
+    }
+}

@@ -2,7 +2,7 @@
   "$schema": "https://github.com/glzr-io/zebar/raw/v3.1.1/resources/zpack-schema.json",
   "name": "glazewm-bar",
   "version": "1.0.0",
-  "description": "Ritvik's glazewm bar (zebar-glazewm repo).",
+  "description": "Ritvik's glazewm bar. Source: dotwin zebar/glazewm-bar (see README.md).",
   "tags": [
     "topbar"
   ],
@@ -19,7 +19,8 @@
       "includeFiles": [
         "index.html",
         "assets/*.js",
-        "assets/*.css"
+        "assets/*.css",
+        "assets/*.woff2"
       ],
       "caching": {
         "defaultDuration": 0,
@@ -56,12 +57,36 @@
             "argsRegex": "endtask\\.ps1 \\d+$"
           },
           {
+            "program": "powershell",
+            "argsRegex": "windowvisible\\.ps1 \\d+$"
+          },
+          {
+            "program": "powershell",
+            "argsRegex": "audiodevice\\.ps1 set \\{[0-9.]+\\}\\.\\{[0-9a-fA-F-]+\\}$"
+          },
+          {
+            "program": "explorer",
+            "argsRegex": "^(ms-settings:[a-z-]*|ms-availablenetworks:|ms-actioncenter:(controlcenter/&showFooter=true)?|shell:AppsFolder\\\\NVIDIACorp\\.NVIDIAControlPanel_56jybvy8sckqj!NVIDIACorp\\.NVIDIAControlPanel)$"
+          },
+          {
+            "program": "taskmgr",
+            "argsRegex": "^$"
+          },
+          {
+            "program": "C:\\Program Files\\NVIDIA Corporation\\NVIDIA App\\CEF\\NVIDIA App.exe",
+            "argsRegex": "^$"
+          },
+          {
             "program": "nvidia-smi",
             "argsRegex": "^--query-gpu=temperature\\.gpu --format=csv,noheader,nounits$"
           },
           {
             "program": "C:\\Program Files\\AutoHotkey\\v2\\AutoHotkey64.exe",
-            "argsRegex": "^C:\\\\Users\\\\Ritvik\\\\Documents\\\\AutoHotkey\\\\taskbar\\.ahk (get|toggle)$"
+            "argsRegex": "^C:\\\\Users\\\\Ritvik\\\\Documents\\\\AutoHotkey\\\\taskbar\\.ahk (get|toggle|focus \\d+)$"
+          },
+          {
+            "program": "C:\\Program Files\\AutoHotkey\\v2\\AutoHotkey64.exe",
+            "argsRegex": "^C:\\\\Users\\\\Ritvik\\\\Documents\\\\AutoHotkey\\\\brightness\\.ahk (get|up|down)$"
           }
         ]
       },
@@ -72,7 +97,7 @@
           "offsetX": "0px",
           "offsetY": "0px",
           "width": "100%",
-          "height": "32px",
+          "height": "34px",
           "monitorSelection": {
             "type": "primary"
           },

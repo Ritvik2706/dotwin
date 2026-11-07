@@ -1,0 +1,51 @@
+/* Inline menus (ui/InlineMenu.jsx): a row of buttons in place of part of the bar. */
+
+.inline-menu {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+}
+
+/* Plain text in a menu, e.g. "CapsEscSwap.ahk not running" */
+.inline-menu-note {
+    padding: 0 6px;
+    color: var(--muted);
+}
+
+.menu-item {
+    gap: 5px;
+    height: 20px;
+    padding: 0 6px;
+    color: var(--text);
+    border-radius: var(--radius);
+    transition: background var(--transition), color var(--transition);
+
+    i {
+        color: var(--muted);
+        transition: color var(--transition);
+    }
+
+    &:hover {
+        color: var(--text-bright);
+        background: var(--surface-hover);
+
+        i {
+            color: var(--accent);
+        }
+    }
+
+    &.destructive:hover i {
+        color: var(--danger);
+    }
+
+    /* Armed: the next click runs it (hooks/useConfirm.js) */
+    &.confirming {
+        color: var(--on-accent);
+        background: var(--danger);
+        font-weight: 600;
+
+        i {
+            color: var(--on-accent);
+        }
+    }
+}

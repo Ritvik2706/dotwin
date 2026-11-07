@@ -7,3 +7,7 @@
 glazewm/.claude/
 zebar/.marketplace/
 mpv/cache/
+
+# Zebar bar build (deploy.sh rebuilds it)
+zebar/glazewm-bar/node_modules/
+zebar/glazewm-bar/dist/

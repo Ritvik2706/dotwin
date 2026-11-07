@@ -1,0 +1,30 @@
+/* Now playing, divided from the clock. */
+
+.media {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-right: 16px;
+}
+
+.media-label {
+    color: var(--text);
+    line-height: 1;
+}
+
+.media-controls {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-left: 6px;
+
+    .clean-button {
+        color: var(--muted);
+        font-size: 12px;
+        transition: color var(--transition);
+
+        &:hover {
+            color: var(--accent);
+        }
+    }
+}

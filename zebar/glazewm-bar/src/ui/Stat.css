@@ -1,0 +1,33 @@
+/* Readouts: a sigil, then the value. Stat.jsx, and Volume and Brightness, which share
+   .stat-value so every number on the right sits on the same line. */
+
+.stat {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    color: var(--silver);
+    line-height: 1;
+    transition: color var(--transition);
+
+    &.high,
+    &.high .glyph {
+        color: var(--danger);
+    }
+
+    &.clean-button:hover {
+        color: var(--text-bright);
+    }
+}
+
+.stat-value {
+    color: inherit;
+    font-family: var(--font-display);
+    font-size: 16px;
+    font-variant-numeric: lining-nums tabular-nums;
+    line-height: 1;
+}
+
+.volume .stat-value,
+.brightness .stat-value {
+    color: var(--silver);
+}

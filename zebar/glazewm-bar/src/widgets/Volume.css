@@ -1,0 +1,57 @@
+.volume {
+    color: var(--text);
+    transition: color var(--transition);
+
+    &.muted .glyph,
+    &.muted .stat-value {
+        color: var(--muted);
+    }
+
+    &:hover {
+        color: var(--text-bright);
+    }
+
+}
+
+/* Right-click output picker: covers the controls island and grows left over its
+   neighbours (right-aligned, opaque), so the island keeps its size. */
+.audio-picker {
+    position: absolute;
+    inset: 0 0 0 auto;
+    z-index: 1;
+    min-width: 100%;
+    max-width: 50vw;
+    justify-content: flex-end;
+    padding: 0 10px;
+    overflow: hidden;
+    background: var(--bg-solid);
+
+    /* Device names shrink (ellipsis) to keep the row inside the island */
+    .menu-item {
+        min-width: 0;
+        flex-shrink: 0;
+    }
+
+    .menu-item:has(span) {
+        flex-shrink: 1;
+    }
+
+    span {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    /* The current default device */
+    .menu-item.current {
+        color: var(--text-bright);
+
+        i {
+            color: var(--accent);
+        }
+    }
+
+    .menu-item.busy {
+        opacity: 0.5;
+    }
+}

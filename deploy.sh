@@ -45,10 +45,49 @@ try_privileged_copy() {
     fi
 }
 
+# Build the Zebar bar (Vite + React) into zebar/glazewm-bar/dist/.
+# Installs dependencies first if they're missing or package-lock.json changed.
+build_zebar_bar() {
+    local dir="$REPO_DIR/zebar/glazewm-bar"
+    if ! command -v npm >/dev/null; then
+        echo "    npm not found in WSL"
+        return 1
+    fi
+    if [[ ! -d "$dir/node_modules" || "$dir/package-lock.json" -nt "$dir/node_modules/.package-lock.json" ]]; then
+        (cd "$dir" && npm ci --no-audit --no-fund --loglevel=error) || return 1
+    fi
+    (cd "$dir" && npm run --silent build >/dev/null) || return 1
+}
+
+# Install the bar into its Zebar pack folder: zpack.json, scripts/, then the build.
+# A failed build leaves the deployed UI as it was.
+deploy_zebar_bar() {
+    local src="$REPO_DIR/zebar/glazewm-bar" dest="$ZEBAR_PACK_DIR"
+    mkdir -p "$dest/scripts" "$dest/assets"
+    cp "$src/zpack.json" "$dest/zpack.json"
+    rm -f "$dest"/*.ps1   # scripts live in scripts/; drop copies from the old flat layout
+    cp "$src"/scripts/*.ps1 "$dest/scripts/"
+
+    if ! build_zebar_bar; then
+        echo "    SKIPPED bar UI — build failed (run: cd zebar/glazewm-bar && npm run build)"
+        return 0
+    fi
+    # index.html names the hashed asset files, so copy it last and only then
+    # remove stale assets; the bar never points at files that aren't there.
+    cp "$src"/dist/assets/* "$dest/assets/"
+    find "$src/dist" -maxdepth 1 -type f ! -name index.html -exec cp {} "$dest/" \;
+    cp "$src/dist/index.html" "$dest/index.html"
+    local file
+    for file in "$dest"/assets/*; do
+        [[ -e "$src/dist/assets/$(basename "$file")" ]] || rm -f "$file"
+    done
+}
+
 deploy() {
     echo "=== Deploying configs to Windows ==="
 
     echo "  autohotkey"
+    rm -rf "$WIN_USER/Documents/AutoHotkey/modules"   # so deleted modules don't linger
     copy_dir "$REPO_DIR/autohotkey" "$WIN_USER/Documents/AutoHotkey"
 
     echo "  glazewm"
@@ -62,15 +101,8 @@ deploy() {
     cp "$REPO_DIR/.wslconfig" "$WIN_USER/.wslconfig"
 
     echo "  zebar"
-    mkdir -p "$ZEBAR_PACK_DIR"
     cp "$REPO_DIR/zebar/settings.json" "$WIN_USER/.glzr/zebar/settings.json"
-    cp "$REPO_DIR/zebar/glazewm-bar/zpack.json" "$ZEBAR_PACK_DIR/zpack.json"
-    cp "$REPO_DIR/zebar/glazewm-bar/index.html" "$ZEBAR_PACK_DIR/index.html"
-    cp "$REPO_DIR/zebar/glazewm-bar/bluetooth.ps1" "$ZEBAR_PACK_DIR/bluetooth.ps1"
-    cp "$REPO_DIR/zebar/glazewm-bar/state.ps1" "$ZEBAR_PACK_DIR/state.ps1"
-    cp "$REPO_DIR/zebar/glazewm-bar/appicon.ps1" "$ZEBAR_PACK_DIR/appicon.ps1"
-    cp "$REPO_DIR/zebar/glazewm-bar/endtask.ps1" "$ZEBAR_PACK_DIR/endtask.ps1"
-    cp "$REPO_DIR/zebar/glazewm-bar/nvidia.png" "$ZEBAR_PACK_DIR/nvidia.png"
+    deploy_zebar_bar
 
     echo "  flowlauncher"
     mkdir -p "$WIN_ROAMING/FlowLauncher/Settings"
@@ -117,13 +149,9 @@ sync() {
 
     echo "  zebar"
     cp "$WIN_USER/.glzr/zebar/settings.json" "$REPO_DIR/zebar/settings.json"
+    # The bar's UI is built from source here, so only its hand-edited files come back.
     cp "$ZEBAR_PACK_DIR/zpack.json" "$REPO_DIR/zebar/glazewm-bar/zpack.json"
-    cp "$ZEBAR_PACK_DIR/index.html" "$REPO_DIR/zebar/glazewm-bar/index.html"
-    cp "$ZEBAR_PACK_DIR/bluetooth.ps1" "$REPO_DIR/zebar/glazewm-bar/bluetooth.ps1"
-    cp "$ZEBAR_PACK_DIR/state.ps1" "$REPO_DIR/zebar/glazewm-bar/state.ps1"
-    cp "$ZEBAR_PACK_DIR/appicon.ps1" "$REPO_DIR/zebar/glazewm-bar/appicon.ps1"
-    cp "$ZEBAR_PACK_DIR/endtask.ps1" "$REPO_DIR/zebar/glazewm-bar/endtask.ps1"
-    cp "$ZEBAR_PACK_DIR/nvidia.png" "$REPO_DIR/zebar/glazewm-bar/nvidia.png"
+    cp "$ZEBAR_PACK_DIR"/scripts/*.ps1 "$REPO_DIR/zebar/glazewm-bar/scripts/"
 
     echo "  flowlauncher"
     cp "$WIN_ROAMING/FlowLauncher/Settings/Settings.json" "$REPO_DIR/flowlauncher/settings.json"

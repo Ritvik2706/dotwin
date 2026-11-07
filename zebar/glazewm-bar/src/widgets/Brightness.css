@@ -1,0 +1,13 @@
+/* Laid out like the volume button next to it. */
+.brightness {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    line-height: 1;
+    color: var(--text);
+    transition: color var(--transition);
+
+    &:hover {
+        color: var(--text-bright);
+    }
+}

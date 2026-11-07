@@ -1,0 +1,93 @@
+# Games that must take the desktop setup down as soon as they open a window,
+# before their anti-cheat's first scan. When one does, GlazeWM, Zebar and
+# CapsEscSwap.ahk quit, and relaunch-after-game.ps1 starts them again once none
+# of these is running. Other games are caught when focused (modules/AntiCheatGames.ahk);
+# list one here if it isn't. One process name per line; # starts a comment. Names
+# that never match cost nothing, so when unsure about an exe, list it.
+# Check a running game's name with Task Manager.
+
+# Call of Duty: the year-numbered names cover the yearly releases.
+cod.exe
+ModernWarfare.exe
+cod22.exe
+cod22-cod.exe
+cod23.exe
+cod23-cod.exe
+cod24.exe
+cod24-cod.exe
+cod25.exe
+cod25-cod.exe
+cod26.exe
+cod26-cod.exe
+
+# Anti-cheat bootstrappers: their splash window opens before the game's, so
+# AutoHotkey is gone before the anti-cheat's first scan.
+start_protected_game.exe                 # Easy Anti-Cheat launcher (many EAC games)
+EAAntiCheat.GameServiceLauncher.exe      # EA Javelin
+FACEITClient.exe                         # FACEIT AC (CS2 on FACEIT)
+
+# EA Javelin — AutoHotkey is on EA's prohibited list
+bf6.exe                                  # Battlefield 6 / REDSEC
+bf6event.exe
+BF2042.exe
+bf1.exe
+bfv.exe
+FC25.exe                                 # EA SPORTS FC
+FC26.exe
+skate.exe
+
+# Embark (EAC) — both flag AutoHotkey (and PowerToys Keyboard Manager)
+Discovery.exe                            # THE FINALS
+PioneerGame.exe                          # ARC Raiders
+Pioneer.exe
+ARC Raiders.exe
+
+# Riot Vanguard
+VALORANT-Win64-Shipping.exe
+League of Legends.exe
+
+# NetEase / Tencent ACE — Marvel Rivals lists AutoHotkey as prohibited
+Marvel-Win64-Shipping.exe                # Marvel Rivals
+DeltaForceClient-Win64-Shipping.exe      # Delta Force
+NarakaBladepoint.exe
+
+# Easy Anti-Cheat
+FortniteClient-Win64-Shipping.exe
+FortniteClient-Win64-Shipping_EAC.exe
+FortniteClient-Win64-Shipping_EAC_EOS.exe
+FortniteClient-Win64-Shipping_BE.exe
+r5apex.exe                               # Apex Legends
+r5apex_dx12.exe
+RustClient.exe
+DeadByDaylight-Win64-Shipping.exe
+DeadByDaylight-EGS-Shipping.exe
+HuntGame.exe                             # Hunt: Showdown 1896
+HaloInfinite.exe
+RocketLeague.exe
+FallGuys_client_game.exe
+ForHonor.exe
+SquadGame.exe
+HLL-Win64-Shipping.exe                   # Hell Let Loose
+InsurgencyClient-Win64-Shipping.exe      # Insurgency: Sandstorm
+LOSTARK.exe
+PortalWars2-Win64-Shipping.exe           # Splitgate 2
+
+# BattlEye
+RainbowSix.exe                           # Rainbow Six Siege
+RainbowSix_BE.exe
+RainbowSix_Vulkan.exe
+TslGame.exe                              # PUBG
+EscapeFromTarkov.exe
+EscapeFromTarkovArena.exe
+destiny2.exe
+DayZ_x64.exe
+DayZ_BE.exe
+ArmaReforgerSteam.exe
+arma3_x64.exe
+arma3battleye.exe
+
+# Blizzard (Overwatch bans macro tools)
+Overwatch.exe
+
+# Krunker (Steam client)
+Official Krunker.io Client.exe

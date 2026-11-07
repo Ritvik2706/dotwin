@@ -1,0 +1,10 @@
+.binding-mode {
+    height: 20px;
+    padding: 0 8px;
+    color: var(--on-accent);
+    background: var(--silver);
+    border: 0;
+    border-radius: var(--radius);
+    font-weight: 700;
+    cursor: pointer;
+}

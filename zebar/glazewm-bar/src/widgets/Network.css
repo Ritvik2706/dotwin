@@ -1,0 +1,12 @@
+.network {
+    color: var(--text);
+    transition: color var(--transition);
+
+    &:hover {
+        color: var(--text-bright);
+    }
+
+    &.offline .glyph {
+        color: var(--muted);
+    }
+}

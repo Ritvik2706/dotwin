@@ -1,0 +1,42 @@
+/* Workspaces as Roman numerals, with a silver mark that slides to the focused one. */
+
+.workspaces {
+    position: relative;
+    display: flex;
+    align-self: stretch;
+}
+
+.workspace {
+    min-width: 18px;
+    padding: 0 3px 2px;
+    color: var(--text);
+    font-family: var(--font-display);
+    font-size: 22px;
+    letter-spacing: 0.04em;
+    line-height: 1;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    transition: color var(--transition);
+
+    &:hover,
+    &.focused {
+        color: var(--text-bright);
+    }
+}
+
+/* Positioned by Workspaces.jsx. */
+.workspace-mark {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 2px;
+    background: var(--silver);
+    transition: transform 0.22s ease-out, width 0.22s ease-out;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .workspace-mark {
+        transition: none;
+    }
+}

@@ -1,0 +1,20 @@
+{
+  "name": "glazewm-bar",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Zebar top bar for GlazeWM. Built by deploy.sh; see README.md.",
+  "scripts": {
+    "build": "vite build",
+    "dev": "vite build --watch"
+  },
+  "dependencies": {
+    "@fontsource/grenze-gotisch": "^5.3.0",
+    "@vitejs/plugin-react": "^4.3.2",
+    "glazewm": "1.7.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "vite": "^5.4.8",
+    "zebar": "3.3.1"
+  }
+}

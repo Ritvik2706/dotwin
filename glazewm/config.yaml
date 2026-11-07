@@ -21,7 +21,7 @@ window_effects:
   focused_window:
     border:
       enabled: true
-      color: "#c084fc"
+      color: "#d9d7df"
     hide_title_bar:
       enabled: false
     corner_style:
@@ -33,7 +33,7 @@ window_effects:
   other_windows:
     border:
       enabled: true
-      color: "#a1a1a1"
+      color: "#26252a"
     hide_title_bar:
       enabled: false
     corner_style:
@@ -51,19 +51,28 @@ window_behavior:
       shown_on_top: false
     fullscreen:
       maximized: false
-      shown_on_top: false
+      # Otherwise tiled windows stay above a fullscreened one (e.g. mpv).
+      shown_on_top: true
 
+# Like niri's fixed homes: 1 browser, 2 terminal, 3 docs, 4 media, 5 tools. Apps
+# open on theirs (window_rules) and stay where you move them. keep_alive only
+# keeps one once it's been opened; GlazeWM doesn't create them all at startup.
 workspaces:
   - name: "1"
     bind_to_monitor: 1
+    keep_alive: true
   - name: "2"
     bind_to_monitor: 1
+    keep_alive: true
   - name: "3"
     bind_to_monitor: 1
+    keep_alive: true
   - name: "4"
     bind_to_monitor: 1
+    keep_alive: true
   - name: "5"
     bind_to_monitor: 1
+    keep_alive: true
   - name: "6"
     bind_to_monitor: 1
   - name: "7"
@@ -71,6 +80,10 @@ workspaces:
   - name: "8"
     bind_to_monitor: 0
   - name: "9"
+    bind_to_monitor: 0
+  # "0" would read as no number in the bar's workspace split.
+  - name: "10"
+    display_name: "0"
     bind_to_monitor: 0
 
 window_rules:
@@ -87,6 +100,33 @@ window_rules:
   - commands: ["move --workspace 7", "focus --workspace 7"]
     match:
       - window_process: { equals: "SumatraPDF" }
+
+  - commands: ["move --workspace 3", "focus --workspace 3"]
+    match:
+      - window_process: { equals: "sioyek" }
+      - window_process: { equals: "Obsidian" }
+      - window_process: { equals: "WINWORD" }
+        window_class: { equals: "OpusApp" }
+      - window_process: { equals: "EXCEL" }
+        window_class: { equals: "XLMAIN" }
+      - window_process: { equals: "POWERPNT" }
+        window_class: { equals: "PPTFrameClass" }
+
+  - commands: ["move --workspace 4", "focus --workspace 4"]
+    match:
+      - window_process: { equals: "mpv" }
+
+  - commands: ["move --workspace 5", "focus --workspace 5"]
+    match:
+      - window_process: { equals: "obs64" }
+
+  # These can start with Windows, so they go home without pulling focus along.
+  - commands: ["move --workspace 4"]
+    match:
+      - window_process: { equals: "Spotify" }
+  - commands: ["move --workspace 5"]
+    match:
+      - window_process: { equals: "qbittorrent" }
 
   - commands: ["ignore"]
     match:
@@ -111,33 +151,43 @@ window_rules:
   - commands: ["ignore"]
     match:
       - window_process: { equals: "Battle.net" }
-      - window_process: { regex: "(?i)^Battle\\.net\\.exe$" }
       - window_title: { regex: "(?i)^Battle\\.net" }
-      - window_process: { equals: "EADesktop.exe" }
-      - window_process: { equals: "EALauncher.exe" }
-      - window_process: { equals: "EpicGamesLauncher.exe" }
-      - window_process: { equals: "steam.exe" }
-      - window_process: { equals: "steamwebhelper.exe" }
-      - window_process: { equals: "UbisoftConnect.exe" }
-      - window_process: { equals: "GalaxyClient.exe" }
-      - window_process: { equals: "RiotClientServices.exe" }
-      - window_process: { equals: "RockstarService.exe" }
-      - window_process: { equals: "XboxApp.exe" }
-      - window_process: { equals: "GameBar.exe" }
-      - window_process: { equals: "XboxGameBarWidgets.exe" }
-      - window_process: { equals: "itch.exe" }
+        window_process: { not_regex: "(?i)^(zen|chrome|msedge|firefox|brave|opera|vivaldi|discord|spotify|explorer|wezterm-gui|obs64|sumatrapdf|sioyek|mpv|code|notepad|obsidian)$" }
+      - window_process: { equals: "EADesktop" }
+      - window_process: { equals: "EALauncher" }
+      - window_process: { equals: "EpicGamesLauncher" }
+      - window_process: { equals: "steam" }
+      - window_process: { equals: "steamwebhelper" }
+      - window_process: { equals: "UbisoftConnect" }
+      - window_process: { equals: "GalaxyClient" }
+      - window_process: { equals: "RiotClientServices" }
+      - window_process: { equals: "RockstarService" }
+      - window_process: { equals: "XboxApp" }
+      - window_process: { equals: "GameBar" }
+      - window_process: { equals: "XboxGameBarWidgets" }
+      - window_process: { equals: "itch" }
       - window_process: { regex: "(?i)^Amazon Games" }
 
   # Games — GlazeWM skips keybinding interception when any of these are focused.
   # Use alt+\ to toggle-pause as a fallback if a game window slips through.
   - commands: ["ignore"]
     match:
-      - window_process: { regex: "(?i)^cod\\.exe$" }
+      - window_process: { regex: "(?i)^cod\\d*(-\\w+)?$" }
       - window_process: { regex: "(?i)^(warzone|modernwarfare|blackops)" }
+      # Titles only for non-everyday apps. Rules re-run when a title changes and
+      # an ignored window stays ignored until it's closed, so one browser tab
+      # called "Call of Duty" would untile the browser for good.
       - window_title: { regex: "(?i)call of duty" }
+        window_process: { not_regex: "(?i)^(zen|chrome|msedge|firefox|brave|opera|vivaldi|discord|spotify|explorer|wezterm-gui|obs64|sumatrapdf|sioyek|mpv|code|notepad|obsidian)$" }
       - window_process: { regex: "(?i)^(The_Finals|FINALS)" }
       - window_title: { regex: "(?i)the finals" }
-      - window_process: { equals: "FPSAimTrainer.exe" }
+        window_process: { not_regex: "(?i)^(zen|chrome|msedge|firefox|brave|opera|vivaldi|discord|spotify|explorer|wezterm-gui|obs64|sumatrapdf|sioyek|mpv|code|notepad|obsidian)$" }
+      - window_process: { equals: "FPSAimTrainer" }
+      # Battlefield 6 / REDSEC (Frostbite, so no engine window class to catch it).
+      - window_process: { regex: "(?i)^(bf\\d|bf20\\d\\d|bfv|battlefield)" }
+      - window_title: { regex: "(?i)^battlefield|redsec" }
+        window_process: { not_regex: "(?i)^(zen|chrome|msedge|firefox|brave|opera|vivaldi|discord|spotify|explorer|wezterm-gui|obs64|sumatrapdf|sioyek|mpv|code|notepad|obsidian)$" }
+      - window_process: { regex: "(?i)^(r5apex|cs2|RainbowSix|League of Legends|Overwatch|FortniteClient|VALORANT|Marvel)" }
       - window_class: { regex: "SDL_app|UnityWndClass|UnrealWindow" }
 
 binding_modes:
@@ -154,6 +204,11 @@ binding_modes:
       - commands: ["wm-disable-binding-mode --name resize"]
         bindings: ["escape", "enter"]
 
+# Alt is niri's Mod: the same physical key (keyd makes Alt into Super on Linux),
+# so these match dotnix/niri/conf/binds/. One job per modifier:
+#   Alt + hjkl focus    Alt+Ctrl + hjkl move    Alt+Shift + hjkl resize
+# App, screenshot and system keys are in autohotkey/modules/ (Alt+Shift+/ lists
+# them all); a key bound here and there would fire twice.
 keybindings:
   - commands: ["focus --direction left"]
     bindings: ["alt+h", "alt+left"]
@@ -165,47 +220,53 @@ keybindings:
     bindings: ["alt+j", "alt+down"]
 
   - commands: ["move --direction left"]
-    bindings: ["alt+shift+h", "alt+shift+left"]
+    bindings: ["alt+ctrl+h", "alt+ctrl+left"]
   - commands: ["move --direction right"]
-    bindings: ["alt+shift+l", "alt+shift+right"]
+    bindings: ["alt+ctrl+l", "alt+ctrl+right"]
   - commands: ["move --direction up"]
-    bindings: ["alt+shift+k", "alt+shift+up"]
+    bindings: ["alt+ctrl+k", "alt+ctrl+up"]
   - commands: ["move --direction down"]
-    bindings: ["alt+shift+j", "alt+shift+down"]
+    bindings: ["alt+ctrl+j", "alt+ctrl+down"]
 
-  - commands: ["resize --width -2%"]
-    bindings: ["alt+ctrl+h"]
-  - commands: ["resize --width +2%"]
-    bindings: ["alt+ctrl+l"]
-  - commands: ["resize --height +2%"]
-    bindings: ["alt+ctrl+j"]
-  - commands: ["resize --height -2%"]
-    bindings: ["alt+ctrl+k"]
+  - commands: ["resize --width -10%"]
+    bindings: ["alt+shift+h"]
+  - commands: ["resize --width +10%"]
+    bindings: ["alt+shift+l"]
+  - commands: ["resize --height +10%"]
+    bindings: ["alt+shift+j"]
+  - commands: ["resize --height -10%"]
+    bindings: ["alt+shift+k"]
 
   - commands: ["wm-enable-binding-mode --name resize"]
-    bindings: ["alt+r"]
+    bindings: ["alt+shift+r"]
   - commands: ["wm-toggle-pause"]
-    bindings: ["alt+\\"]
+    bindings: ["alt+oem_pipe"]
   - commands: ["shell-exec powershell -WindowStyle Hidden -ExecutionPolicy Bypass -File C:/Users/Ritvik/Documents/AutoHotkey/toggle_ahk.ps1"]
     bindings: ["alt+F8"]
   - commands: ["toggle-tiling-direction"]
-    bindings: ["alt+v"]
-  - commands: ["wm-cycle-focus"]
-    bindings: ["alt+space"]
+    bindings: ["alt+t"]
   - commands: ["toggle-floating --centered"]
-    bindings: ["alt+shift+space"]
+    bindings: ["alt+space", "alt+shift+space"]
+  - commands: ["wm-cycle-focus"]
+    bindings: ["alt+ctrl+space"]
   - commands: ["toggle-tiling"]
     bindings: ["alt+p"]
-  - commands: ["toggle-fullscreen"]
+  # Alt+F keeps the bar (niri's maximize-column); Alt+Shift+F covers it.
+  - commands: ["toggle-fullscreen --maximized"]
     bindings: ["alt+f"]
-  - commands: ["toggle-minimized"]
+  - commands: ["toggle-fullscreen"]
+    bindings: ["alt+shift+f"]
+  - commands: ["position --centered"]
     bindings: ["alt+m"]
+  - commands: ["toggle-minimized"]
+    bindings: ["alt+shift+m"]
   - commands: ["close"]
     bindings: ["alt+q"]
-  - commands: ["wm-exit"]
+  # Not plain wm-exit: that leaves windows on hidden workspaces invisible.
+  - commands: ["shell-exec powershell -WindowStyle Hidden -ExecutionPolicy Bypass -File C:/Users/Ritvik/Documents/AutoHotkey/stop-glazewm.ps1"]
     bindings: ["alt+shift+e"]
   - commands: ["wm-reload-config"]
-    bindings: ["alt+shift+r"]
+    bindings: ["alt+shift+c"]
   - commands: ["wm-redraw"]
     bindings: ["alt+shift+w"]
 
@@ -213,6 +274,16 @@ keybindings:
     bindings: ["alt+["]
   - commands: ["focus --next-workspace"]
     bindings: ["alt+]"]
+  - commands: ["focus --recent-workspace"]
+    bindings: ["alt+oem_tilde"]
+  - commands: ["move --next-workspace"]
+    bindings: ["alt+ctrl+shift+j"]
+  - commands: ["move --prev-workspace"]
+    bindings: ["alt+ctrl+shift+k"]
+
+  # No `focus --monitor <n>` keys: with one monitor plugged in the index doesn't
+  # exist, and a keybinding that fails opens an error dialog that blocks GlazeWM
+  # until it's dismissed. Alt+H/L cross monitors at the edges.
 
   - commands: ["focus --workspace 1"]
     bindings: ["alt+1"]
@@ -232,7 +303,10 @@ keybindings:
     bindings: ["alt+8"]
   - commands: ["focus --workspace 9"]
     bindings: ["alt+9"]
+  - commands: ["focus --workspace 10"]
+    bindings: ["alt+0"]
 
+  # Take the window along.
   - commands: ["move --workspace 1", "focus --workspace 1"]
     bindings: ["alt+shift+1"]
   - commands: ["move --workspace 2", "focus --workspace 2"]
@@ -251,3 +325,27 @@ keybindings:
     bindings: ["alt+shift+8"]
   - commands: ["move --workspace 9", "focus --workspace 9"]
     bindings: ["alt+shift+9"]
+  - commands: ["move --workspace 10", "focus --workspace 10"]
+    bindings: ["alt+shift+0"]
+
+  # Send it there and stay.
+  - commands: ["move --workspace 1"]
+    bindings: ["alt+ctrl+1"]
+  - commands: ["move --workspace 2"]
+    bindings: ["alt+ctrl+2"]
+  - commands: ["move --workspace 3"]
+    bindings: ["alt+ctrl+3"]
+  - commands: ["move --workspace 4"]
+    bindings: ["alt+ctrl+4"]
+  - commands: ["move --workspace 5"]
+    bindings: ["alt+ctrl+5"]
+  - commands: ["move --workspace 6"]
+    bindings: ["alt+ctrl+6"]
+  - commands: ["move --workspace 7"]
+    bindings: ["alt+ctrl+7"]
+  - commands: ["move --workspace 8"]
+    bindings: ["alt+ctrl+8"]
+  - commands: ["move --workspace 9"]
+    bindings: ["alt+ctrl+9"]
+  - commands: ["move --workspace 10"]
+    bindings: ["alt+ctrl+0"]

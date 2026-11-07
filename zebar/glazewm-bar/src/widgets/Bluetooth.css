@@ -1,0 +1,21 @@
+.bluetooth {
+    color: var(--text);
+    transition: color var(--transition), opacity var(--transition);
+
+    &:hover {
+        color: var(--text-bright);
+    }
+
+    &.off .glyph {
+        color: var(--muted);
+    }
+
+    /* Something's connected */
+    &.connected .glyph {
+        color: var(--text-bright);
+    }
+
+    &.busy {
+        opacity: 0.5;
+    }
+}

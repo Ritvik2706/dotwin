@@ -1,0 +1,9 @@
+/* The app you're in, by name. */
+
+.focused-app {
+    color: var(--text-bright);
+    font-family: var(--font-display);
+    font-size: 17px;
+    line-height: 1;
+    will-change: transform;   /* grayscale type, like the islands (layout.css) */
+}

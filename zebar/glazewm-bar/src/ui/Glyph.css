@@ -1,0 +1,43 @@
+/* Custom icons (ui/Glyph.jsx). Colour comes from `color`, like the icon font's. */
+
+.glyph {
+    display: block;
+    flex-shrink: 0;
+    width: var(--icon-size);
+    height: var(--icon-size);
+    color: var(--icon);
+    fill: currentColor;
+    transition: color var(--transition);
+}
+
+/* A stroke of the black background, slicing a shape in two. */
+.glyph-cut {
+    fill: none;
+    stroke: var(--bg-solid);
+    stroke-width: 1.6;
+}
+
+.glyph-line {
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.5;
+    stroke-linejoin: miter;
+}
+
+.clean-button:hover .glyph,
+.brightness:hover .glyph {
+    color: var(--text-bright);
+}
+
+.glyph-wing-left,
+.glyph-wing-right {
+    transform-origin: 8px 10px;
+    transition: rotate 0.2s ease-out;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .glyph-wing-left,
+    .glyph-wing-right {
+        transition: none;
+    }
+}

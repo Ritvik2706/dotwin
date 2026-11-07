@@ -1,0 +1,78 @@
+/*
+ * Bar layout (Bar.jsx): three groups, straight on the black, no boxes.
+ *
+ *   sigil Ritvik  I II III  apps name     ── 19:20 ──     arrow  skull heart flame moon  bell star  Fri 6 Nov
+ *   .bar-left                          .bar-center            .bar-right
+ */
+
+.bar {
+    display: grid;
+    /* minmax(0, ...): a long app list can't push the clock off centre */
+    grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+    align-items: center;
+    height: 100%;
+    padding: 0 16px;
+    white-space: nowrap;
+}
+
+.bar-left,
+.bar-center,
+.bar-right {
+    display: flex;
+    align-items: center;
+    gap: var(--gap);
+}
+
+.bar-left {
+    min-width: 0;
+    gap: 10px;
+}
+
+.bar-center {
+    justify-self: center;
+}
+
+.bar-right {
+    justify-self: end;
+    gap: 10px;
+
+    .island {
+        gap: 7px;
+    }
+}
+
+/* ── Groups ─────────────────────────────────────────────── */
+
+.island {
+    display: flex;
+    align-items: center;
+    gap: var(--item-gap);
+    height: 24px;
+    /* Own layer, so type renders in grayscale: Windows' subpixel rendering leaves
+       colour fringes on blackletter's heavy strokes. */
+    will-change: transform;
+}
+
+/* Nerd Font glyphs carry taller line metrics than the text font;
+   collapse them so icon and value centre on the same line. */
+.island i,
+.island .nf,
+.clean-button {
+    line-height: 1;
+}
+
+.island i {
+    display: inline-flex;
+    align-items: center;
+}
+
+/* Anchors the Volume output picker, which overlays this group. */
+.controls-island {
+    position: relative;
+}
+
+/* Anchors the wings (widgets/Clock.css). */
+.clock-island {
+    position: relative;
+    gap: 6px;
+}

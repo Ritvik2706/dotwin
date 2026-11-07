@@ -1,0 +1,8 @@
+.quick-settings {
+    color: var(--text);
+    transition: color var(--transition);
+
+    &:hover {
+        color: var(--text-bright);
+    }
+}

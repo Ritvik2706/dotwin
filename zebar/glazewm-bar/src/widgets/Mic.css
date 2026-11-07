@@ -1,0 +1,16 @@
+.mic {
+    color: var(--text);
+    transition: color var(--transition);
+
+    .glyph {
+        color: inherit;
+    }
+
+    &:hover {
+        color: var(--text-bright);
+    }
+
+    &.muted {
+        color: var(--muted);
+    }
+}

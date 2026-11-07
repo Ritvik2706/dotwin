@@ -1,0 +1,58 @@
+/* Resets and element defaults. */
+
+:root {
+    user-select: none;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    color: var(--text);
+    font-family: var(--font-data);
+    font-size: var(--font-size);
+    overflow: hidden;
+}
+
+#root {
+    background: var(--bg-solid);
+}
+
+/* Nerd Font icons rest quietly; a widget colours one that's on (theme.css). */
+i {
+    color: var(--icon);
+    transition: color var(--transition);
+}
+
+button {
+    font: inherit;
+}
+
+/* The bar never takes keyboard focus, so a click shouldn't leave a ring. */
+button:focus {
+    outline: none;
+}
+
+/* A button with no chrome: most clickable things on the bar. */
+.clean-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 0;
+    color: inherit;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.clean-button:hover i {
+    color: var(--text-bright);
+}

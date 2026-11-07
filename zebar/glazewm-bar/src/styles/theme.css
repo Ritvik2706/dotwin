@@ -1,0 +1,60 @@
+/*
+ * Theme: colours, font and sizes shared by every widget. Change the look here.
+ *
+ * Engraved type on the void. The wallpaper is a chrome figure on pure black, so
+ * the bar has no boxes at all: silver type sits straight on black. Blackletter
+ * (Grenze Gotisch) is the bar's voice: clock, name, workspaces, stats. Levels are
+ * blades cut like the wings by the clock. JetBrains Mono, the terminal's font, is
+ * left for longer text: media titles and menus. The desktop is monochrome: colour
+ * comes only from the tray's icons, and red for warnings.
+ */
+
+/*
+ * JetBrains Mono renders its text ~1px above centre in the bar's line boxes.
+ * Re-declare it as "Bar Mono" with the baseline pushed down ~8% of the em (1px at
+ * 12px); total line height (ascent + descent) is unchanged.
+ */
+@font-face {
+    font-family: "Bar Mono";
+    src: local("JetBrains Mono"), local("JetBrainsMono-Regular");
+    font-weight: 400;
+    ascent-override: 110.5%;
+    descent-override: 21.5%;
+    line-gap-override: 0%;
+}
+
+@font-face {
+    font-family: "Bar Mono";
+    src: local("JetBrains Mono Bold"), local("JetBrainsMono-Bold");
+    font-weight: 700;
+    ascent-override: 110.5%;
+    descent-override: 21.5%;
+    line-gap-override: 0%;
+}
+
+:root {
+    /* Colours */
+    --bg-solid: #000;                       /* the void; overlays that must hide what's under them */
+    --surface-hover: rgb(255 255 255 / 10%);
+    --border: rgb(255 255 255 / 16%);       /* dividers */
+    --silver: #d9d7df;                      /* type at rest, focus marks */
+    --text: #a8a6b0;
+    --text-bright: #fff;
+    --icon: #85838d;                        /* resting icons */
+    --muted: #76747e;                       /* labels, off / muted / inactive */
+    --accent: var(--silver);                /* you are here, or this is on */
+    --on-accent: #000;                      /* text on a silver or danger fill */
+    --danger: #e5484d;                      /* high usage, destructive actions */
+
+    /* Type */
+    --font-data: "Bar Mono", "JetBrains Mono", "JetBrainsMono Nerd Font", monospace;
+    --font-display: "Grenze Gotisch", serif;
+
+    /* Shape and spacing */
+    --radius: 0;
+    --gap: 18px;                            /* between groups */
+    --item-gap: 9px;                        /* between things in a group */
+    --font-size: 12px;
+    --icon-size: 13px;                      /* larger glyphs (network, bluetooth, mic...) */
+    --transition: 0.15s;
+}
