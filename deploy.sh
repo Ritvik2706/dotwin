@@ -13,6 +13,7 @@ WIN_LOCAL="$WIN_USER/AppData/Local"
 ZEBAR_PACK_DIR="$WIN_ROAMING/zebar/downloads/ritvik.glazewm-bar@1.0.0"
 SIOYEK_DIR="$WIN_LOCAL/Programs/sioyek"
 MPV_DIR="/mnt/c/Program Files (x86)/mpv/portable_config"
+RAWACCEL_DIR="/mnt/c/Program Files/RawAccel"
 
 # Copy contents of src/ into dest/ (creating dest if needed).
 # Additional args are names to remove from dest after copying.
@@ -129,6 +130,17 @@ deploy() {
 
     try_privileged_copy "$REPO_DIR/mpv" "$MPV_DIR" "mpv"
 
+    # The driver only holds settings until shutdown, so write them to it now too
+    # (autostart.ahk does it at logon).
+    echo "  rawaccel"
+    if [[ ! -d "$RAWACCEL_DIR" ]]; then
+        echo "    SKIPPED — Raw Accel isn't in Program Files"
+    elif ! cp "$REPO_DIR/rawaccel/settings.json" "$RAWACCEL_DIR/settings.json" 2>/dev/null; then
+        echo "    SKIPPED — no write access to $RAWACCEL_DIR"
+    elif ! (cd "$RAWACCEL_DIR" && ./writer.exe settings.json >/dev/null 2>&1); then
+        echo "    copied, but writer.exe failed (is the driver installed?)"
+    fi
+
     echo "=== Done ==="
 }
 
@@ -177,6 +189,9 @@ sync() {
     echo "  mpv"
     copy_dir "$MPV_DIR" "$REPO_DIR/mpv" "cache"
     clean_after_copy "$REPO_DIR/mpv" -name "*.log"
+
+    echo "  rawaccel"
+    cp "$RAWACCEL_DIR/settings.json" "$REPO_DIR/rawaccel/settings.json"
 
     echo "=== Done ==="
 }
