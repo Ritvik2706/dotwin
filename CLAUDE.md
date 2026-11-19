@@ -32,7 +32,7 @@ Each top-level directory maps to a Windows config location:
 | `obs-studio/` | `C:\Users\Ritvik\AppData\Roaming\obs-studio\` |
 | `sioyek/` | `C:\Users\Ritvik\AppData\Local\Programs\sioyek\` |
 | `mpv/` | `C:\Program Files (x86)\mpv\portable_config\` |
-| `rawaccel/settings.json` (deploy also runs `writer.exe` to load it; mouse rotation −2°, no acceleration) | `C:\Program Files\RawAccel\settings.json` |
+| `rawaccel/settings.json` (deploy also runs `writer.exe` to load it; mouse rotation −2°; lookup-table sensitivity curve: 1.0× up to 8 counts/ms (42cm/360 at 800 DPI), smooth rise to 1.5× (28cm/360) by 30) | `C:\Program Files\RawAccel\settings.json` |
 | `cursors/` (not deployed: `generate.py` builds `reliquary/`, `install.ps1` installs it, `-Restore` undoes it) | `%LOCALAPPDATA%\Microsoft\Windows\Cursors\Reliquary\` |
 
 ## deploy.sh internals
