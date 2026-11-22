@@ -29,11 +29,12 @@ config.window_background_opacity = 0.9
 config.prefer_egl = true
 config.font_size = 18.0
 
+-- Room between the text and the window border (pixels).
 config.window_padding = {
-	left = 0,
-	right = 0,
-	top = 4,
-	bottom = 0,
+	left = 7,
+	right = 7,
+	top = 5,
+	bottom = 3,
 }
 
 -- tabs
@@ -153,7 +154,9 @@ config.window_frame = {
 
 -- config.window_decorations = "INTEGRATED_BUTTONS | RESIZE"
 config.window_decorations = "NONE | RESIZE"
-config.default_prog = { "wsl.exe", "--cd", "~" }
+-- WSL opens in the dotwin repo. Set here, not in the shell's rc files, which
+-- are shared with Linux machines (dotnix).
+config.default_prog = { "wsl.exe", "--cd", "/home/ritvik/github/config/dotwin" }
 config.initial_cols = 80
 
 -- and finally, return the configuration to wezterm

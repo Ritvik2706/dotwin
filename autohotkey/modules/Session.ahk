@@ -44,9 +44,14 @@ CreateKeySheet() {
     g := Gui("+AlwaysOnTop -Caption +ToolWindow +Border")
     g.BackColor := "000000"
     g.MarginX := 20, g.MarginY := 16
-    g.SetFont("s10 cF8F2F5", "Consolas")
+    ; Titled in the bar's blackletter; the sheet itself stays monospace so its
+    ; columns line up. Grenze Gotisch is installed by deploy.sh.
+    g.SetFont("s18 cFFFFFF q3", "Segoe UI")   ; q3: greyscale, no ClearType fringes
+    g.SetFont(, "Grenze Gotisch Medium")
+    g.Add("Text",, "Keys")
+    g.SetFont("s10 cD9D7DF q3", "Consolas")
     g.SetFont(, "JetBrains Mono")
-    g.Add("Text",, KEY_SHEET)
+    g.Add("Text", "y+6", KEY_SHEET)
     g.OnEvent("Escape", (*) => g.Hide())
     return g
 }
@@ -70,6 +75,7 @@ Alt+Shift+M        minimize          Alt+E              emoji
 Alt+T              split direction   Alt+V              screenshot
 Alt+P              tile              Alt+F8             stop/start this script
 Alt+Shift+W        redraw
+Alt+Wheel          focus left/right
 
 WORKSPACES                           SYSTEM
 Alt+1..0           go                Alt+CapsLock       lock
@@ -78,8 +84,8 @@ Alt+Ctrl+1..0      send, stay        Alt+Ctrl+I         caffeine
 Alt+``              previous one      Alt+Shift+Bksp     notifications
 Alt+[ / ]          prev / next       Alt+Shift+C        reload GlazeWM
 Alt+Ctrl+Shift+J/K send next / prev  Alt+\              pause GlazeWM
-Alt+H / L at edge   next monitor     Alt+F7 / F9        restart Zebar / GlazeWM
-                                     Alt+Shift+E        quit GlazeWM
+Alt+Shift+Wheel    prev / next       Alt+F7 / F9        restart Zebar / GlazeWM
+Alt+H / L at edge  next monitor      Alt+Shift+E        quit GlazeWM
 )"
 
 #HotIf ShouldRemap()

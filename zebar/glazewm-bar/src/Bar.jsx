@@ -21,8 +21,10 @@ import Mic from './widgets/Mic.jsx';
 import QuickSettings from './widgets/QuickSettings.jsx';
 
 /**
- * The whole bar, left to right. Each group is a row of islands (bordered
- * boxes); every widget hides itself when it has nothing to show.
+ * The whole bar, left to right. Each side is a row of islands (groups of
+ * widgets); every widget hides itself when it has nothing to show. On the right
+ * the groups are tray, machine, controls and the day, with a rule between them
+ * (styles/layout.css).
  * To add a widget: create widgets/Foo.jsx (+ Foo.css), then place it here.
  */
 export default function Bar() {
@@ -39,19 +41,17 @@ export default function Bar() {
                 <FocusedApp glazewm={glazewm}/>
             </div>
 
+            {/* Media and the clock are centred together as one group; with nothing
+                playing it's the clock alone, dead centre. */}
             <div className="bar-center">
+                <Media media={media}/>
                 <Island className="clock-island">
-                    <Media media={media}/>
                     <Clock date={date}/>
                 </Island>
             </div>
 
             <div className="bar-right">
-                <Systray
-                    systray={systray}
-                    glazewm={glazewm}
-                    alerts={<><Network network={network} alertOnly/><Mic audio={audio} alertOnly/></>}
-                >
+                <Systray systray={systray} glazewm={glazewm}>
                     <Network network={network}/>
                     <Bluetooth glazewm={glazewm}/>
                     <Mic audio={audio}/>
@@ -62,14 +62,17 @@ export default function Bar() {
                     <Memory memory={memory}/>
                     <Cpu cpu={cpu}/>
                     <Gpu glazewm={glazewm}/>
-                    <Weather weather={weather}/>
                 </Island>
                 {/* position: relative anchors the Volume output picker overlay */}
                 <Island className="controls-island">
                     <Volume audio={audio}/>
                     <Brightness glazewm={glazewm} systray={systray}/>
                 </Island>
-                <DateMark date={date}/>
+                {/* Outside: the weather and the day */}
+                <Island className="day-island">
+                    <Weather weather={weather}/>
+                    <DateMark date={date}/>
+                </Island>
             </div>
         </div>
     );

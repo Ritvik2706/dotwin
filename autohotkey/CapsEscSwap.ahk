@@ -10,7 +10,7 @@
 ;   Session            lock, screens off, caffeine, the Alt+Shift+/ key sheet
 ;   GlazeWM            CLI helpers, restart (Alt+F9)
 ;   Zebar              restart (Alt+F7), re-dock after display changes
-;   TaskbarHiding      taskbar auto-hide, no Start on Win tap (Win+F4); taskbar.ahk bridge
+;   TaskbarHiding      Windows taskbar hidden, no Start on Win tap (Win+F4); taskbar.ahk bridge
 ;   MonitorBrightness  DDC/CI brightness + OSD (Alt+volume); brightness.ahk bridge
 ;   Sioyek             black Sioyek titlebar
 ;   AntiCheatGames     GlazeWM, Zebar and this script quit for any game; back after it
@@ -56,7 +56,7 @@ SetMouseDelay(-1)
 StartGameWatch()       ; first: exits right here if a game is already running
 BuildTrayMenu()        ; first: the toggles below update its check marks
 StartZebarDockWatch()
-StartTaskbarHiding()   ; turns on auto-hide now
+StartTaskbarHiding()   ; hides the Windows taskbar now
 StartBrightness()
 StartSioyekTitlebar()
 StartWindowEvents()    ; last: its handlers use everything above

@@ -13,7 +13,7 @@ $GlazeExe = 'C:\Program Files\glzr.io\GlazeWM\glazewm.exe'
 # Squirrel's stub, which survives Flow updates (the real exe is in app-<version>\).
 $FlowExe = Join-Path $env:LOCALAPPDATA 'FlowLauncher\Flow.Launcher.exe'
 
-& (Join-Path $PSScriptRoot 'stop-glazewm.ps1')
+& (Join-Path $PSScriptRoot 'stop-glazewm.ps1') -KeepTaskbar
 
 $flowWasRunning = [bool](Get-Process Flow.Launcher -ErrorAction SilentlyContinue)
 Stop-Process -Name Flow.Launcher -Force -ErrorAction SilentlyContinue

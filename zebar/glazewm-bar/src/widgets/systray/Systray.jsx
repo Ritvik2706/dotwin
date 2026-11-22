@@ -1,115 +1,113 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useRef } from 'react';
 import { cx } from '../../lib/format.js';
 import { allWindows } from '../../lib/glazewm.js';
 import Glyph from '../../ui/Glyph.jsx';
 import Island from '../../ui/Island.jsx';
+import TrayIcon from './TrayIcon.jsx';
 import { trayItems } from './trayItems.js';
 import { useDeadIcons } from './useDeadIcons.js';
-import { useTrayLayout } from './useTrayLayout.js';
 import { useTrayDrag } from './useTrayDrag.js';
+import { applyDrop, useTrayLayout } from './useTrayLayout.js';
+import { useTrayPanel } from './trayLink.js';
 import './Systray.css';
 
 /**
- * Windows notification-area icons, folded away behind an arrow.
+ * Windows notification-area icons.
  *
- * - Click the arrow to open the tray; it folds again CLOSE_MS after the mouse leaves.
- * - `children` (network, Bluetooth, mic, settings) open with it; `alerts` show while
- *   it's folded, for things that need seeing anyway.
- * - Click / right-click / middle-click are forwarded to the owning app.
- * - Drag an icon to reorder it. Drag it onto the chevron to hide it, or out of
- *   the hidden group to show it again. Shift+click also toggles.
- * - The chevron shows/hides the hidden icons.
+ *   [pinned icons] [network bluetooth mic settings] [n ➤]
+ *
+ * - Only pinned icons sit on the bar; the rest are in the tray panel, a
+ *   flyout window under the arrow (src/tray/, linked through trayLink.js) that
+ *   grows to fit every icon, so nothing is ever cut off. The arrow counts them.
+ * - The panel shows pinned icons too, so they stay reachable when the bar's row
+ *   runs out of room (it clips; the wheel scrolls it).
+ * - Click / double-click / right-click / middle-click are forwarded to the
+ *   owning app, on the bar and in the panel.
+ * - Shift+click pins or unpins. Drag to reorder; on the bar, drag onto the arrow
+ *   to unpin; in the panel, drag between its two sections.
+ * - `children` (network, Bluetooth, mic, settings) always stay on the bar.
  *
  *   trayItems.js     provider icons -> items (+ NVIDIA stand-in)
  *   useDeadIcons.js  finds icons left behind by dead apps
- *   useTrayLayout.js saved order + hidden set
+ *   useTrayLayout.js saved order + pinned set
  *   useTrayDrag.js   pointer drag-and-drop
+ *   trayLink.js      the bar <-> panel messages
  */
-const CLOSE_MS = 3000;
+const scrollSideways = e => {
+    e.currentTarget.scrollLeft += e.deltaY;
+};
 
-export default function Systray({ systray, glazewm, alerts, children }) {
+/** Forward an action to the icon's app; failures (app gone) are only logged. */
+function forward(item, type) {
+    Promise.resolve()
+        .then(() => item?.[type]?.())
+        .catch(err => console.debug(`tray: ${type} failed`, err));
+}
+
+export default function Systray({ systray, glazewm, children }) {
+    const panelOpen = useRef(false);
     const windowsKey = allWindows(glazewm).map(e => e.win.id).join();
-    const { dead, check } = useDeadIcons(systray, windowsKey);
+    const { dead, check } = useDeadIcons(systray, windowsKey, panelOpen);
     const items = trayItems(systray).filter(item => !dead.has(item.id));
     const layout = useTrayLayout(items);
-    const { drag, handlers, suppressClick } = useTrayDrag(layout);
-    const [expanded, setExpanded] = useState(false);
-    const [open, setOpen] = useState(false);
-    const closeTimer = useRef(null);
+    const drop = (key, hit) => applyDrop(layout, key, hit);
+    const { drag, handlers, suppressClick } = useTrayDrag(drop);
+    const arrow = useRef(null);
 
-    useEffect(() => () => clearTimeout(closeTimer.current), []);
+    const byKey = key => items.find(item => item.key === key);
+    const entries = layout.sorted.map(item => ({ item, pinned: layout.pinned.includes(item) }));
+    const panel = useTrayPanel(entries, ({ type, key, hit, pinned }) => {
+        if (type === 'drop') drop(key, hit);
+        else if (type === 'pin') layout.setPinned(key, pinned);
+        else forward(byKey(key), type);
+    });
+    panelOpen.current = panel.open;
 
-    if (items.length === 0) return null;
-
-    const close = () => {
-        setOpen(false);
-        setExpanded(false);
-    };
-
-    const renderItem = (item, inHiddenGroup, i) => (
-        <button
-            key={item.key}
-            style={{ '--i': i }}
-            data-tray-key={item.key}
-            data-tray-hidden={inHiddenGroup ? '1' : '0'}
-            className={cx(
-                'tray-icon clean-button',
-                inHiddenGroup && 'is-hidden',
-                drag?.key === item.key && 'dragging',
-                drag && drag.key !== item.key && drag.overKey === item.key && (drag.after ? 'drop-after' : 'drop-before'),
-            )}
-            title={drag ? undefined : item.tooltip}
-            onClick={e => {
-                if (suppressClick.current) return;
-                if (e.shiftKey) layout.setHidden(item.key, !inHiddenGroup);
-                else item.left();
-            }}
-            onContextMenu={e => {
-                e.preventDefault();
-                item.right();
-            }}
-            onAuxClick={e => {
-                if (e.button === 1) item.middle?.();
-            }}
-            onMouseEnter={() => {
-                item.enter?.()?.catch(() => {});
-                check();
-            }}
-            onMouseLeave={() => item.leave?.()?.catch(() => {})}
-            {...handlers(item)}
-        >
-            <img src={item.iconUrl} alt={item.tooltip} draggable={false}/>
-        </button>
-    );
+    const count = layout.unpinned.length;
 
     return (
-        <Island
-            className={cx('tray', drag && 'is-dragging')}
-            onMouseEnter={() => clearTimeout(closeTimer.current)}
-            onMouseLeave={() => {
-                if (open) closeTimer.current = setTimeout(close, CLOSE_MS);
-            }}
-        >
-            {open ? (
-                <>
-                    {expanded ? layout.hidden.map((item, i) => renderItem(item, true, i)) : null}
-                    <button
-                        className={cx('tray-toggle clean-button', drag && 'drop-target', drag?.overToggle && 'drop-hover')}
-                        title={`${expanded ? 'Collapse' : 'Show'} hidden icons\nDrag an icon here to hide it · Shift+click an icon to hide/show it`}
-                        onClick={() => setExpanded(!expanded)}
-                    >
-                        <i className={`nf ${expanded ? 'nf-md-chevron_right' : 'nf-md-chevron_left'}`}></i>
-                        {!expanded && layout.hidden.length > 0 ? <span>{layout.hidden.length}</span> : null}
-                    </button>
-                    {layout.visible.map((item, i) => renderItem(item, false, i))}
-                    <div className="tray-utilities">{children}</div>
-                </>
-            ) : <div className="tray-utilities">{alerts}</div>}
+        <Island className={cx('tray', drag && 'is-dragging')} data-tray-zone="pinned">
+            {layout.pinned.length > 0 ? (
+                <div className="tray-strip" onWheel={scrollSideways}>
+                    {layout.pinned.map((item, i) => (
+                        <TrayIcon
+                            key={item.key}
+                            item={item}
+                            pinned
+                            index={i}
+                            dragging={drag?.key === item.key}
+                            act={type => {
+                                if (type === 'enter') check();
+                                forward(item, type);
+                            }}
+                            togglePin={() => layout.setPinned(item.key, false)}
+                            drag={drag}
+                            handlers={handlers(item)}
+                            suppressClick={suppressClick}
+                        />
+                    ))}
+                </div>
+            ) : null}
+            <div className="tray-utilities">{children}</div>
             <button
-                className={cx('tray-arrow clean-button', open && 'open')}
-                title={open ? 'Fold the tray away' : 'Open the tray'}
-                onClick={() => (open ? close() : setOpen(true))}
+                ref={arrow}
+                className={cx(
+                    'tray-toggle clean-button',
+                    panel.open && 'open',
+                    drag && 'drop-target',
+                    drag?.zone === 'tray' && 'drop-hover',
+                )}
+                title={drag ? undefined : [
+                    panel.open ? 'Close the tray' : `Open the tray (${count} icon${count === 1 ? '' : 's'})`,
+                    'Shift+click an icon to pin it to the bar · drag an icon here to unpin it',
+                ].join('\n')}
+                onClick={() => {
+                    if (!panel.open) check();
+                    panel.toggle(arrow.current);
+                }}
+                onContextMenu={e => e.preventDefault()}
             >
+                {count > 0 ? <span>{count}</span> : null}
                 <Glyph name="arrow"/>
             </button>
         </Island>

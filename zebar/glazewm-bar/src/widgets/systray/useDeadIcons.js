@@ -13,8 +13,9 @@ import { useInterval } from '../../hooks/useInterval.js';
  * Runs when the icon list or the open windows change, on hover, and on a timer.
  * The timer is needed because a tray-only app closes no window when it's killed,
  * and in a multi-process app the tray window can outlive the check a closing
- * window starts. It starts no process. It skips while the pointer is on the tray,
- * since "mouse left" also tells the app to close the popup it's showing there.
+ * window starts. It starts no process. It skips while the pointer is on the tray
+ * or the tray panel is open (`paused`, a ref), since "mouse left" also tells the
+ * app to close the popup it's showing there.
  */
 const SETTLE_MS = 500;
 const POLL_MS = 5000;
@@ -22,7 +23,7 @@ const POLL_MS = 5000;
 // systray-util's InoperableIcon error.
 const isInoperable = err => /unable to send event to icon/i.test(String(err?.message ?? err));
 
-export function useDeadIcons(systray, windowsKey) {
+export function useDeadIcons(systray, windowsKey, paused) {
     const [dead, setDead] = useState(() => new Set());
     const answered = useRef(new Set());
     const latest = useRef(systray);
@@ -45,7 +46,7 @@ export function useDeadIcons(systray, windowsKey) {
     }).current;
 
     const poll = useRef(() => {
-        if (!document.querySelector('.tray:hover')) return check();
+        if (!paused?.current && !document.querySelector('.tray:hover')) return check();
     }).current;
     useInterval(poll, POLL_MS, Boolean(systray));
 

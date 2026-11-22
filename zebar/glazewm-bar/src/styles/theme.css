@@ -6,7 +6,7 @@
  * (Grenze Gotisch) is the bar's voice: clock, name, workspaces, stats. Levels are
  * blades cut like the wings by the clock. JetBrains Mono, the terminal's font, is
  * left for longer text: media titles and menus. The desktop is monochrome: colour
- * comes only from the tray's icons, and red for warnings.
+ * comes only from the tray's icons while the pointer is on them, and red for warnings.
  */
 
 /*
@@ -45,6 +45,7 @@
     --accent: var(--silver);                /* you are here, or this is on */
     --on-accent: #000;                      /* text on a silver or danger fill */
     --danger: #e5484d;                      /* high usage, destructive actions */
+    --tray-rest-filter: grayscale(1);       /* tray icons until hovered; `none` keeps their colour */
 
     /* Type */
     --font-data: "Bar Mono", "JetBrains Mono", "JetBrainsMono Nerd Font", monospace;
@@ -53,8 +54,9 @@
     /* Shape and spacing */
     --radius: 0;
     --gap: 18px;                            /* between groups */
+    --group-gap: 10px;                      /* either side of a rule on the right */
     --item-gap: 9px;                        /* between things in a group */
     --font-size: 12px;
-    --icon-size: 13px;                      /* larger glyphs (network, bluetooth, mic...) */
+    --icon-size: 14px;                      /* larger glyphs (network, bluetooth, mic...) */
     --transition: 0.15s;
 }

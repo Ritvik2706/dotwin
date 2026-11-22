@@ -20,7 +20,7 @@
         "y": 1.0
       },
       "Whole or horizontal accel parameters": {
-        "mode": "lut",
+        "mode": "noaccel",
         "Gain / Velocity": false,
         "inputOffset": 0.0,
         "outputOffset": 0.0,
@@ -135,7 +135,7 @@
         ]
       },
       "Vertical accel parameters": {
-        "mode": "lut",
+        "mode": "noaccel",
         "Gain / Velocity": false,
         "inputOffset": 0.0,
         "outputOffset": 0.0,

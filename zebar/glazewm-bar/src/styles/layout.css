@@ -1,8 +1,8 @@
 /*
  * Bar layout (Bar.jsx): three groups, straight on the black, no boxes.
  *
- *   sigil Ritvik  I II III  apps name     ── 19:20 ──     arrow  skull heart flame moon  bell star  Fri 6 Nov
- *   .bar-left                          .bar-center            .bar-right
+ *   sigil Ritvik  I II III  apps name   ♪ media  ── 19:20 ──   tray arrow | skull heart flame | bell star | moon Fri 6 Nov
+ *   .bar-left                         .bar-center: media + clock, centred together   .bar-right
  */
 
 .bar {
@@ -32,12 +32,30 @@
     justify-self: center;
 }
 
+/* Never wider than its column: when the right side runs out of room the tray's
+   icon row gives way (widgets/systray/Systray.css) rather than covering the clock. */
 .bar-right {
     justify-self: end;
-    gap: 10px;
+    min-width: 0;
+    max-width: 100%;
+    gap: var(--group-gap);
+
+    > * {
+        flex-shrink: 0;
+    }
+
+    /* A rule between groups: a hairline that fades out at both ends, like a blade. */
+    > * + * {
+        padding-left: var(--group-gap);
+        background: linear-gradient(transparent, var(--border) 35%, var(--border) 65%, transparent) left center / 1px 16px no-repeat;
+    }
+
+    > .island:empty {
+        display: none;
+    }
 
     .island {
-        gap: 7px;
+        gap: 10px;
     }
 }
 
@@ -71,8 +89,9 @@
     position: relative;
 }
 
-/* Anchors the wings (widgets/Clock.css). */
+/* Anchors the wings (widgets/Clock.css), which hang outside it: the margin
+   keeps their room (130px + 8px) out of the side columns. */
 .clock-island {
     position: relative;
-    gap: 6px;
+    margin: 0 138px;
 }

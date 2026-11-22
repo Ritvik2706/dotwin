@@ -7,7 +7,6 @@ import './Network.css';
 /**
  * Connection status; first of the system controls, so it carries the divider.
  * Click: Windows network flyout. Right-click: network settings.
- * With alertOnly it only shows when offline: it's left out while the tray is folded.
  */
 /** Spikes to light: all on ethernet, by signal on wifi. */
 function networkBars(network) {
@@ -15,9 +14,8 @@ function networkBars(network) {
     return Math.max(1, Math.ceil((network.defaultGateway?.signalStrength ?? 0) / 25));
 }
 
-export default function Network({ network, alertOnly }) {
+export default function Network({ network }) {
     if (!network) return null;
-    if (alertOnly && network.defaultInterface) return null;
 
     const iface = network.defaultInterface;
     const title = iface

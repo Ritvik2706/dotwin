@@ -2,6 +2,8 @@
 ; Prints {"available":true,"hidden":true} to stdout.
 ;   AutoHotkey64.exe taskbar.ahk get|toggle
 ;   AutoHotkey64.exe taskbar.ahk focus <hwnd>   (focus a window the way a taskbar click does)
+;   AutoHotkey64.exe taskbar.ahk start          (open the Start menu)
+;   AutoHotkey64.exe taskbar.ahk show           (bring the taskbar back: stop-glazewm.ps1)
 ;   AutoHotkey64.exe taskbar.ahk quit           (quit it normally, so it cleans up: toggle_ahk.ps1)
 #Requires AutoHotkey v2.0
 #NoTrayIcon
@@ -19,7 +21,7 @@ WM_TASKBAR := 0x8001
 action := A_Args.Length ? A_Args[1] : "get"
 
 try {
-    wParam := action = "toggle" ? 1 : action = "focus" ? 2 : action = "quit" ? 3 : 0
+    wParam := action = "toggle" ? 1 : action = "focus" ? 2 : action = "quit" ? 3 : action = "start" ? 4 : action = "show" ? 5 : 0
     lParam := action = "focus" && A_Args.Length > 1 ? Integer(A_Args[2]) : 0
     reply := SendMessage(WM_TASKBAR, wParam, lParam,, "CapsEscSwap.ahk ahk_class AutoHotkey",,,, 2000)
     if reply != 1 && reply != 2

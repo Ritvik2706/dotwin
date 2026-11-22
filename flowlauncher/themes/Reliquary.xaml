@@ -1,0 +1,243 @@
+<!--
+    Name: Reliquary
+    IsDark: True
+    HasBlur: False
+-->
+<!--
+    Matches the wallpaper (a chrome figure on pure black) and the Zebar bar
+    (zebar/glazewm-bar/src/styles/theme.css): silver type straight on black, no
+    rounded boxes, a hairline that fades at both ends like the bar's rules.
+    Fonts are set in settings.json, not here: the query and result names in
+    Grenze Gotisch Medium (the bar's blackletter; deploy.sh installs it from
+    flowlauncher/fonts/), paths in JetBrains Mono.
+-->
+<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:system="clr-namespace:System;assembly=mscorlib">
+
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="pack://application:,,,/Themes/Base.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+
+    <!--  The bar's palette (theme.css)  -->
+    <SolidColorBrush x:Key="Silver" Color="#D9D7DF" />
+    <SolidColorBrush x:Key="Text" Color="#A8A6B0" />
+    <SolidColorBrush x:Key="Icon" Color="#85838D" />
+    <SolidColorBrush x:Key="Muted" Color="#76747E" />
+    <SolidColorBrush x:Key="Faint" Color="#3A3940" />
+    <SolidColorBrush x:Key="Hairline" Color="#29FFFFFF" />
+
+    <!--  Window: the void, edged by one hairline, square like the bar  -->
+    <Style
+        x:Key="WindowBorderStyle"
+        BasedOn="{StaticResource BaseWindowBorderStyle}"
+        TargetType="{x:Type Border}">
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="BorderBrush" Value="{StaticResource Hairline}" />
+        <Setter Property="Background" Value="#000000" />
+        <Setter Property="CornerRadius" Value="0" />
+        <Setter Property="UseLayoutRounding" Value="True" />
+    </Style>
+    <Style x:Key="WindowRadius" TargetType="{x:Type Border}">
+        <Setter Property="CornerRadius" Value="0" />
+    </Style>
+    <!--  Greyscale text, as in the bar: ClearType leaves colour fringes on
+          blackletter's heavy strokes.  -->
+    <Style
+        x:Key="WindowStyle"
+        BasedOn="{StaticResource BaseWindowStyle}"
+        TargetType="{x:Type Window}">
+        <Setter Property="TextOptions.TextRenderingMode" Value="Grayscale" />
+    </Style>
+
+    <!--  Query: engraved white, like the clock  -->
+    <Style
+        x:Key="QueryBoxStyle"
+        BasedOn="{StaticResource BaseQueryBoxStyle}"
+        TargetType="{x:Type TextBox}">
+        <Setter Property="Padding" Value="0 0 50 0" />
+        <Setter Property="Foreground" Value="#FFFFFF" />
+        <Setter Property="CaretBrush" Value="{StaticResource Silver}" />
+        <Setter Property="SelectionBrush" Value="{StaticResource Silver}" />
+        <Setter Property="Height" Value="44" />
+    </Style>
+    <Style
+        x:Key="QuerySuggestionBoxStyle"
+        BasedOn="{StaticResource BaseQuerySuggestionBoxStyle}"
+        TargetType="{x:Type TextBox}">
+        <Setter Property="Padding" Value="0 0 50 0" />
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="Height" Value="44" />
+        <Setter Property="Foreground" Value="{StaticResource Faint}" />
+    </Style>
+    <Style
+        x:Key="PendingLineStyle"
+        BasedOn="{StaticResource BasePendingLineStyle}"
+        TargetType="{x:Type Line}">
+        <Setter Property="Stroke" Value="{StaticResource Silver}" />
+    </Style>
+
+    <!--  The rule under the query: a blade that fades out at both ends  -->
+    <Style
+        x:Key="SeparatorStyle"
+        BasedOn="{StaticResource BaseSeparatorStyle}"
+        TargetType="{x:Type Rectangle}">
+        <Setter Property="Height" Value="1" />
+        <Setter Property="Margin" Value="0 0 0 8" />
+        <Setter Property="Fill">
+            <Setter.Value>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                    <GradientStop Offset="0" Color="#00FFFFFF" />
+                    <GradientStop Offset="0.3" Color="#40FFFFFF" />
+                    <GradientStop Offset="0.7" Color="#40FFFFFF" />
+                    <GradientStop Offset="1" Color="#00FFFFFF" />
+                </LinearGradientBrush>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!--  Results: silver at rest, white when chosen. Matched letters go white
+          instead of bold: only the Medium weight is installed, and synthetic
+          bold smears blackletter.  -->
+    <Style
+        x:Key="ItemTitleStyle"
+        BasedOn="{StaticResource BaseItemTitleStyle}"
+        TargetType="{x:Type TextBlock}">
+        <Setter Property="Foreground" Value="{StaticResource Text}" />
+    </Style>
+    <Style
+        x:Key="ItemSubTitleStyle"
+        BasedOn="{StaticResource BaseItemSubTitleStyle}"
+        TargetType="{x:Type TextBlock}">
+        <Setter Property="Foreground" Value="{StaticResource Muted}" />
+    </Style>
+    <Style
+        x:Key="ItemTitleSelectedStyle"
+        BasedOn="{StaticResource BaseItemTitleSelectedStyle}"
+        TargetType="{x:Type TextBlock}">
+        <Setter Property="Foreground" Value="#FFFFFF" />
+    </Style>
+    <Style
+        x:Key="ItemSubTitleSelectedStyle"
+        BasedOn="{StaticResource BaseItemSubTitleSelectedStyle}"
+        TargetType="{x:Type TextBlock}">
+        <Setter Property="Foreground" Value="{StaticResource Icon}" />
+    </Style>
+    <Style x:Key="HighlightStyle">
+        <Setter Property="Inline.Foreground" Value="#FFFFFF" />
+    </Style>
+    <!--  The bar's hover: a faint lift, no box edge  -->
+    <SolidColorBrush x:Key="ItemSelectedBackgroundColor">#14FFFFFF</SolidColorBrush>
+    <CornerRadius x:Key="ItemRadius">0</CornerRadius>
+    <Thickness x:Key="ItemMargin">8 0 8 0</Thickness>
+    <Thickness x:Key="ResultMargin">0 0 0 8</Thickness>
+
+    <Style
+        x:Key="ItemGlyph"
+        BasedOn="{StaticResource BaseGlyphStyle}"
+        TargetType="{x:Type TextBlock}">
+        <Setter Property="Foreground" Value="{StaticResource Icon}" />
+    </Style>
+    <Style x:Key="ItemGlyphSelectedStyle" TargetType="{x:Type TextBlock}">
+        <Setter Property="Foreground" Value="#FFFFFF" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="HorizontalAlignment" Value="Center" />
+        <Setter Property="Width" Value="25" />
+        <Setter Property="Height" Value="25" />
+        <Setter Property="FontSize" Value="25" />
+    </Style>
+    <Style x:Key="ItemHotkeyStyle" TargetType="{x:Type TextBlock}">
+        <Setter Property="FontSize" Value="12" />
+        <Setter Property="Foreground" Value="{StaticResource Faint}" />
+    </Style>
+    <Style x:Key="ItemHotkeySelectedStyle" TargetType="{x:Type TextBlock}">
+        <Setter Property="FontSize" Value="12" />
+        <Setter Property="Foreground" Value="{StaticResource Muted}" />
+    </Style>
+
+    <!--  Scrollbar: a thin square sliver  -->
+    <Style
+        x:Key="ThumbStyle"
+        BasedOn="{StaticResource BaseThumbStyle}"
+        TargetType="{x:Type Thumb}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Thumb}">
+                    <Border
+                        Background="#29FFFFFF"
+                        BorderBrush="Transparent"
+                        BorderThickness="0"
+                        CornerRadius="0"
+                        DockPanel.Dock="Right" />
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style
+        x:Key="ScrollBarStyle"
+        BasedOn="{StaticResource BaseScrollBarStyle}"
+        TargetType="{x:Type ScrollBar}" />
+
+    <Style
+        x:Key="SearchIconStyle"
+        BasedOn="{StaticResource BaseSearchIconStyle}"
+        TargetType="{x:Type Path}">
+        <Setter Property="Fill" Value="{StaticResource Faint}" />
+        <Setter Property="Width" Value="22" />
+        <Setter Property="Height" Value="22" />
+    </Style>
+    <Style x:Key="SearchIconPosition" TargetType="{x:Type Canvas}">
+        <Setter Property="Background" Value="#000000" />
+        <Setter Property="Width" Value="32" />
+        <Setter Property="Height" Value="32" />
+        <Setter Property="Margin" Value="0 8 10 0" />
+        <Setter Property="HorizontalAlignment" Value="Right" />
+    </Style>
+
+    <Style
+        x:Key="ClockPanel"
+        BasedOn="{StaticResource ClockPanel}"
+        TargetType="{x:Type StackPanel}">
+        <Setter Property="Margin" Value="0 0 54 0" />
+    </Style>
+    <Style
+        x:Key="ClockBox"
+        BasedOn="{StaticResource BaseClockBox}"
+        TargetType="{x:Type TextBlock}">
+        <Setter Property="Foreground" Value="{StaticResource Muted}" />
+    </Style>
+    <Style
+        x:Key="DateBox"
+        BasedOn="{StaticResource BaseDateBox}"
+        TargetType="{x:Type TextBlock}">
+        <Setter Property="Foreground" Value="{StaticResource Muted}" />
+    </Style>
+
+    <!--  Preview pane (F1)  -->
+    <Style
+        x:Key="PreviewBorderStyle"
+        BasedOn="{StaticResource BasePreviewBorderStyle}"
+        TargetType="{x:Type Border}">
+        <Setter Property="Margin" Value="0 0 10 8" />
+        <Setter Property="BorderBrush" Value="{StaticResource Hairline}" />
+    </Style>
+    <Style
+        x:Key="PreviewItemTitleStyle"
+        BasedOn="{StaticResource BasePreviewItemTitleStyle}"
+        TargetType="{x:Type TextBlock}">
+        <Setter Property="Foreground" Value="{StaticResource Silver}" />
+    </Style>
+    <Style
+        x:Key="PreviewItemSubTitleStyle"
+        BasedOn="{StaticResource BasePreviewItemSubTitleStyle}"
+        TargetType="{x:Type TextBlock}">
+        <Setter Property="Foreground" Value="{StaticResource Muted}" />
+    </Style>
+    <Style
+        x:Key="PreviewGlyph"
+        BasedOn="{StaticResource BasePreviewGlyph}"
+        TargetType="{x:Type TextBlock}">
+        <Setter Property="Foreground" Value="{StaticResource Icon}" />
+    </Style>
+</ResourceDictionary>

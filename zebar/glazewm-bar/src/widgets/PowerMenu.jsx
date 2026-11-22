@@ -12,10 +12,10 @@ import { BackItem, InlineMenu, MenuItem } from '../ui/InlineMenu.jsx';
  * Windows Settings. Destructive actions need a second click; the menu closes
  * itself AUTO_CLOSE_MS after the mouse leaves it.
  *
- * TaskbarMenu (right-click): just the taskbar toggle.
+ * TaskbarMenu (right-click): the Start menu and the taskbar toggle.
  *
- * CapsEscSwap.ahk keeps the Windows taskbar on auto-hide; the toggle switches
- * it to always-on-top and back via taskbar.ahk. If the script isn't running
+ * CapsEscSwap.ahk keeps the Windows taskbar hidden; the toggle brings it back
+ * (always on top) and hides it again via taskbar.ahk. If the script isn't running
  * (its tray icon is missing, lib/ahk.js) there's nothing to toggle, and
  * taskbar.ahk isn't launched at all.
  *
@@ -64,12 +64,12 @@ function useTaskbarState(systray) {
 }
 
 function TaskbarToggle({ taskbar, onClose }) {
-    const label = taskbar.hidden ? 'Show taskbar' : 'Auto-hide taskbar';
+    const label = taskbar.hidden ? 'Show taskbar' : 'Hide taskbar';
     return (
         <MenuItem
             icon="nf-md-dock_bottom"
             label={label}
-            title={`${taskbar.hidden ? 'Keep the Windows taskbar on top' : 'Auto-hide the Windows taskbar'} (Win+F4)`}
+            title={`${taskbar.hidden ? 'Bring the Windows taskbar back' : 'Hide the Windows taskbar'} (Win+F4)`}
             onClick={() => {
                 onClose();
                 taskbarCommand('toggle').catch(err => console.error('taskbar.ahk failed', err));
@@ -83,7 +83,20 @@ export function TaskbarMenu({ systray, onClose }) {
 
     return (
         <InlineMenu>
-            {taskbar?.available ? <TaskbarToggle taskbar={taskbar} onClose={onClose}/>
+            {taskbar?.available ? (
+                <>
+                    <MenuItem
+                        icon="nf-md-apps"
+                        label="Start menu"
+                        title="Open the Windows Start menu"
+                        onClick={() => {
+                            onClose();
+                            taskbarCommand('start').catch(err => console.error('taskbar.ahk failed', err));
+                        }}
+                    />
+                    <TaskbarToggle taskbar={taskbar} onClose={onClose}/>
+                </>
+            )
                 : taskbar ? <span className="inline-menu-note">CapsEscSwap.ahk not running</span>
                 : null}
             <BackItem onClick={onClose}/>

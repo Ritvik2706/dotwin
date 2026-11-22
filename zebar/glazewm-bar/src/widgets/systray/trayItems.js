@@ -3,7 +3,7 @@ import { launch, openUri } from '../../lib/commands.js';
 
 /**
  * Turns the systray provider's icons into tray items:
- *   { id?, key, tooltip, iconUrl, left, right, middle?, enter?, leave? }
+ *   { id?, key, tooltip, iconUrl, left, right, double?, middle?, enter?, leave? }
  * where the functions forward clicks/hovers to the owning app.
  */
 
@@ -56,6 +56,7 @@ export function trayItems(systray) {
         iconUrl: icon.iconUrl,
         left: () => systray.onLeftClick(icon.id),
         right: () => systray.onRightClick(icon.id),
+        double: () => systray.onLeftDoubleClick(icon.id),
         middle: () => systray.onMiddleClick(icon.id),
         enter: () => systray.onHoverEnter(icon.id),
         leave: () => systray.onHoverLeave(icon.id),

@@ -1,0 +1,134 @@
+/* The tray panel (TrayPanel.jsx): a black plate with a silver edge, hanging under
+   the bar's arrow. The window is sized to .tray-panel, so the page around it is
+   transparent. Icon styles come from widgets/systray/Systray.css. */
+
+html,
+body,
+#root {
+    background: transparent;
+}
+
+.tray-panel {
+    --cell: 30px;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: max-content;
+    padding: 8px 10px 7px;
+    background: var(--bg-solid);
+    border: 1px solid var(--border);
+    border-top: 1px solid var(--silver);
+    white-space: nowrap;
+
+    &.open {
+        animation: tray-drop 0.16s ease-out;
+    }
+
+    header {
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+        padding: 0 2px 6px;
+    }
+}
+
+.tray-panel-title {
+    color: var(--silver);
+    font-family: var(--font-display);
+    font-size: 17px;
+    line-height: 1;
+}
+
+.tray-panel-count {
+    color: var(--muted);
+    font-family: var(--font-display);
+    font-size: 14px;
+    line-height: 1;
+}
+
+.tray-panel-label {
+    margin: 8px 2px 4px;
+    padding-top: 6px;
+    border-top: 1px solid var(--border);
+    color: var(--muted);
+    font-family: var(--font-display);
+    font-size: 13px;
+    line-height: 1;
+}
+
+/* One section of icons. Fixed columns, so the panel keeps its width while icons
+   come and go and the footer can't stretch it. */
+.tray-grid {
+    display: grid;
+    grid-template-columns: repeat(var(--cols), var(--cell));
+    grid-auto-rows: var(--cell);
+    min-height: var(--cell);
+    outline: 1px dashed transparent;
+    outline-offset: -1px;
+    transition: outline-color var(--transition);
+
+    &.drop-hover {
+        outline-color: var(--accent);
+    }
+
+    .tray-icon {
+        width: var(--cell);
+        height: var(--cell);
+
+        img {
+            width: 18px;
+            height: 18px;
+        }
+
+        &:hover {
+            background: var(--surface-hover);
+        }
+    }
+}
+
+/* Monochrome until the pointer is on the panel, like the bar's icons. */
+.tray-panel:not(:hover, .is-dragging) .tray-icon img {
+    filter: var(--tray-rest-filter);
+    opacity: 0.75;
+}
+
+.tray-empty {
+    grid-column: 1 / -1;
+    align-self: center;
+    padding: 0 4px;
+    color: var(--muted);
+    font-style: italic;
+}
+
+/* The hovered icon's tooltip, cut to the grid's width. */
+.tray-panel footer {
+    width: 0;
+    min-width: 100%;
+    margin-top: 6px;
+    padding: 5px 2px 0;
+    overflow: hidden;
+    border-top: 1px solid var(--border);
+    text-overflow: ellipsis;
+}
+
+.tray-tip-name {
+    color: var(--text-bright);
+}
+
+.tray-tip-detail {
+    color: var(--muted);
+}
+
+@keyframes tray-drop {
+    from {
+        opacity: 0;
+        translate: 0 -6px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .tray-panel.open {
+        animation: none;
+    }
+}

@@ -1,11 +1,33 @@
-/* Tray: an arrow that opens onto the notification-area icons. */
+/* Tray on the bar: pinned icons, the utilities, and the arrow that opens the
+   tray panel (src/tray/TrayPanel.css). The icon styles are shared with the panel. */
 
 .tray {
     align-items: stretch;
+}
+
+/* .bar-right spaces its islands' children (layout.css); the tray spaces its own. */
+.bar-right .tray {
     gap: 0;
 }
 
+/* The one thing on the right that gives way when space runs out (layout.css),
+   so the tray can't reach the clock. */
+.bar-right > .tray {
+    flex-shrink: 1;
+    min-width: 0;
+}
+
+/* Pinned icons; clips when there are too many (the panel still has them all),
+   and the wheel scrolls it. */
+.tray-strip {
+    display: flex;
+    align-items: stretch;
+    min-width: 0;
+    overflow: hidden;
+}
+
 .tray-icon {
+    flex-shrink: 0;
     justify-content: center;
     width: 20px;
     animation: tray-in 0.22s ease-out backwards;
@@ -13,19 +35,14 @@
 
     img {
         display: block;
-        width: 14px;
-        height: 14px;
+        width: 15px;
+        height: 15px;
         opacity: 0.9;
-        transition: opacity var(--transition);
+        transition: opacity var(--transition), filter var(--transition);
     }
 
     &:hover img {
         opacity: 1;
-    }
-
-    /* In the hidden group (shown while expanded) */
-    &.is-hidden {
-        opacity: 0.55;
     }
 
     &.dragging {
@@ -42,56 +59,79 @@
     }
 }
 
-/* Chevron that shows/hides the hidden group; also a drop target to hide an icon */
-.tray-toggle {
-    justify-content: center;
-    gap: 2px;
-    padding: 0 4px;
-    color: var(--muted);
-    border-radius: var(--radius);
-    transition: color var(--transition), background var(--transition);
+/* At rest the icons keep to the bar's monochrome (theme.css); colour comes back
+   while the pointer is on the tray. */
+.tray:not(:hover, .is-dragging) .tray-icon img {
+    filter: var(--tray-rest-filter);
+    opacity: 0.7;
+}
 
-    i {
-        color: inherit;
+.is-dragging,
+.is-dragging * {
+    cursor: grabbing !important;
+}
+
+/* Network, Bluetooth, mic, settings: between the icons and the arrow. */
+.tray-utilities {
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+    gap: 9px;
+    padding: 0 6px 0 9px;
+
+    /* Collapsed (nothing pinned), the utilities need no lead-in. */
+    &:first-child {
+        padding-left: 0;
     }
+}
 
-    /* Count of hidden icons */
+/* The arrow: points along the bar at rest and turns down while the panel hangs
+   under it. Also the drop target that unpins an icon. */
+.tray-toggle {
+    flex-shrink: 0;
+    justify-content: center;
+    gap: 3px;
+    min-width: 17px;
+    color: var(--muted);
+    transition: color var(--transition);
+
+    /* Count of icons in the panel */
     span {
         font-family: var(--font-display);
         font-size: 14px;
         line-height: 1;
     }
 
+    .glyph {
+        width: 11px;
+        height: 11px;
+        color: var(--icon);
+        rotate: 180deg;
+        transition: color var(--transition), rotate 0.2s ease-out;
+    }
+
     &:hover,
+    &.open,
     &.drop-hover {
         color: var(--text-bright);
     }
 
-    &.drop-target {
-        color: var(--accent);
-    }
-}
-
-.tray.is-dragging,
-.tray.is-dragging * {
-    cursor: grabbing !important;
-}
-
-/* The arrow that opens the tray; it turns round to fold it away */
-.tray-arrow {
-    justify-content: center;
-    width: 17px;
-
-    .glyph {
-        width: 13px;
-        height: 13px;
-        color: var(--silver);
-        transition: color var(--transition), rotate 0.2s ease-out;
+    &:hover .glyph,
+    &.open .glyph {
+        color: var(--text-bright);
     }
 
     &.open .glyph {
+        rotate: 270deg;
+    }
+
+    &.drop-target,
+    &.drop-target .glyph {
+        color: var(--accent);
+    }
+
+    &.drop-hover .glyph {
         color: var(--text-bright);
-        rotate: 180deg;
     }
 }
 
@@ -107,18 +147,7 @@
         animation: none;
     }
 
-    .tray-arrow .glyph {
+    .tray-toggle .glyph {
         transition: none;
-    }
-}
-
-/* Network, Bluetooth, mic, settings: open with the tray. */
-.tray-utilities {
-    display: flex;
-    align-items: center;
-    gap: 7px;
-
-    &:not(:empty) {
-        padding: 0 5px;
     }
 }

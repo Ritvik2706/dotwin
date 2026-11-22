@@ -127,7 +127,7 @@ ShowBrightnessOsd(level) {
     fillW := Round(OSD_TRACK_W * level / 100)
     brightOsd.fill.Move(OSD_TRACK_X, , fillW)
     brightOsd.rest.Move(OSD_TRACK_X + fillW, , OSD_TRACK_W - fillW)
-    brightOsd.pct.Value := level "%"
+    brightOsd.pct.Value := level
     MonitorGetWorkArea(MonitorGetPrimary(), &l, &t, &r)
     brightOsd.Show("NoActivate x" (l + (r - l - OSD_W) // 2) " y" (t + 12) " w" OSD_W " h" OSD_H)
     SetTimer(HideBrightnessOsd, -OSD_HIDE_MS)  ; same func → re-arms rather than stacking
@@ -148,17 +148,20 @@ CreateBrightnessOsd() {
     for r in [[0, 0, OSD_W, 1], [0, OSD_H - 1, OSD_W, 1], [0, 0, 1, OSD_H], [OSD_W - 1, 0, 1, OSD_H]]
         g.Add("Text", Format("x{} y{} w{} h{} Background3A3940", r*))
     ; Brightness glyph (U+E706): Segoe Fluent Icons on Win11, MDL2 as fallback
-    g.SetFont("s13 cD9D7DF", "Segoe MDL2 Assets")
+    ; q3: greyscale antialiasing, as in the bar; ClearType leaves colour fringes.
+    g.SetFont("s13 cD9D7DF q3", "Segoe MDL2 Assets")
     g.SetFont(, "Segoe Fluent Icons")
     g.Add("Text", "x12 y1 w24 h" (OSD_H - 2) " +0x200 BackgroundTrans", Chr(0xE706))
     ; Track: filled part + remainder side by side
     barY := OSD_H // 2 - 2
     g.fill := g.Add("Text", Format("x{} y{} w0 h4 BackgroundD9D7DF", OSD_TRACK_X, barY))
     g.rest := g.Add("Text", Format("x{} y{} w{} h4 Background26252A", OSD_TRACK_X, barY, OSD_TRACK_W))
-    g.SetFont("s10 cF8F2F5 w700", "Segoe UI")
-    g.SetFont(, "JetBrains Mono")
-    g.pct := g.Add("Text", Format("x{} y1 w{} h{} Right +0x200 BackgroundTrans",
-        OSD_TRACK_X + OSD_TRACK_W + 4, OSD_W - OSD_TRACK_X - OSD_TRACK_W - 16, OSD_H - 2), "100%")
+    ; The level as the bar shows it (.stat-value): blackletter, silver, no unit.
+    ; Grenze Gotisch is installed by deploy.sh (flowlauncher/fonts/).
+    g.SetFont("s14 cD9D7DF w400 q3", "JetBrains Mono")
+    g.SetFont(, "Grenze Gotisch Medium")
+    g.pct := g.Add("Text", Format("x{} y-1 w{} h{} Right +0x200 BackgroundTrans",
+        OSD_TRACK_X + OSD_TRACK_W + 4, OSD_W - OSD_TRACK_X - OSD_TRACK_W - 16, OSD_H - 2), "100")
     WinSetTransparent(240, g)
     return g
 }

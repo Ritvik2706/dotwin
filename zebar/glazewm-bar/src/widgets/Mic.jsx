@@ -7,14 +7,12 @@ import './Mic.css';
 /**
  * Default recording device. Click: mute/unmute it system-wide (every app,
  * OBS included, gets silence while muted). Right-click: Windows sound settings.
- * With alertOnly it only shows while muted: it's left out while the tray is folded.
  */
-export default function Mic({ audio, alertOnly }) {
+export default function Mic({ audio }) {
     const device = audio?.defaultRecordingDevice;
     if (!device) return null;
 
     const muted = device.isMuted;
-    if (alertOnly && !muted) return null;
 
     return (
         <button

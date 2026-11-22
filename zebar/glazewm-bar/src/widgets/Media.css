@@ -1,20 +1,25 @@
-/* Now playing, divided from the clock. */
+/* Now playing: beside the clock's left wing, centred with the clock as one
+   group (Bar.jsx). Its label is capped (MAX_LABEL), so the group stays bounded. */
 
 .media {
     display: flex;
+    flex-shrink: 0;
     align-items: center;
     gap: 6px;
-    margin-right: 16px;
 }
 
 .media-label {
+    min-width: 0;
+    overflow: hidden;
     color: var(--text);
     line-height: 1;
+    text-overflow: ellipsis;
 }
 
 .media-controls {
     display: flex;
     align-items: center;
+    flex-shrink: 0;
     gap: 10px;
     margin-left: 6px;
 

@@ -46,6 +46,25 @@ try_privileged_copy() {
     fi
 }
 
+# Install each .ttf in src/ as a per-user font (no admin needed): copy it to
+# %LOCALAPPDATA%\Microsoft\Windows\Fonts and register it under HKCU. A font in
+# use is locked, so unchanged files aren't copied again. Apps see a new font
+# once they restart.
+install_user_fonts() {
+    local src="$1" dest="$WIN_LOCAL/Microsoft/Windows/Fonts" font name
+    mkdir -p "$dest"
+    for font in "$src"/*.ttf; do
+        [[ -e "$font" ]] || continue
+        name="$(basename "$font")"
+        if ! cmp -s "$font" "$dest/$name"; then
+            cp "$font" "$dest/$name" || { echo "    $name is in use; close the apps using it and deploy again"; continue; }
+        fi
+        reg.exe add 'HKCU\Software\Microsoft\Windows NT\CurrentVersion\Fonts' \
+            /v "${name%.ttf} (TrueType)" /t REG_SZ /d "$(wslpath -w "$dest/$name")" /f >/dev/null \
+            || echo "    couldn't register $name"
+    done
+}
+
 # Build the Zebar bar (Vite + React) into zebar/glazewm-bar/dist/.
 # Installs dependencies first if they're missing or package-lock.json changed.
 build_zebar_bar() {
@@ -108,6 +127,9 @@ deploy() {
     echo "  flowlauncher"
     mkdir -p "$WIN_ROAMING/FlowLauncher/Settings"
     cp "$REPO_DIR/flowlauncher/settings.json" "$WIN_ROAMING/FlowLauncher/Settings/Settings.json"
+    # Reliquary theme, and the blackletter font it names in settings.json
+    copy_dir "$REPO_DIR/flowlauncher/themes" "$WIN_ROAMING/FlowLauncher/Themes"
+    install_user_fonts "$REPO_DIR/flowlauncher/fonts"
 
     echo "  powertoys"
     mkdir -p "$WIN_LOCAL/Microsoft/PowerToys/Keyboard Manager"
@@ -167,6 +189,7 @@ sync() {
 
     echo "  flowlauncher"
     cp "$WIN_ROAMING/FlowLauncher/Settings/Settings.json" "$REPO_DIR/flowlauncher/settings.json"
+    cp "$WIN_ROAMING/FlowLauncher/Themes/Reliquary.xaml" "$REPO_DIR/flowlauncher/themes/" 2>/dev/null || true
 
     echo "  powertoys"
     cp "$WIN_LOCAL/Microsoft/PowerToys/settings.json" \

@@ -6,7 +6,7 @@ import './StartButton.css';
 
 /**
  * Windows logo + host name, at the far left.
- * Click: power menu. Right-click: Windows taskbar auto-hide toggle.
+ * Click: power menu. Right-click: Start menu and the Windows taskbar toggle.
  * Either menu replaces the host name until closed.
  */
 export default function StartButton({ systray, hostname }) {
@@ -21,7 +21,7 @@ export default function StartButton({ systray, hostname }) {
         <div className="start">
             <button
                 className={cx('start-button clean-button', menu && 'open')}
-                title={'Power options\nRight-click: taskbar auto-hide'}
+                title={'Power options\nRight-click: Start menu, Windows taskbar'}
                 onClick={() => toggle('power')}
                 onContextMenu={e => {
                     e.preventDefault();

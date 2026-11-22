@@ -91,7 +91,9 @@ window_rules:
     match:
       - window_title: { regex: "(?i) - Helium$" }
         window_process: { equals: "chrome" }
+      # Browser windows only: Zen also opens short-lived dialog windows of its own.
       - window_process: { equals: "zen" }
+        window_class: { equals: "MozillaWindowClass" }
 
   - commands: ["move --workspace 2", "focus --workspace 2"]
     match:
@@ -116,22 +118,48 @@ window_rules:
     match:
       - window_process: { equals: "mpv" }
 
+  # qBittorrent lives in the tray: reopening it just shows its window, which
+  # landed on workspace 5 unseen without the focus.
   - commands: ["move --workspace 5", "focus --workspace 5"]
     match:
       - window_process: { equals: "obs64" }
+      - window_process: { equals: "qbittorrent" }
 
-  # These can start with Windows, so they go home without pulling focus along.
+  # Premiere sizes its main window to the whole monitor instead of the work area
+  # Zebar reserves (it isn't a real Win32 maximize), so GlazeWM reads it as
+  # fullscreen and lays it over the bar. Put it back in the tiling layout whenever
+  # it does that. Matched by title so its dialogs (Export, Preferences) still float.
+  - commands: ["set-tiling"]
+    on: ["manage", "title_change", "focus"]
+    match:
+      - window_process: { equals: "Adobe Premiere Pro" }
+        window_title: { regex: "^Adobe Premiere" }
+
+  # Can start with Windows, so it goes home without pulling focus along.
   - commands: ["move --workspace 4"]
     match:
       - window_process: { equals: "Spotify" }
-  - commands: ["move --workspace 5"]
+
+  # Short-lived dialogs float over the layout instead of tiling into it and
+  # reshuffling everything: Open/Save pickers, Run, Properties, message boxes
+  # (all class #32770, from any app), Explorer's copy/move progress, Calculator.
+  # Calculator is a UWP app, so its window belongs to ApplicationFrameHost.
+  - commands: ["set-floating"]
     match:
-      - window_process: { equals: "qbittorrent" }
+      - window_class: { equals: "#32770" }
+      - window_class: { equals: "OperationStatusWindow" }
+      - window_process: { equals: "ApplicationFrameHost" }
+        window_title: { equals: "Calculator" }
 
   - commands: ["ignore"]
     match:
       - window_process: { equals: "zebar" }
       - window_process: { equals: "claude" }
+      # Zen's dialogs. Some open and close within a second (136x134, titled "Zen
+      # Browser"); tiled, each one reshuffled the workspace. Matched by class, which
+      # never changes, so this can't untile a browser window.
+      - window_process: { equals: "zen" }
+        window_class: { equals: "MozillaDialogClass" }
       - window_title: { regex: "(?i)^picture.in.picture$" }
         window_class: { regex: "Chrome_WidgetWin_1|MozillaDialogClass" }
       - window_process: { equals: "PowerToys" }
@@ -147,8 +175,10 @@ window_rules:
       - window_process: { equals: "POWERPNT" }
         window_class: { not_regex: "PPTFrameClass" }
 
-  # Gaming launchers — not tiled, keybindings pass through.
-  - commands: ["ignore"]
+  # Gaming launchers float instead of tiling. Floating, not ignored: GlazeWM still
+  # manages them, so each one belongs to a workspace (move it with Alt+Shift+N)
+  # and hides with it, instead of showing on every workspace.
+  - commands: ["set-floating"]
     match:
       - window_process: { equals: "Battle.net" }
       - window_title: { regex: "(?i)^Battle\\.net" }
@@ -163,10 +193,14 @@ window_rules:
       - window_process: { equals: "RiotClientServices" }
       - window_process: { equals: "RockstarService" }
       - window_process: { equals: "XboxApp" }
-      - window_process: { equals: "GameBar" }
-      - window_process: { equals: "XboxGameBarWidgets" }
       - window_process: { equals: "itch" }
       - window_process: { regex: "(?i)^Amazon Games" }
+
+  # Game Bar is an overlay over whatever's in front, so it stays out of GlazeWM.
+  - commands: ["ignore"]
+    match:
+      - window_process: { equals: "GameBar" }
+      - window_process: { equals: "XboxGameBarWidgets" }
 
   # Games — GlazeWM skips keybinding interception when any of these are focused.
   # Use alt+\ to toggle-pause as a fallback if a game window slips through.
@@ -182,13 +216,26 @@ window_rules:
       - window_process: { regex: "(?i)^(The_Finals|FINALS)" }
       - window_title: { regex: "(?i)the finals" }
         window_process: { not_regex: "(?i)^(zen|chrome|msedge|firefox|brave|opera|vivaldi|discord|spotify|explorer|wezterm-gui|obs64|sumatrapdf|sioyek|mpv|code|notepad|obsidian)$" }
-      - window_process: { equals: "FPSAimTrainer" }
       # Battlefield 6 / REDSEC (Frostbite, so no engine window class to catch it).
       - window_process: { regex: "(?i)^(bf\\d|bf20\\d\\d|bfv|battlefield)" }
       - window_title: { regex: "(?i)^battlefield|redsec" }
         window_process: { not_regex: "(?i)^(zen|chrome|msedge|firefox|brave|opera|vivaldi|discord|spotify|explorer|wezterm-gui|obs64|sumatrapdf|sioyek|mpv|code|notepad|obsidian)$" }
       - window_process: { regex: "(?i)^(r5apex|cs2|RainbowSix|League of Legends|Overwatch|FortniteClient|VALORANT|Marvel)" }
+      # Engine window classes, except launchers built on them (Steam's window is
+      # SDL_app, Epic's is UnrealWindow): those float (rule above). Same list as
+      # notGames in autohotkey/modules/AntiCheatGames.ahk. KovaaK's is an Unreal
+      # game but stays managed (rule below).
       - window_class: { regex: "SDL_app|UnityWndClass|UnrealWindow" }
+        window_process: { not_regex: "(?i)^(steam|steamwebhelper|EpicGamesLauncher|FPSAimTrainer.*)$" }
+
+  # KovaaK's (its window belongs to FPSAimTrainer-Win64-Shipping) runs alongside
+  # GlazeWM, so it's managed rather than ignored: an ignored window shows on every
+  # workspace, a managed one belongs to its workspace and hides with it. Its
+  # borderless fullscreen becomes GlazeWM's fullscreen, which covers the bar and
+  # stays above the tiled windows. Alt bindings still work while it's focused.
+  - commands: ["set-fullscreen"]
+    match:
+      - window_process: { regex: "(?i)^FPSAimTrainer" }
 
 binding_modes:
   - name: "resize"

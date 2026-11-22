@@ -20,7 +20,8 @@
         "index.html",
         "assets/*.js",
         "assets/*.css",
-        "assets/*.woff2"
+        "assets/*.woff2",
+        "*.png"
       ],
       "caching": {
         "defaultDuration": 0,
@@ -82,7 +83,7 @@
           },
           {
             "program": "C:\\Program Files\\AutoHotkey\\v2\\AutoHotkey64.exe",
-            "argsRegex": "^C:\\\\Users\\\\Ritvik\\\\Documents\\\\AutoHotkey\\\\taskbar\\.ahk (get|toggle|focus \\d+)$"
+            "argsRegex": "^C:\\\\Users\\\\Ritvik\\\\Documents\\\\AutoHotkey\\\\taskbar\\.ahk (get|toggle|start|focus \\d+)$"
           },
           {
             "program": "C:\\Program Files\\AutoHotkey\\v2\\AutoHotkey64.exe",
@@ -103,6 +104,47 @@
           },
           "dockToEdge": {
             "enabled": true,
+            "edge": "top",
+            "windowMargin": "0px"
+          }
+        }
+      ]
+    },
+    {
+      "name": "tray",
+      "htmlPath": "./tray.html",
+      "zOrder": "top_most",
+      "shownInTaskbar": false,
+      "focused": false,
+      "resizable": false,
+      "transparent": true,
+      "includeFiles": [
+        "tray.html",
+        "assets/*.js",
+        "assets/*.css",
+        "assets/*.woff2",
+        "*.png"
+      ],
+      "caching": {
+        "defaultDuration": 0,
+        "rules": []
+      },
+      "privileges": {
+        "shellCommands": []
+      },
+      "presets": [
+        {
+          "name": "default",
+          "anchor": "top_left",
+          "offsetX": "0px",
+          "offsetY": "0px",
+          "width": "1px",
+          "height": "1px",
+          "monitorSelection": {
+            "type": "primary"
+          },
+          "dockToEdge": {
+            "enabled": false,
             "edge": "top",
             "windowMargin": "0px"
           }

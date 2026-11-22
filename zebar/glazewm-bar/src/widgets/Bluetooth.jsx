@@ -1,19 +1,19 @@
 import React, { useCallback, useState } from 'react';
 import { openUri, runScriptJson } from '../lib/commands.js';
-import { cx, truncate } from '../lib/format.js';
+import { cx } from '../lib/format.js';
 import { shouldPoll, useInterval } from '../hooks/useInterval.js';
 import Glyph from '../ui/Glyph.jsx';
 import './Bluetooth.css';
 
 /**
  * Bluetooth status via scripts/bluetooth.ps1 (Zebar has no Bluetooth provider).
+ * Connected devices brighten the glyph and are named in its tooltip.
  * Click: Bluetooth & devices settings (connect/pair). Right-click: radio on/off.
  * Each poll spawns PowerShell, so it polls slowly (never while GlazeWM is paused) and
  * refreshes on hover instead.
  */
 const POLL_MS = 60_000;
 const HOVER_REFRESH_MS = 3_000;
-const MAX_NAME = 14;
 
 export default function Bluetooth({ glazewm }) {
     // { available, on, connected: [names] } from bluetooth.ps1
@@ -35,12 +35,6 @@ export default function Bluetooth({ glazewm }) {
     if (!state?.available) return null;
 
     const connected = state.connected ?? [];
-    let label = null;
-    if (state.on && connected.length > 0) {
-        label = truncate(connected[0], MAX_NAME);
-        if (connected.length > 1) label += ` +${connected.length - 1}`;
-    }
-
     const title = !state.on ? 'Bluetooth off — right-click to turn on'
         : connected.length > 0 ? `Connected: ${connected.join(', ')}`
         : 'Bluetooth on — no devices connected';
@@ -62,7 +56,6 @@ export default function Bluetooth({ glazewm }) {
             }}
         >
             <Glyph name="bluetooth"/>
-            {label ? <span>{label}</span> : null}
         </button>
     );
 }

@@ -9,7 +9,7 @@
 ; never waits on anything. GlazeWM starts Zebar itself (startup_commands).
 ;
 ; Quitting skips the exit clean-up that would show the taskbar (EXIT_FOR_GAME),
-; so it stays on auto-hide, where a click on it still switches windows.
+; so it stays hidden and on auto-hide.
 
 EXIT_FOR_GAME   := 2
 antiCheatGames  := MakeSet(ReadGameList(A_ScriptDir "\anticheat-games.txt"))
@@ -19,6 +19,20 @@ GAME_WINDOW_CLASSES := "^(UnrealWindow|UnityWndClass|SDL_app)$"
 
 ; In steamapps or built on a game engine, but not games.
 notGames := MakeSet(["wallpaper32.exe", "wallpaper64.exe", "ui32.exe", "UnrealEditor.exe", "Unity.exe"])
+
+; Games that don't need the desktop taken down: no anti-cheat, already borderless
+; fullscreen, and GlazeWM keeps them fullscreen on their workspace (window_rules),
+; so they run alongside it.
+for name in ["FPSAimTrainer.exe", "FPSAimTrainer-Win64-Shipping.exe"]   ; KovaaK's
+    notGames[name] := true
+
+; Game launchers aren't games either: you open them to update or browse, and the
+; games they start are still caught by their own windows. Some are built like
+; games, so they'd match IsGameWindow: Epic's is an Unreal app, Steam's is SDL.
+for name in ["EpicGamesLauncher.exe", "steam.exe", "steamwebhelper.exe", "Battle.net.exe",
+    "EADesktop.exe", "EALauncher.exe", "UbisoftConnect.exe", "upc.exe", "GalaxyClient.exe",
+    "RiotClientServices.exe", "RiotClientUx.exe", "Launcher.exe", "RockstarService.exe", "itch.exe"]
+    notGames[name] := true
 
 ; Called at startup, in case a game is already open.
 StartGameWatch() {

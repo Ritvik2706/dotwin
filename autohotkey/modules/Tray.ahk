@@ -2,7 +2,7 @@
 ; Check marks mirror the toggles; UpdateTray() refreshes them.
 
 TRAY_REMAPS  := "Remaps`tWin+F1"
-TRAY_TASKBAR := "Auto-hide Windows Taskbar`tWin+F4"
+TRAY_TASKBAR := "Hide Windows Taskbar`tWin+F4"
 TRAY_AWAKE   := "Caffeine`tAlt+Ctrl+I"
 
 BuildTrayMenu() {

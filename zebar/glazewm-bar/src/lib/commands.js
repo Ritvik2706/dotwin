@@ -56,6 +56,7 @@ export async function runScriptJson(name, ...args) {
  * Send a command to CapsEscSwap.ahk through taskbar.ahk:
  *   'get' / 'toggle' -> { available, hidden } (Windows taskbar state)
  *   'focus', hwnd    -> focus a window the way a taskbar click does
+ *   'start'          -> open the Start menu
  */
 export function runTaskbarAhk(...args) {
     return shellExec(AUTOHOTKEY_EXE, [TASKBAR_AHK, ...args.map(String)]);
