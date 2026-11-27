@@ -1,0 +1,87 @@
+Kill #,Timestamp,Bot,Weapon,TTK,Shots,Hits,Accuracy,Damage Done,Damage Possible,Efficiency,Cheated,OverShots
+1,18:42:40.476,Quaker Bot Long Strafes,Full auto,5.000000s,51,35,0.686275,70.000000,204.000000,0.343137,0,2
+2,18:42:41.267,target,Full auto,0.099000s,2,1,0.500000,2.000000,8.000000,0.250000,0,2
+3,18:42:41.874,target_high,Full auto,0.000000s,1,1,1.000000,2.000000,4.000000,0.500000,0,1
+4,18:42:42.347,target_low,Full auto,0.000000s,1,1,1.000000,2.000000,4.000000,0.500000,0,1
+5,18:42:42.916,target,Full auto,0.000000s,1,1,1.000000,2.000000,4.000000,0.500000,0,0
+6,18:42:43.497,target_high,Full auto,0.000000s,1,1,1.000000,2.000000,4.000000,0.500000,0,1
+7,18:42:44.007,target_low,Full auto,0.000000s,1,1,1.000000,2.000000,4.000000,0.500000,0,1
+8,18:42:49.443,Quaker Bot Long Strafes,Full auto,4.796000s,49,35,0.714286,70.000000,196.000000,0.357143,0,2
+9,18:42:50.539,target,Full auto,0.000000s,1,1,1.000000,2.000000,4.000000,0.500000,0,0
+10,18:42:51.270,target_high,Full auto,0.000000s,1,1,1.000000,2.000000,4.000000,0.500000,0,0
+11,18:42:52.116,target_low,Full auto,0.000000s,1,1,1.000000,2.000000,4.000000,0.500000,0,0
+12,18:42:52.945,target,Full auto,0.000000s,1,1,1.000000,2.000000,4.000000,0.500000,0,0
+13,18:42:53.721,target_high,Full auto,0.000000s,1,1,1.000000,2.000000,4.000000,0.500000,0,0
+14,18:42:54.569,target_low,Full auto,0.255000s,3,1,0.333333,2.000000,12.000000,0.166667,0,1
+15,18:43:00.258,Quaker Bot Long Strafes,Full auto,4.897000s,50,35,0.700000,70.000000,200.000000,0.350000,0,2
+16,18:43:01.123,target,Full auto,0.202000s,3,1,0.333333,2.000000,12.000000,0.166667,0,0
+17,18:43:02.242,target_high,Full auto,0.561000s,4,1,0.250000,2.000000,16.000000,0.125000,0,0
+18,18:43:03.035,target_low,Full auto,0.230000s,3,1,0.333333,2.000000,12.000000,0.166667,0,1
+19,18:43:03.791,target,Full auto,0.000000s,1,1,1.000000,2.000000,4.000000,0.500000,0,0
+20,18:43:04.726,target_high,Full auto,0.000000s,1,1,1.000000,2.000000,4.000000,0.500000,0,0
+21,18:43:05.547,target_low,Full auto,0.000000s,1,1,1.000000,2.000000,4.000000,0.500000,0,0
+22,18:43:11.544,Quaker Bot Long Strafes,Full auto,5.295000s,54,35,0.648148,70.000000,216.000000,0.324074,0,2
+23,18:43:12.144,target,Full auto,0.099000s,2,1,0.500000,2.000000,8.000000,0.250000,0,0
+24,18:43:12.830,target_high,Full auto,0.504000s,2,1,0.500000,2.000000,8.000000,0.250000,0,0
+25,18:43:13.761,target_low,Full auto,0.279000s,3,1,0.333333,2.000000,12.000000,0.166667,0,1
+26,18:43:14.592,target,Full auto,0.282000s,3,1,0.333333,2.000000,12.000000,0.166667,0,1
+27,18:43:15.473,target_high,Full auto,0.000000s,1,1,1.000000,2.000000,4.000000,0.500000,0,1
+28,18:43:16.250,target_low,Full auto,0.000000s,1,1,1.000000,2.000000,4.000000,0.500000,0,1
+29,18:43:22.577,Quaker Bot Long Strafes,Full auto,5.598000s,57,35,0.614035,70.000000,228.000000,0.307018,0,2
+30,18:43:23.293,target,Full auto,0.100000s,2,1,0.500000,2.000000,8.000000,0.250000,0,0
+31,18:43:24.291,target_high,Full auto,0.672000s,5,1,0.200000,2.000000,20.000000,0.100000,0,2
+32,18:43:24.843,target_low,Full auto,0.000000s,1,1,1.000000,2.000000,4.000000,0.500000,0,0
+33,18:43:25.662,target,Full auto,0.114000s,2,1,0.500000,2.000000,8.000000,0.250000,0,2
+34,18:43:26.336,target_high,Full auto,0.547000s,2,1,0.500000,2.000000,8.000000,0.250000,0,0
+35,18:43:26.877,target_low,Full auto,0.000000s,1,1,1.000000,2.000000,4.000000,0.500000,0,1
+36,18:43:32.331,Quaker Bot Long Strafes,Full auto,4.798000s,49,35,0.714286,70.000000,196.000000,0.357143,0,2
+37,18:43:33.302,target,Full auto,0.279000s,3,1,0.333333,2.000000,12.000000,0.166667,0,2
+38,18:43:33.832,target_high,Full auto,0.441000s,3,1,0.333333,2.000000,12.000000,0.166667,0,0
+39,18:43:34.590,target_low,Full auto,0.581000s,4,1,0.250000,2.000000,16.000000,0.125000,0,1
+
+Weapon,Shots,Hits,Damage Done,Damage Possible,,Sens Scale,Horiz Sens,Vert Sens,FOV,Hide Gun,Crosshair,Crosshair Scale,Crosshair Color,ADS Sens,ADS Zoom Scale,Avg Target Scale,Avg Time Dilation
+Full auto,373,243,486.0,1492.0,
+
+Kills:,39
+Deaths:,0
+Fight Time:,35.629002
+Time Remaining:,0.0
+Avg TTK:,1.538314
+Damage Done:,486.0
+Total Overshots:,32
+Damage Taken:,0.0
+Hit Count:,243
+Miss Count:,130
+Midairs:,0
+Midaired:,0
+Directs:,0
+Directed:,0
+Reloads:,0
+Distance Traveled:,0.0
+MBS Points:,0.0
+Score:,3380.0
+Scenario:,KovaaKs Sandbox Intro Scenario
+Hash:,18505db399aaa604b7a65fa03ffa7490
+Game Version:,3.9.9.2026-09-08-13-49-08-01c79144c86c
+Challenge Start:,18:42:34.756
+Pause Count:,0
+Pause Duration:,0
+Avg Target Scale:,1.0
+Avg Time Dilation:,1.0
+
+Input Lag:,0
+Max FPS (config):,180.0
+Sens Scale:,cm/360
+Sens Increment:,0.388775
+Horiz Sens:,42.0
+Vert Sens:,42.0
+DPI:,800
+FOV:,110.0
+FOVScale:,Overwatch
+Hide Gun:,false
+Crosshair:,RoundDot1.png
+Crosshair Scale:,1.0
+Crosshair Color:,000000FF
+Resolution:,1920x1080
+Avg FPS:,171.166458
+Resolution Scale:,100.0

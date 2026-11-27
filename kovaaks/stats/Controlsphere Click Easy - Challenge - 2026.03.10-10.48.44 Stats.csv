@@ -1,0 +1,82 @@
+Kill #,Timestamp,Bot,Weapon,TTK,Shots,Hits,Accuracy,Damage Done,Damage Possible,Efficiency,Cheated,OverShots
+1,10:47:47.115,regen_dot,pistol,1.841000s,3,1,0.333333,1.000000,6.000000,0.166667,0,0
+2,10:47:47.813,regen_dot,pistol,0.001000s,1,1,1.000000,1.000000,2.000000,0.500000,0,0
+3,10:47:49.115,regen_dot,pistol,0.000000s,1,1,1.000000,1.000000,2.000000,0.500000,0,0
+4,10:47:50.201,regen_dot,pistol,0.000000s,1,1,1.000000,1.000000,2.000000,0.500000,0,0
+5,10:47:51.470,regen_dot,pistol,0.681000s,2,1,0.500000,1.000000,4.000000,0.250000,0,0
+6,10:47:54.161,regen_dot,pistol,1.532000s,3,1,0.333333,1.000000,6.000000,0.166667,0,0
+7,10:47:55.326,regen_dot,pistol,0.653000s,3,1,0.333333,1.000000,6.000000,0.166667,0,0
+8,10:47:56.828,regen_dot,pistol,0.000000s,1,1,1.000000,1.000000,2.000000,0.500000,0,0
+9,10:47:57.899,regen_dot,pistol,0.324000s,2,1,0.500000,1.000000,4.000000,0.250000,0,0
+10,10:47:58.945,regen_dot,pistol,0.550000s,2,1,0.500000,1.000000,4.000000,0.250000,0,0
+11,10:47:59.898,regen_dot,pistol,0.311000s,2,1,0.500000,1.000000,4.000000,0.250000,0,0
+12,10:48:03.474,regen_dot,pistol,2.412000s,4,1,0.250000,1.000000,8.000000,0.125000,0,0
+13,10:48:03.991,regen_dot,pistol,0.000000s,1,1,1.000000,1.000000,2.000000,0.500000,0,0
+14,10:48:04.809,regen_dot,pistol,0.000000s,1,1,1.000000,1.000000,2.000000,0.500000,0,0
+15,10:48:06.765,regen_dot,pistol,0.600000s,2,1,0.500000,1.000000,4.000000,0.250000,0,0
+16,10:48:09.700,regen_dot,pistol,2.201000s,4,1,0.250000,1.000000,8.000000,0.125000,0,0
+17,10:48:15.649,regen_dot,pistol,5.327000s,8,1,0.125000,1.000000,16.000000,0.062500,0,0
+18,10:48:16.338,regen_dot,pistol,0.000000s,1,1,1.000000,1.000000,2.000000,0.500000,0,0
+19,10:48:17.154,regen_dot,pistol,0.000000s,1,1,1.000000,1.000000,2.000000,0.500000,0,0
+20,10:48:17.932,regen_dot,pistol,0.000000s,1,1,1.000000,1.000000,2.000000,0.500000,0,0
+21,10:48:19.522,regen_dot,pistol,0.571000s,2,1,0.500000,1.000000,4.000000,0.250000,0,0
+22,10:48:20.250,regen_dot,pistol,0.000000s,1,1,1.000000,1.000000,2.000000,0.500000,0,0
+23,10:48:21.790,regen_dot,pistol,0.282000s,2,1,0.500000,1.000000,4.000000,0.250000,0,0
+24,10:48:25.029,regen_dot,pistol,1.938000s,4,1,0.250000,1.000000,8.000000,0.125000,0,0
+25,10:48:25.956,regen_dot,pistol,0.372000s,2,1,0.500000,1.000000,4.000000,0.250000,0,0
+26,10:48:29.512,regen_dot,pistol,2.927000s,6,1,0.166667,1.000000,12.000000,0.083333,0,0
+27,10:48:32.301,regen_dot,pistol,2.194000s,4,1,0.250000,1.000000,8.000000,0.125000,0,0
+28,10:48:32.981,regen_dot,pistol,0.000000s,1,1,1.000000,1.000000,2.000000,0.500000,0,0
+29,10:48:36.115,regen_dot,pistol,2.100000s,4,1,0.250000,1.000000,8.000000,0.125000,0,0
+30,10:48:36.924,regen_dot,pistol,0.001000s,1,1,1.000000,1.000000,2.000000,0.500000,0,0
+31,10:48:38.315,regen_dot,pistol,0.727000s,2,1,0.500000,1.000000,4.000000,0.250000,0,0
+32,10:48:39.203,regen_dot,pistol,0.000000s,1,1,1.000000,1.000000,2.000000,0.500000,0,0
+33,10:48:40.058,regen_dot,pistol,0.000000s,1,1,1.000000,1.000000,2.000000,0.500000,0,0
+34,10:48:42.111,regen_dot,pistol,0.369000s,2,1,0.500000,1.000000,4.000000,0.250000,0,0
+
+Weapon,Shots,Hits,Damage Done,Damage Possible,,Sens Scale,Horiz Sens,Vert Sens,FOV,Hide Gun,Crosshair,Crosshair Scale,Crosshair Color,ADS Sens,ADS Zoom Scale,Avg Target Scale,Avg Time Dilation
+pistol,80,34,34.0,160.0,
+
+Kills:,34
+Deaths:,0
+Fight Time:,27.914
+Time Remaining:,0.0
+Avg TTK:,1.764316
+Damage Done:,34.0
+Total Overshots:,0
+Damage Taken:,0.0
+Hit Count:,34
+Miss Count:,46
+Midairs:,0
+Midaired:,0
+Directs:,0
+Directed:,0
+Reloads:,9
+Distance Traveled:,0.0
+MBS Points:,0.0
+Score:,34.0
+Scenario:,Controlsphere Click Easy
+Hash:,50f3333e3c4a0300e6f423332c196c37
+Game Version:,3.8.7.2026-03-03-13-18-29-7697ade12a30
+Challenge Start:,10:47:44.435
+Pause Count:,0
+Pause Duration:,0
+Avg Target Scale:,1.0
+Avg Time Dilation:,1.0
+
+Input Lag:,0
+Max FPS (config):,360.0
+Sens Scale:,cm/360
+Sens Increment:,0.544971
+Horiz Sens:,29.96225
+Vert Sens:,29.96225
+DPI:,800
+FOV:,120.0
+FOVScale:,Call of Duty
+Hide Gun:,false
+Crosshair:,lmbSmolPlus.png
+Crosshair Scale:,1.0
+Crosshair Color:,010000FF
+Resolution:,1920x1080
+Avg FPS:,365.847412
+Resolution Scale:,100.0

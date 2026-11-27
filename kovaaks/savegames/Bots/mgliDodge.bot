@@ -1,0 +1,11 @@
+Name=mgliDodge
+DodgeProfileNames=Short Strafes;Long Strafes;Short Strafes Jumping;Short Strafes Close;Mimic;Long Strafes 2;Long Strafes Close
+DodgeProfileWeights=1.0;1.0;1.0;0.2;1.0;1.0;0.2
+DodgeProfileMaxChangeTime=5.0
+DodgeProfileMinChangeTime=1.0
+WeaponProfileWeights=1.0;1.0;1.0;1.0;1.0;1.0;1.0;1.0
+AimingProfileNames=High Skill At Feet;Default;Default;Default;Default;Default;Default;Default
+WeaponSwitchTime=3.0
+UseWeapons=true
+CharacterProfile=Quakerz
+SeeThroughWalls=false

@@ -1,0 +1,159 @@
+{
+	"playlistName": "Viscose Benchmarks Beta - Advanced",
+	"playlistId": 346414,
+	"authorSteamId": "76561198130230208",
+	"authorName": "AG.kynave",
+	"scenarioList": [
+		{
+			"scenario_name": "WhisphereRawControl 30% small",
+			"play_Count": 1
+		},
+		{
+			"scenario_name": "Whisphere Small & Slow",
+			"play_Count": 1
+		},
+		{
+			"scenario_name": "SmoothBot Invincible Goated Smaller",
+			"play_Count": 1
+		},
+		{
+			"scenario_name": "Leaptrack Goated 80%",
+			"play_Count": 1
+		},
+		{
+			"scenario_name": "Controlsphere rAim",
+			"play_Count": 1
+		},
+		{
+			"scenario_name": "VT Controlsphere Intermediate S5 Hard",
+			"play_Count": 1
+		},
+		{
+			"scenario_name": "Air Angelic 4 Voltaic",
+			"play_Count": 1
+		},
+		{
+			"scenario_name": "cloverRawControl",
+			"play_Count": 1
+		},
+		{
+			"scenario_name": "Controlsphere Far",
+			"play_Count": 1
+		},
+		{
+			"scenario_name": "PGTI Voltaic",
+			"play_Count": 1
+		},
+		{
+			"scenario_name": "Air CELESTIAL",
+			"play_Count": 1
+		},
+		{
+			"scenario_name": "Whisphere Extra Small & Slow",
+			"play_Count": 1
+		},
+		{
+			"scenario_name": "Ground Plaza Sparky V3 Thin",
+			"play_Count": 1
+		},
+		{
+			"scenario_name": "Controlsphere OW 150%",
+			"play_Count": 1
+		},
+		{
+			"scenario_name": "Flicker Plaza",
+			"play_Count": 1
+		},
+		{
+			"scenario_name": "Polarized Hell 20% Slower",
+			"play_Count": 1
+		},
+		{
+			"scenario_name": "Air Pure",
+			"play_Count": 1
+		},
+		{
+			"scenario_name": "Air Voltaic Invincible 4",
+			"play_Count": 1
+		},
+		{
+			"scenario_name": "Pokeball Frenzy Auto TE Wide",
+			"play_Count": 1
+		},
+		{
+			"scenario_name": "1w2ts reload",
+			"play_Count": 1
+		},
+		{
+			"scenario_name": "voxTargetSwitch 2 20% Smaller",
+			"play_Count": 1
+		},
+		{
+			"scenario_name": "beanTS 30% Smaller",
+			"play_Count": 1
+		},
+		{
+			"scenario_name": "FloatTS Angelic",
+			"play_Count": 1
+		},
+		{
+			"scenario_name": "waldoTS",
+			"play_Count": 1
+		},
+		{
+			"scenario_name": "devTS Goated NR Static Small 5Bot",
+			"play_Count": 1
+		},
+		{
+			"scenario_name": "domiSwitch",
+			"play_Count": 1
+		},
+		{
+			"scenario_name": "tamTargetSwitch Smooth",
+			"play_Count": 1
+		},
+		{
+			"scenario_name": "Pasu Reload Goated",
+			"play_Count": 1
+		},
+		{
+			"scenario_name": "VT Bounceshot Advanced",
+			"play_Count": 1
+		},
+		{
+			"scenario_name": "Controlsphere Click Smaller",
+			"play_Count": 1
+		},
+		{
+			"scenario_name": "Popcorn MV Advanced",
+			"play_Count": 1
+		},
+		{
+			"scenario_name": "Pasu Angelic",
+			"play_Count": 1
+		},
+		{
+			"scenario_name": "1w2ts Pasu Perfected 30% Smaller",
+			"play_Count": 1
+		},
+		{
+			"scenario_name": "1w3ts Pasu Perfected Micro Goated",
+			"play_Count": 1
+		},
+		{
+			"scenario_name": "Floating Heads Timing 400% FIXED",
+			"play_Count": 1
+		},
+		{
+			"scenario_name": "VoxTargetSwitch Click Small",
+			"play_Count": 1
+		}
+	],
+	"description": "8/23/25",
+	"hasOfflineScenarios": false,
+	"hasEdited": false,
+	"shareCode": "",
+	"version": 31,
+	"updated": 1762246106,
+	"isPrivate": false
+}

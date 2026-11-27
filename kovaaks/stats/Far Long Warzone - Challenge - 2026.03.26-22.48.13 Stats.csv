@@ -1,0 +1,57 @@
+Kill #,Timestamp,Bot,Weapon,TTK,Shots,Hits,Accuracy,Damage Done,Damage Possible,Efficiency,Cheated,OverShots
+1,22:47:18.494,Quaker Bot Long Strafes,LG,4.598000s,101,50,0.495050,300.000000,606.000000,0.495050,0,5
+2,22:47:24.484,Quaker Bot Long Strafes,LG,5.712000s,91,50,0.549451,300.000000,546.000000,0.549451,0,5
+3,22:47:31.518,Quaker Bot Long Strafes,LG,6.760000s,112,50,0.446429,300.000000,672.000000,0.446429,0,5
+4,22:47:38.023,Quaker Bot Long Strafes,LG,6.229000s,103,50,0.485437,300.000000,618.000000,0.485437,0,5
+5,22:47:43.913,Quaker Bot Long Strafes,LG,5.613000s,88,50,0.568182,300.000000,528.000000,0.568182,0,5
+6,22:47:50.416,Quaker Bot Long Strafes,LG,6.229000s,99,50,0.505050,300.000000,594.000000,0.505050,0,5
+7,22:47:57.074,Quaker Bot Long Strafes,LG,6.379000s,104,50,0.480769,300.000000,624.000000,0.480769,0,5
+8,22:48:04.155,Quaker Bot Long Strafes,LG,6.807000s,110,50,0.454545,300.000000,660.000000,0.454545,0,5
+9,22:48:10.369,Quaker Bot Long Strafes,LG,4.323000s,95,50,0.526316,300.000000,570.000000,0.526316,0,5
+
+Weapon,Shots,Hits,Damage Done,Damage Possible,,Sens Scale,Horiz Sens,Vert Sens,FOV,Hide Gun,Crosshair,Crosshair Scale,Crosshair Color,ADS Sens,ADS Zoom Scale,Avg Target Scale,Avg Time Dilation
+LG,927,462,2772.0,5562.0,
+
+Kills:,9
+Deaths:,0
+Fight Time:,52.650002
+Time Remaining:,0.0
+Avg TTK:,6.664083
+Damage Done:,2772.0
+Total Overshots:,45
+Damage Taken:,0.0
+Hit Count:,462
+Miss Count:,465
+Midairs:,0
+Midaired:,0
+Directs:,0
+Directed:,0
+Reloads:,0
+Distance Traveled:,0.0
+MBS Points:,0.0
+Score:,4144.543945
+Scenario:,Far Long Warzone
+Hash:,707727ce192ab8ce2a7bf89f79ee3bec
+Game Version:,3.8.7.2026-03-03-13-18-29-7697ade12a30
+Challenge Start:,22:47:13.075
+Pause Count:,0
+Pause Duration:,0
+Avg Target Scale:,1.0
+Avg Time Dilation:,1.0
+
+Input Lag:,0
+Max FPS (config):,360.0
+Sens Scale:,cm/360
+Sens Increment:,0.347416
+Horiz Sens:,47.0
+Vert Sens:,47.0
+DPI:,800
+FOV:,120.0
+FOVScale:,Call of Duty
+Hide Gun:,false
+Crosshair:,lmbDot.png
+Crosshair Scale:,1.0
+Crosshair Color:,010000FF
+Resolution:,1920x1080
+Avg FPS:,359.822754
+Resolution Scale:,100.0

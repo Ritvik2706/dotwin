@@ -1,0 +1,56 @@
+Kill #,Timestamp,Bot,Weapon,TTK,Shots,Hits,Accuracy,Damage Done,Damage Possible,Efficiency,Cheated,OverShots
+1,07:21:19.856,air1_close_long,Track Master 100,12.979001s,1299,800,0.615858,800.000000,1299.000000,0.615858,0,24
+2,07:21:36.912,air1_far_long,Track Master 100,15.269001s,1528,800,0.523560,800.000000,1528.000000,0.523560,0,18
+3,07:21:55.153,air_close_short,Track Master 100,16.358002s,1637,800,0.488699,800.000000,1637.000000,0.488699,0,25
+4,07:22:16.489,air1_far_short,Track Master 100,19.558001s,1957,800,0.408789,800.000000,1957.000000,0.408789,0,25
+5,07:22:31.531,air1F_close_long,Track Master 100,14.782001s,1334,800,0.599700,800.000000,1334.000000,0.599700,0,25
+6,07:22:48.194,air1F_far_long,Track Master 100,16.403000s,1486,800,0.538358,800.000000,1486.000000,0.538358,0,25
+7,07:23:08.516,air1F_close_short,Track Master 100,20.064001s,1855,800,0.431267,800.000000,1855.000000,0.431267,0,25
+8,07:23:29.223,air1F_far_short,Track Master 100,20.697001s,1925,800,0.415584,800.000000,1925.000000,0.415584,0,0
+
+Weapon,Shots,Hits,Damage Done,Damage Possible,,Sens Scale,Horiz Sens,Vert Sens,FOV,Hide Gun,Crosshair,Crosshair Scale,Crosshair Color,ADS Sens,ADS Zoom Scale,Avg Target Scale,Avg Time Dilation
+Track Master 100,13021,6400,6400.0,13021.0,
+
+Kills:,8
+Deaths:,0
+Fight Time:,136.110001
+Time Remaining:,0.0
+Avg TTK:,17.873236
+Damage Done:,6400.0
+Total Overshots:,167
+Damage Taken:,0.0
+Hit Count:,6400
+Miss Count:,6621
+Midairs:,0
+Midaired:,0
+Directs:,0
+Directed:,0
+Reloads:,0
+Distance Traveled:,0.0
+MBS Points:,0.0
+Score:,857.009277
+Scenario:,Air CELESTIAL No UFO Easy Slowed
+Hash:,03b72801e5e60f541e4ef6b8713e5e11
+Game Version:,3.8.7.2026-03-03-13-18-29-7697ade12a30
+Challenge Start:,07:21:06.232
+Pause Count:,0
+Pause Duration:,0
+Avg Target Scale:,1.0
+Avg Time Dilation:,1.0
+
+Input Lag:,0
+Max FPS (config):,360.0
+Sens Scale:,cm/360
+Sens Increment:,0.544872
+Horiz Sens:,29.967699
+Vert Sens:,29.967699
+DPI:,800
+FOV:,120.0
+FOVScale:,Call of Duty
+Hide Gun:,false
+Crosshair:,OPDot.png
+Crosshair Scale:,1.0
+Crosshair Color:,010000FF
+Resolution:,1920x1080
+Avg FPS:,362.238556
+Resolution Scale:,100.0

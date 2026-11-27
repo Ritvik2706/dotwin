@@ -1,0 +1,87 @@
+{
+	"playlistName": "Voltaic Intermediate Benchmarks S5",
+	"playlistId": 299889,
+	"authorSteamId": "76561198137004993",
+	"authorName": "Tammas",
+	"scenarioList": [
+		{
+			"scenario_name": "VT Pasu Intermediate S5",
+			"play_Count": 1
+		},
+		{
+			"scenario_name": "VT Popcorn Intermediate S5",
+			"play_Count": 1
+		},
+		{
+			"scenario_name": "VT 1w3ts Intermediate S5",
+			"play_Count": 1
+		},
+		{
+			"scenario_name": "VT ww5t Intermediate S5",
+			"play_Count": 1
+		},
+		{
+			"scenario_name": "VT Frogtagon Intermediate S5",
+			"play_Count": 1
+		},
+		{
+			"scenario_name": "VT Floating Heads Intermediate S5",
+			"play_Count": 1
+		},
+		{
+			"scenario_name": "VT PGT Intermediate S5",
+			"play_Count": 1
+		},
+		{
+			"scenario_name": "VT Snake Track Intermediate S5",
+			"play_Count": 1
+		},
+		{
+			"scenario_name": "VT Aether Intermediate S5",
+			"play_Count": 1
+		},
+		{
+			"scenario_name": "VT Ground Intermediate S5",
+			"play_Count": 1
+		},
+		{
+			"scenario_name": "VT Raw Control Intermediate S5",
+			"play_Count": 1
+		},
+		{
+			"scenario_name": "VT Controlsphere Intermediate S5",
+			"play_Count": 1
+		},
+		{
+			"scenario_name": "VT DotTS Intermediate S5",
+			"play_Count": 1
+		},
+		{
+			"scenario_name": "VT EddieTS Intermediate S5",
+			"play_Count": 1
+		},
+		{
+			"scenario_name": "VT DriftTS Intermediate S5",
+			"play_Count": 1
+		},
+		{
+			"scenario_name": "VT FlyTS Intermediate S5",
+			"play_Count": 1
+		},
+		{
+			"scenario_name": "VT ControlTS Intermediate S5",
+			"play_Count": 1
+		},
+		{
+			"scenario_name": "VT Penta Bounce Intermediate S5",
+			"play_Count": 1
+		}
+	],
+	"description": "Official Voltaic Season 5 - Intermediate Benchmark Playlist",
+	"hasOfflineScenarios": false,
+	"hasEdited": false,
+	"shareCode": "",
+	"version": 31,
+	"updated": 1734840034,
+	"isPrivate": false
+}

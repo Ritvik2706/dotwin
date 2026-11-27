@@ -1,0 +1,87 @@
+{
+	"playlistName": "Voltaic Novice Benchmarks S5",
+	"playlistId": 299890,
+	"authorSteamId": "76561198137004993",
+	"authorName": "Tammas",
+	"scenarioList": [
+		{
+			"scenario_name": "VT Pasu Novice S5",
+			"play_Count": 1
+		},
+		{
+			"scenario_name": "VT Popcorn Novice S5",
+			"play_Count": 1
+		},
+		{
+			"scenario_name": "VT 1w4ts Novice S5",
+			"play_Count": 1
+		},
+		{
+			"scenario_name": "VT ww5t Novice S5",
+			"play_Count": 1
+		},
+		{
+			"scenario_name": "VT Frogtagon Novice S5",
+			"play_Count": 1
+		},
+		{
+			"scenario_name": "VT Floating Heads Novice S5",
+			"play_Count": 1
+		},
+		{
+			"scenario_name": "VT PGT Novice S5",
+			"play_Count": 1
+		},
+		{
+			"scenario_name": "VT Snake Track Novice S5",
+			"play_Count": 1
+		},
+		{
+			"scenario_name": "VT Aether Novice S5",
+			"play_Count": 1
+		},
+		{
+			"scenario_name": "VT Ground Novice S5",
+			"play_Count": 1
+		},
+		{
+			"scenario_name": "VT Raw Control Novice S5",
+			"play_Count": 1
+		},
+		{
+			"scenario_name": "VT Controlsphere Novice S5",
+			"play_Count": 1
+		},
+		{
+			"scenario_name": "VT DotTS Novice S5",
+			"play_Count": 1
+		},
+		{
+			"scenario_name": "VT EddieTS Novice S5",
+			"play_Count": 1
+		},
+		{
+			"scenario_name": "VT DriftTS Novice S5",
+			"play_Count": 1
+		},
+		{
+			"scenario_name": "VT FlyTS Novice S5",
+			"play_Count": 1
+		},
+		{
+			"scenario_name": "VT ControlTS Novice S5",
+			"play_Count": 1
+		},
+		{
+			"scenario_name": "VT Penta Bounce Novice S5",
+			"play_Count": 1
+		}
+	],
+	"description": "Official Voltaic Season 5 - Novice Benchmark Playlist",
+	"hasOfflineScenarios": false,
+	"hasEdited": false,
+	"shareCode": "",
+	"version": 31,
+	"updated": 1734840400,
+	"isPrivate": false
+}

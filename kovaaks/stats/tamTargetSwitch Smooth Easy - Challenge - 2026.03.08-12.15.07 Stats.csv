@@ -1,0 +1,58 @@
+Kill #,Timestamp,Bot,Weapon,TTK,Shots,Hits,Accuracy,Damage Done,Damage Possible,Efficiency,Cheated,OverShots
+1,12:14:15.033,regen_dot,Poke-Drill,6.662000s,491,203,0.413442,203.000000,491.000000,0.413442,0,20
+2,12:14:27.014,regen_dot,Poke-Drill,11.543000s,870,413,0.474713,413.000000,870.000000,0.474713,0,24
+3,12:14:30.867,regen_dot,Poke-Drill,2.735000s,209,109,0.521531,109.000000,209.000000,0.521531,0,25
+4,12:14:38.423,regen_dot,Poke-Drill,6.945000s,529,234,0.442344,234.000000,529.000000,0.442344,0,24
+5,12:14:45.259,regen_dot,Poke-Drill,5.181000s,395,206,0.521519,206.000000,395.000000,0.521519,0,22
+6,12:14:53.785,regen_dot,Poke-Drill,8.039001s,612,345,0.563725,345.000000,612.000000,0.563725,0,20
+7,12:14:59.838,regen_dot,Poke-Drill,5.629000s,429,217,0.505827,217.000000,429.000000,0.505827,0,20
+8,12:15:02.158,regen_dot,Poke-Drill,1.521000s,97,62,0.639175,62.000000,97.000000,0.639175,0,21
+9,12:15:04.852,regen_dot,Poke-Drill,2.249000s,172,101,0.587209,101.000000,172.000000,0.587209,0,21
+10,12:15:07.341,regen_dot,Poke-Drill,2.236000s,171,101,0.590643,101.000000,171.000000,0.590643,0,3
+
+Weapon,Shots,Hits,Damage Done,Damage Possible,,Sens Scale,Horiz Sens,Vert Sens,FOV,Hide Gun,Crosshair,Crosshair Scale,Crosshair Color,ADS Sens,ADS Zoom Scale,Avg Target Scale,Avg Time Dilation
+Poke-Drill,3975,1991,1991.0,3975.0,
+
+Kills:,10
+Deaths:,0
+Fight Time:,52.740002
+Time Remaining:,0.0
+Avg TTK:,5.998954
+Damage Done:,1991.0
+Total Overshots:,200
+Damage Taken:,0.0
+Hit Count:,1991
+Miss Count:,1984
+Midairs:,0
+Midaired:,0
+Directs:,0
+Directed:,0
+Reloads:,0
+Distance Traveled:,0.0
+MBS Points:,0.0
+Score:,10.0
+Scenario:,tamTargetSwitch Smooth Easy
+Hash:,ec652a02944edf8ea184825c8a88b55b
+Game Version:,3.8.7.2026-03-03-13-18-29-7697ade12a30
+Challenge Start:,12:14:07.346
+Pause Count:,0
+Pause Duration:,0
+Avg Target Scale:,1.0
+Avg Time Dilation:,1.0
+
+Input Lag:,0
+Max FPS (config):,360.0
+Sens Scale:,cm/360
+Sens Increment:,0.544971
+Horiz Sens:,29.96225
+Vert Sens:,29.96225
+DPI:,800
+FOV:,120.0
+FOVScale:,Call of Duty
+Hide Gun:,false
+Crosshair:,OPDot.png
+Crosshair Scale:,1.0
+Crosshair Color:,010000FF
+Resolution:,1920x1080
+Avg FPS:,365.897156
+Resolution Scale:,100.0

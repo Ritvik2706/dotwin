@@ -1,0 +1,11 @@
+Name=Quaker Bot Hard
+DodgeProfileNames=Circle Strafe;Long Strafes;Mimic;Short Strafes
+DodgeProfileWeights=2.0;2.0;1.0;2.0
+DodgeProfileMaxChangeTime=5.0
+DodgeProfileMinChangeTime=1.0
+WeaponProfileWeights=1.0;0.25;2.0;1.0;1.0;1.0;1.0;1.0
+AimingProfileNames=At Feet;High Skill At Feet;High Skill;Default;Default;Default;Default;Default
+WeaponSwitchTime=3.0
+UseWeapons=true
+CharacterProfile=Quake RL No KB
+SeeThroughWalls=false

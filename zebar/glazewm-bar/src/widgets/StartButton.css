@@ -1,4 +1,4 @@
-/* Windows logo + name / power menu. */
+/* The sigil + name. The panel it opens is src/start/StartPanel.css. */
 
 .start {
     display: flex;
@@ -8,12 +8,6 @@
     font-family: var(--font-display);
     font-size: 18px;
     line-height: 1;
-
-    /* Power menus stay in the data font */
-    .inline-menu {
-        font-family: var(--font-data);
-        font-size: var(--font-size);
-    }
 }
 
 .start-button {

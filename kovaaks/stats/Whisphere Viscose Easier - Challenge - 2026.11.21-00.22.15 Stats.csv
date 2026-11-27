@@ -1,0 +1,48 @@
+Kill #,Timestamp,Bot,Weapon,TTK,Shots,Hits,Accuracy,Damage Done,Damage Possible,Efficiency,Cheated,OverShots
+
+Weapon,Shots,Hits,Damage Done,Damage Possible,,Sens Scale,Horiz Sens,Vert Sens,FOV,Hide Gun,Crosshair,Crosshair Scale,Crosshair Color,ADS Sens,ADS Zoom Scale,Avg Target Scale,Avg Time Dilation
+LG,29910,16690,16690.0,29910.0,
+
+Kills:,0
+Deaths:,0
+Fight Time:,0.0
+Time Remaining:,0.0
+Avg TTK:,0.0
+Damage Done:,16690.0
+Total Overshots:,0
+Damage Taken:,0.0
+Hit Count:,16690
+Miss Count:,13220
+Midairs:,0
+Midaired:,0
+Directs:,0
+Directed:,0
+Reloads:,0
+Distance Traveled:,0.0
+MBS Points:,0.0
+Score:,16690.0
+Scenario:,Whisphere Viscose Easier
+Hash:,684cf97b1840961fa62be90b299754fd
+Game Version:,3.9.14.2026-11-12-15-54-35-a2085c23b084
+Challenge Start:,00:21:15.081
+Pause Count:,0
+Pause Duration:,0
+Avg Target Scale:,1.0
+Avg Time Dilation:,1.0
+
+Input Lag:,0
+Max FPS (config):,180.0
+Sens Scale:,cm/360
+Sens Increment:,0.388775
+Horiz Sens:,42.0
+Vert Sens:,42.0
+DPI:,800
+FOV:,110.0
+FOVScale:,Overwatch
+Hide Gun:,false
+Crosshair:,clover-ascended.png
+Crosshair Scale:,0.9
+Crosshair Color:,000000FF
+Resolution:,1920x1080
+Avg FPS:,180.895248
+Resolution Scale:,100.0

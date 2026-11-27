@@ -1,0 +1,11 @@
+Name=Racer Bot
+DodgeProfileNames=Long Strafes Close;Short Strafes Close
+DodgeProfileWeights=1.0;2.0
+DodgeProfileMaxChangeTime=5.0
+DodgeProfileMinChangeTime=1.0
+WeaponProfileWeights=1.0;1.0;1.0;1.0;1.0;1.0;1.0;1.0
+AimingProfileNames=Ignore Spread;Default;Default;Default;Default;Default;Default;Default
+WeaponSwitchTime=3.0
+UseWeapons=true
+CharacterProfile=Racer
+SeeThroughWalls=false

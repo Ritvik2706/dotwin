@@ -8,7 +8,7 @@ import { useEffect, useRef, useState } from 'react';
  *
  * The first click on an id arms it and returns false; a second click on the
  * same id within `ms` returns true. `armed` is the armed id (or null), for
- * styling the button.
+ * styling the button; `disarm()` forgets it (e.g. when its menu closes).
  */
 export function useConfirm(ms = 3000) {
     const [armed, setArmed] = useState(null);
@@ -24,5 +24,10 @@ export function useConfirm(ms = 3000) {
         return false;
     };
 
-    return [armed, confirm];
+    const disarm = () => {
+        clearTimeout(timer.current);
+        setArmed(null);
+    };
+
+    return [armed, confirm, disarm];
 }

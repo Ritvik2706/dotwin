@@ -1,0 +1,11 @@
+Name=Counter-Striker Bot PEEKER
+DodgeProfileNames=cs peek
+DodgeProfileWeights=1.0
+DodgeProfileMaxChangeTime=10.0
+DodgeProfileMinChangeTime=0.1
+WeaponProfileWeights=1.5;1.5;1.5;1.0;1.0;1.0;1.0;1.0
+AimingProfileNames=cs;cs;cs;cs;cs;Default;Default;Default
+WeaponSwitchTime=5.0
+UseWeapons=true
+CharacterProfile=Counter-Striker
+SeeThroughWalls=true

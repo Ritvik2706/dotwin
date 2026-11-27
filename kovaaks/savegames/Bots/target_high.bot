@@ -1,0 +1,23 @@
+Name=target_high
+DodgeProfileNames=Mimic
+DodgeProfileWeights=1.0
+DodgeProfileMaxChangeTime=5.0
+DodgeProfileMinChangeTime=1.0
+WeaponProfileWeights=1.0;1.0;1.0;1.0;1.0;1.0;1.0;1.0
+AimingProfileNames=Default;Default;Default;Default;Default;Default;Default;Default
+WeaponSwitchTime=3.0
+UseWeapons=false
+CharacterProfile=target_high
+SeeThroughWalls=false
+NoDodging=true
+NoAiming=false
+AbilityUseTimer=0.1
+UseAbilityFrequency=1.0
+UseAbilityFreqMinTime=0.3
+UseAbilityFreqMaxTime=0.6
+ShowLaser=false
+LaserRGB=X=1.000 Y=0.300 Z=0.000
+LaserAlpha=1.0
+RandomizeDodgeProfiles=true
+RepeatDodgeProfileEntries=true
+UseMinimumRespawnTime=true

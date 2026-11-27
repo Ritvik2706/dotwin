@@ -1,0 +1,63 @@
+Name=Counting-Striker
+MaxHealth=100.0
+WeaponProfileNames=AK-47;M4A1-S;M4A4;USP-S;Deag;;;
+MinRespawnDelay=0.1
+MaxRespawnDelay=10.0
+StepUpHeight=75.0
+CrouchHeightModifier=0.75
+CrouchAnimationSpeed=1.0
+CameraOffset=X=0.000 Y=0.000 Z=0.000
+HeadshotOnly=false
+DamageKnockbackFactor=1.0
+MovementType=Base
+MaxSpeed=1100.0
+MaxCrouchSpeed=250.0
+Acceleration=6000.0
+AirAcceleration=16000.0
+Friction=7.5
+BrakingFrictionFactor=1.25
+JumpVelocity=800.0
+Gravity=2.5
+AirControl=1.0
+CanCrouch=true
+CanPogoJump=false
+CanCrouchInAir=true
+CanJumpFromCrouch=true
+EnemyBodyColor=X=0.546 Y=0.776 Z=0.546
+EnemyHeadColor=X=0.608 Y=0.463 Z=0.314
+TeamBodyColor=X=0.000 Y=0.000 Z=0.771
+TeamHeadColor=X=0.149 Y=0.542 Z=1.000
+BlockSelfDamage=true
+InvinciblePlayer=false
+InvincibleBots=false
+BlockTeamDamage=true
+AirJumpCount=0
+AirJumpVelocity=800.0
+MainBBType=Cylindrical
+MainBBHeight=300.0
+MainBBRadius=45.0
+MainBBHasHead=true
+MainBBHeadRadius=25.0
+MainBBHeadOffset=0.0
+MainBBHide=false
+ProjBBType=Cylindrical
+ProjBBHeight=300.0
+ProjBBRadius=45.0
+ProjBBHasHead=true
+ProjBBHeadRadius=25.0
+ProjBBHeadOffset=0.0
+ProjBBHide=true
+HasJetpack=false
+JetpackActivationDelay=0.5
+JetpackFullFuelTime=1000.0
+JetpackFuelIncPerSec=100.0
+JetpackFuelRegensInAir=true
+JetpackThrust=6000.0
+JetpackMaxZVelocity=600.0
+JetpackAirControlWithThrust=0.25
+AbilityProfileNames=;;;
+HideWeapon=false
+AerialFriction=0.0
+StrafeSpeedMult=1.0
+BackSpeedMult=1.0
+RespawnInvulnTime=0.0

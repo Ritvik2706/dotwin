@@ -1,0 +1,75 @@
+Kill #,Timestamp,Bot,Weapon,TTK,Shots,Hits,Accuracy,Damage Done,Damage Possible,Efficiency,Cheated,OverShots
+1,11:51:51.219,Quaker Bot Long Strafes,LG HS,11.800000s,237,8,0.033755,80.000000,2370.000000,0.033755,0,0
+2,11:51:53.619,Quaker Bot Long Strafes,LG HS,2.360000s,43,8,0.186047,80.000000,430.000000,0.186047,0,0
+3,11:51:55.279,Quaker Bot Long Strafes,LG HS,1.610000s,29,8,0.275862,80.000000,290.000000,0.275862,0,0
+4,11:51:56.679,Quaker Bot Long Strafes,LG HS,1.350000s,24,8,0.333333,80.000000,240.000000,0.333333,0,0
+5,11:51:59.109,Quaker Bot Long Strafes,LG HS,2.390000s,45,8,0.177778,80.000000,450.000000,0.177778,0,0
+6,11:52:01.060,Quaker Bot Long Strafes,LG HS,1.891000s,35,9,0.257143,90.000000,350.000000,0.257143,0,0
+7,11:52:02.519,Quaker Bot Long Strafes,LG HS,1.410000s,24,7,0.291667,70.000000,240.000000,0.291667,0,0
+8,11:52:04.469,Quaker Bot Long Strafes,LG HS,1.900000s,37,8,0.216216,80.000000,370.000000,0.216216,0,0
+9,11:52:07.268,Quaker Bot Long Strafes,LG HS,2.749000s,51,11,0.215686,110.000000,510.000000,0.215686,0,0
+10,11:52:09.219,Quaker Bot Long Strafes,LG HS,1.910000s,39,10,0.256410,100.000000,390.000000,0.256410,0,0
+11,11:52:10.309,Quaker Bot Long Strafes,LG HS,1.050000s,22,5,0.227273,50.000000,220.000000,0.227273,0,0
+12,11:52:12.739,Quaker Bot Long Strafes,LG HS,2.370000s,47,6,0.127660,60.000000,470.000000,0.127660,0,0
+13,11:52:14.869,Quaker Bot Long Strafes,LG HS,2.070000s,39,8,0.205128,80.000000,390.000000,0.205128,0,0
+14,11:52:16.119,Quaker Bot Long Strafes,LG HS,1.190000s,25,10,0.400000,100.000000,250.000000,0.400000,0,0
+15,11:52:16.909,Quaker Bot Long Strafes,LG HS,0.730000s,14,6,0.428571,60.000000,140.000000,0.428571,0,0
+16,11:52:18.519,Quaker Bot Long Strafes,LG HS,1.560000s,24,8,0.333333,80.000000,240.000000,0.333333,0,0
+17,11:52:19.849,Quaker Bot Long Strafes,LG HS,1.270000s,24,8,0.333333,80.000000,240.000000,0.333333,0,0
+18,11:52:23.679,Quaker Bot Long Strafes,LG HS,3.770000s,50,15,0.300000,150.000000,500.000000,0.300000,0,0
+19,11:52:24.779,Quaker Bot Long Strafes,LG HS,1.050000s,22,5,0.227273,50.000000,220.000000,0.227273,0,0
+20,11:52:27.579,Quaker Bot Long Strafes,LG HS,2.750000s,54,10,0.185185,100.000000,540.000000,0.185185,0,0
+21,11:52:28.748,Quaker Bot Long Strafes,LG HS,1.119000s,17,8,0.470588,80.000000,170.000000,0.470588,0,0
+22,11:52:30.980,Quaker Bot Long Strafes,LG HS,2.181000s,41,12,0.292683,120.000000,410.000000,0.292683,0,0
+23,11:52:31.909,Quaker Bot Long Strafes,LG HS,0.880000s,16,5,0.312500,50.000000,160.000000,0.312500,0,0
+24,11:52:32.859,Quaker Bot Long Strafes,LG HS,0.900000s,19,6,0.315789,60.000000,190.000000,0.315789,0,0
+25,11:52:34.459,Quaker Bot Long Strafes,LG HS,1.560000s,28,9,0.321429,90.000000,280.000000,0.321429,0,0
+26,11:52:35.209,Quaker Bot Long Strafes,LG HS,0.700000s,15,7,0.466667,70.000000,150.000000,0.466667,0,0
+27,11:52:36.349,Quaker Bot Long Strafes,LG HS,1.090000s,18,8,0.444444,80.000000,180.000000,0.444444,0,0
+
+Weapon,Shots,Hits,Damage Done,Damage Possible,,Sens Scale,Horiz Sens,Vert Sens,FOV,Hide Gun,Crosshair,Crosshair Scale,Crosshair Color,ADS Sens,ADS Zoom Scale,Avg Target Scale,Avg Time Dilation
+LG HS,1090,231,2310.0,10900.0,
+
+Kills:,27
+Deaths:,0
+Fight Time:,55.610001
+Time Remaining:,0.0
+Avg TTK:,2.221616
+Damage Done:,2310.0
+Total Overshots:,0
+Damage Taken:,0.0
+Hit Count:,231
+Miss Count:,859
+Midairs:,0
+Midaired:,0
+Directs:,0
+Directed:,0
+Reloads:,0
+Distance Traveled:,25991.763672
+MBS Points:,2977.0
+Score:,5287.0
+Scenario:,4BK - Realistic Dodge HS Switch
+Hash:,09957660e7dd03584dbbd7be4f868201
+Game Version:,3.8.6.2026-02-18-11-40-40-e860b3550f1e
+Challenge Start:,11:51:38.903
+Pause Count:,0
+Pause Duration:,0
+Avg Target Scale:,1.0
+Avg Time Dilation:,1.0
+
+Input Lag:,0
+Max FPS (config):,100.0
+Sens Scale:,Call of Duty
+Sens Increment:,0.544971
+Horiz Sens:,5.78
+Vert Sens:,5.78
+DPI:,800
+FOV:,120.0
+FOVScale:,Call of Duty
+Hide Gun:,false
+Crosshair:,lmbSmolPlus.png
+Crosshair Scale:,1.0
+Crosshair Color:,010000FF
+Resolution:,1920x1080
+Avg FPS:,100.193985
+Resolution Scale:,100.0

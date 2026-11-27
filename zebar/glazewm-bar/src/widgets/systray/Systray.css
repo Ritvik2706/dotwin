@@ -1,4 +1,4 @@
-/* Tray on the bar: pinned icons, the utilities, and the arrow that opens the
+/* Tray on the bar: pinned icons and the arrow that opens the
    tray panel (src/tray/TrayPanel.css). The icon styles are shared with the panel. */
 
 .tray {
@@ -71,18 +71,9 @@
     cursor: grabbing !important;
 }
 
-/* Network, Bluetooth, mic, settings: between the icons and the arrow. */
-.tray-utilities {
-    display: flex;
-    flex-shrink: 0;
-    align-items: center;
-    gap: 9px;
-    padding: 0 6px 0 9px;
-
-    /* Collapsed (nothing pinned), the utilities need no lead-in. */
-    &:first-child {
-        padding-left: 0;
-    }
+/* Room between the last pinned icon and the arrow. */
+.tray-strip + .tray-toggle {
+    margin-left: 6px;
 }
 
 /* The arrow: points along the bar at rest and turns down while the panel hangs

@@ -1,0 +1,11 @@
+Name=Counter-Striker Bot Harmless
+DodgeProfileNames=CsClose1;CsFar1;CsMimic1;CsOppose1;CsCareful1;CsCareless1;CsMid1;CsRandom1;CsFar2
+DodgeProfileWeights=1.0;1.0;1.0;1.0;1.0;1.0;1.0;1.0;1.0
+DodgeProfileMaxChangeTime=10.0
+DodgeProfileMinChangeTime=0.1
+WeaponProfileWeights=1.5;1.5;1.5;1.0;1.0;1.0;1.0;1.0
+AimingProfileNames=cs;cs;cs;cs;cs;Default;Default;Default
+WeaponSwitchTime=3.0
+UseWeapons=false
+CharacterProfile=Counter-Striker
+SeeThroughWalls=false

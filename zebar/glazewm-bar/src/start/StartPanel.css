@@ -1,0 +1,178 @@
+/* The start panel (StartPanel.jsx): the tray panel's black plate with a silver
+   edge (tray/TrayPanel.css), hanging under the sigil. The window is sized to
+   .start-panel, so the page around it is transparent. */
+
+html,
+body,
+#root {
+    background: transparent;
+}
+
+.start-panel {
+    --tile-w: 62px;
+    --tile-h: 48px;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: max-content;
+    padding: 8px 10px 7px;
+    background: var(--bg-solid);
+    border: 1px solid var(--border);
+    border-top: 1px solid var(--silver);
+    white-space: nowrap;
+
+    &.open {
+        animation: start-drop 0.16s ease-out;
+    }
+
+    header {
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+        gap: 24px;
+        padding: 0 2px 6px;
+    }
+}
+
+.start-panel-title {
+    color: var(--silver);
+    font-family: var(--font-display);
+    font-size: 17px;
+    line-height: 1;
+}
+
+.start-panel-uptime {
+    color: var(--muted);
+    font-family: var(--font-display);
+    font-size: 14px;
+    line-height: 1;
+}
+
+.start-panel-label {
+    margin: 8px 2px 4px;
+    padding-top: 6px;
+    border-top: 1px solid var(--border);
+    color: var(--muted);
+    font-family: var(--font-display);
+    font-size: 13px;
+    line-height: 1;
+}
+
+/* Fixed columns, so both rows line up and the footer can't stretch the panel. */
+.start-grid {
+    display: grid;
+    grid-template-columns: repeat(5, var(--tile-w));
+    grid-auto-rows: var(--tile-h);
+}
+
+.start-tile {
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    width: var(--tile-w);
+    height: var(--tile-h);
+    color: var(--text);
+    animation: start-in 0.22s ease-out backwards;
+    animation-delay: calc(var(--i) * 22ms);
+    transition: background var(--transition), color var(--transition);
+
+    .glyph {
+        width: 16px;
+        height: 16px;
+        color: var(--icon);
+    }
+
+    /* Labels in the bar's blackletter, like the headings */
+    span {
+        font-family: var(--font-display);
+        font-size: 14px;
+        line-height: 1;
+    }
+
+    &:hover {
+        color: var(--text-bright);
+        background: var(--surface-hover);
+
+        .glyph {
+            color: var(--text-bright);
+        }
+    }
+
+    &.destructive:hover .glyph {
+        color: var(--danger);
+    }
+
+    /* Off, muted, offline */
+    &.dim {
+        color: var(--muted);
+
+        .glyph {
+            color: var(--muted);
+        }
+    }
+
+    /* Something's connected */
+    &.lit .glyph {
+        color: var(--text-bright);
+    }
+
+    &.busy {
+        opacity: 0.5;
+    }
+
+    /* Armed: the next click runs it (hooks/useConfirm.js) */
+    &.confirming,
+    &.confirming:hover {
+        color: var(--on-accent);
+        background: var(--danger);
+
+        .glyph {
+            color: var(--on-accent);
+        }
+    }
+}
+
+/* The hovered tile's hint, cut to the grid's width. */
+.start-panel footer {
+    width: 0;
+    min-width: 100%;
+    margin-top: 6px;
+    padding: 5px 2px 0;
+    overflow: hidden;
+    border-top: 1px solid var(--border);
+    text-overflow: ellipsis;
+}
+
+.start-tip-name {
+    color: var(--text-bright);
+}
+
+.start-tip-detail {
+    color: var(--muted);
+}
+
+.start-tip-warn {
+    color: var(--danger);
+}
+
+@keyframes start-drop {
+    from {
+        opacity: 0;
+        translate: 0 -6px;
+    }
+}
+
+@keyframes start-in {
+    from {
+        opacity: 0;
+        translate: -10px 0;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .start-panel.open,
+    .start-tile {
+        animation: none;
+    }
+}

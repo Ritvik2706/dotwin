@@ -1,0 +1,56 @@
+Kill #,Timestamp,Bot,Weapon,TTK,Shots,Hits,Accuracy,Damage Done,Damage Possible,Efficiency,Cheated,OverShots
+1,09:03:06.254,Quaker Bot Long Strafes,LG,4.226000s,93,50,0.537634,300.000000,558.000000,0.537634,0,5
+2,09:03:12.620,Quaker Bot Long Strafes,LG,6.089000s,100,50,0.500000,300.000000,600.000000,0.500000,0,5
+3,09:03:19.913,Quaker Bot Long Strafes,LG,7.016000s,120,50,0.416667,300.000000,720.000000,0.416667,0,5
+4,09:03:26.674,Quaker Bot Long Strafes,LG,6.488000s,108,50,0.462963,300.000000,648.000000,0.462963,0,5
+5,09:03:35.295,Quaker Bot Long Strafes,LG,8.343000s,149,50,0.335570,300.000000,894.000000,0.335570,0,5
+6,09:03:42.611,Quaker Bot Long Strafes,LG,7.044000s,119,50,0.420168,300.000000,714.000000,0.420168,0,5
+7,09:03:50.994,Quaker Bot Long Strafes,LG,6.437000s,141,50,0.354610,300.000000,846.000000,0.354610,0,5
+8,09:03:58.387,Quaker Bot Long Strafes,LG,7.116000s,122,50,0.409836,300.000000,732.000000,0.409836,0,5
+
+Weapon,Shots,Hits,Damage Done,Damage Possible,,Sens Scale,Horiz Sens,Vert Sens,FOV,Hide Gun,Crosshair,Crosshair Scale,Crosshair Color,ADS Sens,ADS Zoom Scale,Avg Target Scale,Avg Time Dilation
+LG,982,411,2466.0,5892.0,
+
+Kills:,8
+Deaths:,0
+Fight Time:,52.758999
+Time Remaining:,0.0
+Avg TTK:,7.496821
+Damage Done:,2466.0
+Total Overshots:,40
+Damage Taken:,0.0
+Hit Count:,411
+Miss Count:,571
+Midairs:,0
+Midaired:,0
+Directs:,0
+Directed:,0
+Reloads:,0
+Distance Traveled:,0.0
+MBS Points:,0.0
+Score:,3096.311523
+Scenario:,Far Long Warzone
+Hash:,707727ce192ab8ce2a7bf89f79ee3bec
+Game Version:,3.8.7.2026-03-03-13-18-29-7697ade12a30
+Challenge Start:,09:03:01.319
+Pause Count:,0
+Pause Duration:,0
+Avg Target Scale:,1.0
+Avg Time Dilation:,1.0
+
+Input Lag:,0
+Max FPS (config):,180.0
+Sens Scale:,cm/360
+Sens Increment:,0.362857
+Horiz Sens:,45.0
+Vert Sens:,45.0
+DPI:,800
+FOV:,103.0
+FOVScale:,Overwatch
+Hide Gun:,false
+Crosshair:,lmbDot.png
+Crosshair Scale:,1.0
+Crosshair Color:,010000FF
+Resolution:,1920x1080
+Avg FPS:,180.042984
+Resolution Scale:,100.0

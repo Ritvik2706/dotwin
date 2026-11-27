@@ -1,0 +1,81 @@
+Kill #,Timestamp,Bot,Weapon,TTK,Shots,Hits,Accuracy,Damage Done,Damage Possible,Efficiency,Cheated,OverShots
+1,00:02:25.218,regen_dot,pistol,0.000000s,1,1,1.000000,1.000000,2.000000,0.500000,0,0
+2,00:02:27.334,regen_dot,pistol,0.000000s,1,1,1.000000,1.000000,2.000000,0.500000,0,0
+3,00:02:28.454,regen_dot,pistol,0.000000s,1,1,1.000000,1.000000,2.000000,0.500000,0,0
+4,00:02:30.576,regen_dot,pistol,1.120000s,3,1,0.333333,1.000000,6.000000,0.166667,0,0
+5,00:02:32.409,regen_dot,pistol,0.000000s,1,1,1.000000,1.000000,2.000000,0.500000,0,0
+6,00:02:33.795,regen_dot,pistol,0.348000s,2,1,0.500000,1.000000,4.000000,0.250000,0,0
+7,00:02:35.255,regen_dot,pistol,0.437000s,2,1,0.500000,1.000000,4.000000,0.250000,0,0
+8,00:02:36.285,regen_dot,pistol,0.000000s,1,1,1.000000,1.000000,2.000000,0.500000,0,0
+9,00:02:37.831,regen_dot,pistol,0.000000s,1,1,1.000000,1.000000,2.000000,0.500000,0,0
+10,00:02:39.158,regen_dot,pistol,0.001000s,1,1,1.000000,1.000000,2.000000,0.500000,0,0
+11,00:02:40.109,regen_dot,pistol,0.292000s,2,1,0.500000,1.000000,4.000000,0.250000,0,0
+12,00:02:42.118,regen_dot,pistol,0.678000s,2,1,0.500000,1.000000,4.000000,0.250000,0,0
+13,00:02:44.692,regen_dot,pistol,1.767000s,2,1,0.500000,1.000000,4.000000,0.250000,0,0
+14,00:02:46.005,regen_dot,pistol,0.000000s,1,1,1.000000,1.000000,2.000000,0.500000,0,0
+15,00:02:47.890,regen_dot,pistol,0.000000s,1,1,1.000000,1.000000,2.000000,0.500000,0,0
+16,00:02:50.410,regen_dot,pistol,0.000000s,1,1,1.000000,1.000000,2.000000,0.500000,0,0
+17,00:02:53.571,regen_dot,pistol,1.852000s,3,1,0.333333,1.000000,6.000000,0.166667,0,0
+18,00:02:54.734,regen_dot,pistol,0.334000s,2,1,0.500000,1.000000,4.000000,0.250000,0,0
+19,00:02:56.467,regen_dot,pistol,0.337000s,2,1,0.500000,1.000000,4.000000,0.250000,0,0
+20,00:02:59.620,regen_dot,pistol,2.298000s,3,1,0.333333,1.000000,6.000000,0.166667,0,0
+21,00:03:02.610,regen_dot,pistol,2.302000s,4,1,0.250000,1.000000,8.000000,0.125000,0,0
+22,00:03:03.145,regen_dot,pistol,0.000000s,1,1,1.000000,1.000000,2.000000,0.500000,0,0
+23,00:03:04.117,regen_dot,pistol,0.000000s,1,1,1.000000,1.000000,2.000000,0.500000,0,0
+24,00:03:05.968,regen_dot,pistol,0.000000s,1,1,1.000000,1.000000,2.000000,0.500000,0,0
+25,00:03:07.539,regen_dot,pistol,0.852000s,2,1,0.500000,1.000000,4.000000,0.250000,0,0
+26,00:03:10.470,regen_dot,pistol,1.351000s,2,1,0.500000,1.000000,4.000000,0.250000,0,0
+27,00:03:11.975,regen_dot,pistol,0.345000s,2,1,0.500000,1.000000,4.000000,0.250000,0,0
+28,00:03:13.813,regen_dot,pistol,0.648000s,2,1,0.500000,1.000000,4.000000,0.250000,0,0
+29,00:03:14.998,regen_dot,pistol,0.001000s,1,1,1.000000,1.000000,2.000000,0.500000,0,0
+30,00:03:16.874,regen_dot,pistol,1.149000s,3,1,0.333333,1.000000,6.000000,0.166667,0,0
+31,00:03:18.769,regen_dot,pistol,0.827000s,2,1,0.500000,1.000000,4.000000,0.250000,0,0
+32,00:03:19.877,regen_dot,pistol,0.000000s,1,1,1.000000,1.000000,2.000000,0.500000,0,0
+33,00:03:22.999,regen_dot,pistol,2.490000s,4,1,0.250000,1.000000,8.000000,0.125000,0,0
+
+Weapon,Shots,Hits,Damage Done,Damage Possible,,Sens Scale,Horiz Sens,Vert Sens,FOV,Hide Gun,Crosshair,Crosshair Scale,Crosshair Color,ADS Sens,ADS Zoom Scale,Avg Target Scale,Avg Time Dilation
+pistol,60,33,33.0,120.0,
+
+Kills:,33
+Deaths:,0
+Fight Time:,19.429001
+Time Remaining:,0.0
+Avg TTK:,1.816102
+Damage Done:,33.0
+Total Overshots:,0
+Damage Taken:,0.0
+Hit Count:,33
+Miss Count:,27
+Midairs:,0
+Midaired:,0
+Directs:,0
+Directed:,0
+Reloads:,2
+Distance Traveled:,0.0
+MBS Points:,0.0
+Score:,33.0
+Scenario:,Controlsphere Click Easy
+Hash:,50f3333e3c4a0300e6f423332c196c37
+Game Version:,3.8.7.2026-03-03-13-18-29-7697ade12a30
+Challenge Start:,00:02:23.861
+Pause Count:,0
+Pause Duration:,0
+Avg Target Scale:,1.0
+Avg Time Dilation:,1.0
+
+Input Lag:,0
+Max FPS (config):,360.0
+Sens Scale:,cm/360
+Sens Increment:,0.388775
+Horiz Sens:,42.0
+Vert Sens:,42.0
+DPI:,800
+FOV:,120.0
+FOVScale:,Call of Duty
+Hide Gun:,false
+Crosshair:,lmbDot.png
+Crosshair Scale:,1.0
+Crosshair Color:,010000FF
+Resolution:,1920x1080
+Avg FPS:,153.625732
+Resolution Scale:,100.0

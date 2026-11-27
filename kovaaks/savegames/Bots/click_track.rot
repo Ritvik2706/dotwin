@@ -1,0 +1,5 @@
+Name=click_track
+ProfileNames=Quaker Bot Long Strafes;target;target_high;target_low;target;target_high;target_low
+ProfileWeights=1.0;1.0;1.0;1.0;1.0;1.0;1.0
+Randomized=false
+AllowRepeatEntries=true

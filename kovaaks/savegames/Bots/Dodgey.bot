@@ -1,0 +1,11 @@
+Name=Dodgey
+DodgeProfileNames=ADAD;MidStrafes;Stop;MidStrafes2
+DodgeProfileWeights=1.5;3.0;0.1;1.2
+DodgeProfileMaxChangeTime=1.25
+DodgeProfileMinChangeTime=0.35
+WeaponProfileWeights=0.0;0.0;1.0;1.0;1.0;1.0;1.0;1.0
+AimingProfileNames=At Feet;At Feet;Low Skill;Default;Default;Default;Default;Default
+WeaponSwitchTime=3.0
+UseWeapons=false
+CharacterProfile=Dodgey
+SeeThroughWalls=false

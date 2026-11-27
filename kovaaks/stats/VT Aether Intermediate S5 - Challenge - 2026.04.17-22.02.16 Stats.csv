@@ -1,0 +1,51 @@
+Kill #,Timestamp,Bot,Weapon,TTK,Shots,Hits,Accuracy,Damage Done,Damage Possible,Efficiency,Cheated,OverShots
+1,22:01:35.032,Aether 1 Bot,Track Master 100,18.864000s,1888,560,0.296610,0.559996,1.888032,0.296603,0,0
+2,22:01:55.436,Aether 2 Bot,Track Master 100,20.394001s,1969,631,0.320467,0.630995,1.969036,0.320459,0,0
+3,22:02:15.839,Aether 3 Bot,Track Master 100,20.398001s,1969,540,0.274251,0.539997,1.969036,0.274244,0,0
+
+Weapon,Shots,Hits,Damage Done,Damage Possible,,Sens Scale,Horiz Sens,Vert Sens,FOV,Hide Gun,Crosshair,Crosshair Scale,Crosshair Color,ADS Sens,ADS Zoom Scale,Avg Target Scale,Avg Time Dilation
+Track Master 100,5845,1731,1.731025,5.844759,
+
+Kills:,3
+Deaths:,0
+Fight Time:,59.655998
+Time Remaining:,0.0
+Avg TTK:,19.99148
+Damage Done:,1.731025
+Total Overshots:,0
+Damage Taken:,0.0
+Hit Count:,1731
+Miss Count:,4114
+Midairs:,0
+Midaired:,0
+Directs:,0
+Directed:,0
+Reloads:,0
+Distance Traveled:,0.0
+MBS Points:,0.0
+Score:,1731.0
+Scenario:,VT Aether Intermediate S5
+Hash:,c4c11bf8a727b6e6c836138535bd0879
+Game Version:,3.8.7.2026-03-03-13-18-29-7697ade12a30
+Challenge Start:,22:01:16.042
+Pause Count:,0
+Pause Duration:,0
+Avg Target Scale:,1.0
+Avg Time Dilation:,1.0
+
+Input Lag:,0
+Max FPS (config):,180.0
+Sens Scale:,cm/360
+Sens Increment:,0.429699
+Horiz Sens:,38.0
+Vert Sens:,38.0
+DPI:,800
+FOV:,103.0
+FOVScale:,Overwatch
+Hide Gun:,false
+Crosshair:,lmbDot.png
+Crosshair Scale:,1.0
+Crosshair Color:,010000FF
+Resolution:,1920x1080
+Avg FPS:,180.043365
+Resolution Scale:,100.0

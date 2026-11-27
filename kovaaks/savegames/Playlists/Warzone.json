@@ -1,0 +1,75 @@
+{
+	"playlistName": "Warzone",
+	"playlistId": 32,
+	"authorSteamId": "76561198066375616",
+	"authorName": "DrUninstall",
+	"scenarioList": [
+		{
+			"scenario_name": "voxTS Viscose Varied",
+			"play_Count": 1
+		},
+		{
+			"scenario_name": "PatTS 90 NR smooth",
+			"play_Count": 2
+		},
+		{
+			"scenario_name": "TamTS Warzone",
+			"play_Count": 2
+		},
+		{
+			"scenario_name": "180 Regen Warzone",
+			"play_Count": 2
+		},
+		{
+			"scenario_name": "Close Long Strafes Robot Warzone",
+			"play_Count": 2
+		},
+		{
+			"scenario_name": "Glider GOATED Easy",
+			"play_Count": 2
+		},
+		{
+			"scenario_name": "Midrange fast strafes Robot Warzone",
+			"play_Count": 2
+		},
+		{
+			"scenario_name": "Warzone High Ground Tracking",
+			"play_Count": 2
+		},
+		{
+			"scenario_name": "Far Long Warzone",
+			"play_Count": 2
+		},
+		{
+			"scenario_name": "Reactive Switching",
+			"play_Count": 2
+		},
+		{
+			"scenario_name": "1wallvalorantsmall",
+			"play_Count": 1
+		},
+		{
+			"scenario_name": "Wide Wall 3 Targets",
+			"play_Count": 2
+		},
+		{
+			"scenario_name": "Tamspeed 2bpes",
+			"play_Count": 2
+		},
+		{
+			"scenario_name": "Floating Heads Timing 400% FIXED",
+			"play_Count": 2
+		},
+		{
+			"scenario_name": "Reactive Clicking",
+			"play_Count": 2
+		}
+	],
+	"description": "",
+	"hasOfflineScenarios": false,
+	"hasEdited": false,
+	"shareCode": "",
+	"version": 31,
+	"updated": 1682026127,
+	"isPrivate": false
+}

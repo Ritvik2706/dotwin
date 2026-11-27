@@ -1,0 +1,54 @@
+Kill #,Timestamp,Bot,Weapon,TTK,Shots,Hits,Accuracy,Damage Done,Damage Possible,Efficiency,Cheated,OverShots
+1,02:23:40.961,fast strafes blink,LG,22.827002s,2284,1000,0.437828,1000.000000,2284.000000,0.437828,0,25
+2,02:24:02.181,long strafe ufo blink,LG,19.359001s,1937,1000,0.516262,1000.000000,1937.000000,0.516262,0,26
+3,02:24:23.159,air1_UFO,LG,20.717001s,1999,1000,0.500250,1000.000000,1999.000000,0.500250,0,25
+4,02:24:46.583,ufo slow,LG,23.159000s,2243,1000,0.445831,1000.000000,2243.000000,0.445831,0,25
+5,02:25:05.927,air1F_far_long,LG,19.080002s,1697,1000,0.589275,1000.000000,1697.000000,0.589275,0,25
+6,02:25:23.205,air1F_close_long,LG,17.273001s,1662,1000,0.601685,1000.000000,1662.000000,0.601685,0,0
+
+Weapon,Shots,Hits,Damage Done,Damage Possible,,Sens Scale,Horiz Sens,Vert Sens,FOV,Hide Gun,Crosshair,Crosshair Scale,Crosshair Color,ADS Sens,ADS Zoom Scale,Avg Target Scale,Avg Time Dilation
+LG,11822,6000,6000.0,11822.0,
+
+Kills:,6
+Deaths:,0
+Fight Time:,122.415001
+Time Remaining:,0.0
+Avg TTK:,20.906496
+Damage Done:,6000.0
+Total Overshots:,126
+Damage Taken:,0.0
+Hit Count:,6000
+Miss Count:,5822
+Midairs:,0
+Midaired:,0
+Directs:,0
+Directed:,0
+Reloads:,0
+Distance Traveled:,0.0
+MBS Points:,0.0
+Score:,874.540771
+Scenario:,Ground Plaza Sparky v3 Easy
+Hash:,72ea8e31eb7d3eb5b884c97b05465100
+Game Version:,3.9.0.2026-04-27-18-43-07-15870d84c21e
+Challenge Start:,02:23:17.750
+Pause Count:,0
+Pause Duration:,0
+Avg Target Scale:,1.0
+Avg Time Dilation:,1.0
+
+Input Lag:,0
+Max FPS (config):,180.0
+Sens Scale:,cm/360
+Sens Increment:,0.544286
+Horiz Sens:,30.0
+Vert Sens:,30.0
+DPI:,800
+FOV:,103.0
+FOVScale:,Overwatch
+Hide Gun:,false
+Crosshair:,lmbDot.png
+Crosshair Scale:,1.0
+Crosshair Color:,010000FF
+Resolution:,1920x1080
+Avg FPS:,180.023788
+Resolution Scale:,100.0

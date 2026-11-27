@@ -1,0 +1,55 @@
+Kill #,Timestamp,Bot,Weapon,TTK,Shots,Hits,Accuracy,Damage Done,Damage Possible,Efficiency,Cheated,OverShots
+1,07:36:12.359,Flicker 3,LG,14.767001s,1330,553,0.415789,721.111938,1734.299194,0.415794,0,24
+2,07:36:32.232,Flicker 4,LG,17.942001s,1616,553,0.342203,721.111938,2107.230469,0.342208,0,20
+3,07:36:49.672,Flicker 5,LG,15.511001s,1397,553,0.395848,721.111938,1821.664185,0.395853,0,21
+4,07:37:11.210,Flicker 6,LG,19.644001s,1769,553,0.312606,721.111938,2306.735596,0.312611,0,20
+5,07:37:29.182,Flicker 7,LG,16.076000s,1448,553,0.381906,721.111938,1888.165894,0.381911,0,19
+6,07:37:46.442,Flicker 8,LG,15.287001s,1377,553,0.401598,721.111938,1795.585083,0.401603,0,22
+7,07:38:04.305,Flicker 9,LG,16.033001s,1444,553,0.382964,721.111938,1882.950073,0.382969,0,0
+
+Weapon,Shots,Hits,Damage Done,Damage Possible,,Sens Scale,Horiz Sens,Vert Sens,FOV,Hide Gun,Crosshair,Crosshair Scale,Crosshair Color,ADS Sens,ADS Zoom Scale,Avg Target Scale,Avg Time Dilation
+LG,10381,3871,5047.827148,13536.162109,
+
+Kills:,7
+Deaths:,0
+Fight Time:,115.260002
+Time Remaining:,0.0
+Avg TTK:,18.172087
+Damage Done:,5047.827148
+Total Overshots:,126
+Damage Taken:,0.0
+Hit Count:,3871
+Miss Count:,6510
+Midairs:,0
+Midaired:,0
+Directs:,0
+Directed:,0
+Reloads:,0
+Distance Traveled:,0.0
+MBS Points:,0.0
+Score:,885.511414
+Scenario:,Flicker Plaza rAim Easy Less Blinks
+Hash:,3cb77f31868838825dec534e8cc1b9ab
+Game Version:,3.8.7.2026-03-03-13-18-29-7697ade12a30
+Challenge Start:,07:35:57.096
+Pause Count:,0
+Pause Duration:,0
+Avg Target Scale:,1.0
+Avg Time Dilation:,1.0
+
+Input Lag:,0
+Max FPS (config):,360.0
+Sens Scale:,cm/360
+Sens Increment:,0.544872
+Horiz Sens:,29.967699
+Vert Sens:,29.967699
+DPI:,800
+FOV:,120.0
+FOVScale:,Call of Duty
+Hide Gun:,false
+Crosshair:,OPDot.png
+Crosshair Scale:,1.0
+Crosshair Color:,010000FF
+Resolution:,1920x1080
+Avg FPS:,362.707001
+Resolution Scale:,100.0

@@ -1,4 +1,5 @@
 import React from 'react';
+import { useBluetooth } from './lib/system.js';
 import { useProviders } from './providers.js';
 import Island from './ui/Island.jsx';
 
@@ -13,12 +14,8 @@ import BindingModes from './widgets/BindingModes.jsx';
 import { Cpu, Memory } from './widgets/SystemStats.jsx';
 import Gpu from './widgets/Gpu.jsx';
 import Weather from './widgets/Weather.jsx';
-import Network from './widgets/Network.jsx';
-import Bluetooth from './widgets/Bluetooth.jsx';
 import Volume from './widgets/Volume.jsx';
 import Brightness from './widgets/Brightness.jsx';
-import Mic from './widgets/Mic.jsx';
-import QuickSettings from './widgets/QuickSettings.jsx';
 
 /**
  * The whole bar, left to right. Each side is a row of islands (groups of
@@ -29,12 +26,14 @@ import QuickSettings from './widgets/QuickSettings.jsx';
  */
 export default function Bar() {
     const { glazewm, host, date, media, systray, memory, cpu, weather, network, audio } = useProviders();
+    // For the start panel's System row.
+    const bluetooth = useBluetooth(glazewm);
 
     return (
         <div className="bar">
             <div className="bar-left">
                 <Island>
-                    <StartButton systray={systray} hostname={host?.hostname}/>
+                    <StartButton systray={systray} host={host} network={network} audio={audio} bluetooth={bluetooth}/>
                     <Workspaces glazewm={glazewm}/>
                 </Island>
                 <OpenApps glazewm={glazewm} systray={systray}/>
@@ -51,12 +50,7 @@ export default function Bar() {
             </div>
 
             <div className="bar-right">
-                <Systray systray={systray} glazewm={glazewm}>
-                    <Network network={network}/>
-                    <Bluetooth glazewm={glazewm}/>
-                    <Mic audio={audio}/>
-                    <QuickSettings/>
-                </Systray>
+                <Systray systray={systray} glazewm={glazewm}/>
                 <Island>
                     <BindingModes glazewm={glazewm}/>
                     <Memory memory={memory}/>

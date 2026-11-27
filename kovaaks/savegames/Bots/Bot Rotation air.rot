@@ -1,0 +1,4 @@
+Name=Bot Rotation air
+ProfileNames=air1_close_long;air1_far_long;air_close_short;air1_far_short;air1F_close_long;air1F_far_long;air1F_close_short;air1F_far_short;air1_UFO
+ProfileWeights=1.0;1.0;1.0;1.0;1.0;1.0;1.0;1.0;1.0
+Randomized=false

@@ -1,0 +1,11 @@
+Name=air1F_far_long
+DodgeProfileNames=Long Strafes Jumping
+DodgeProfileWeights=1.0
+DodgeProfileMaxChangeTime=5.0
+DodgeProfileMinChangeTime=1.0
+WeaponProfileWeights=1.0;1.0;1.0;1.0;1.0;1.0;1.0;1.0
+AimingProfileNames=Default;Default;Default;Default;Default;Default;Default;Default
+WeaponSwitchTime=3.0
+UseWeapons=true
+CharacterProfile=air1_fast
+SeeThroughWalls=false

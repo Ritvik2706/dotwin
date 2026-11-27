@@ -14,7 +14,7 @@ import './Systray.css';
 /**
  * Windows notification-area icons.
  *
- *   [pinned icons] [network bluetooth mic settings] [n ➤]
+ *   [pinned icons] [n ➤]
  *
  * - Only pinned icons sit on the bar; the rest are in the tray panel, a
  *   flyout window under the arrow (src/tray/, linked through trayLink.js) that
@@ -25,7 +25,6 @@ import './Systray.css';
  *   owning app, on the bar and in the panel.
  * - Shift+click pins or unpins. Drag to reorder; on the bar, drag onto the arrow
  *   to unpin; in the panel, drag between its two sections.
- * - `children` (network, Bluetooth, mic, settings) always stay on the bar.
  *
  *   trayItems.js     provider icons -> items (+ NVIDIA stand-in)
  *   useDeadIcons.js  finds icons left behind by dead apps
@@ -44,7 +43,7 @@ function forward(item, type) {
         .catch(err => console.debug(`tray: ${type} failed`, err));
 }
 
-export default function Systray({ systray, glazewm, children }) {
+export default function Systray({ systray, glazewm }) {
     const panelOpen = useRef(false);
     const windowsKey = allWindows(glazewm).map(e => e.win.id).join();
     const { dead, check } = useDeadIcons(systray, windowsKey, panelOpen);
@@ -88,7 +87,6 @@ export default function Systray({ systray, glazewm, children }) {
                     ))}
                 </div>
             ) : null}
-            <div className="tray-utilities">{children}</div>
             <button
                 ref={arrow}
                 className={cx(

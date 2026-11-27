@@ -17,6 +17,7 @@ glazewm-bar/
 ├── zpack.json            Zebar pack manifest: window placement + shellCommands privileges
 ├── index.html            Vite entry for the bar (mounts src/main.jsx)
 ├── tray.html             Vite entry for the tray panel window (mounts src/tray/main.jsx)
+├── start.html            Vite entry for the start panel window (mounts src/start/main.jsx)
 ├── public/               copied as-is next to index.html (nvidia.png)
 ├── scripts/*.ps1         PowerShell helpers the bar runs (see "Talking to Windows")
 └── src/
@@ -29,15 +30,18 @@ glazewm-bar/
     ├── widgets/          one file per widget, each with its own .css next to it
     │   └── systray/      the tray is big enough for a folder: items, saved layout, drag-and-drop,
     │                     hiding icons left behind by crashed apps, and the link to the panel
-    ├── tray/             the tray panel: a second widget window that drops down under the arrow
+    ├── tray/             the tray panel: a widget window that drops down under the arrow
+    ├── start/            the start panel: the same, under the sigil (power, Start menu, taskbar, settings)
     ├── ui/               shared building blocks: Island, InlineMenu/MenuItem, Stat, AppIcon
     ├── hooks/            useConfirm (click twice), useInterval (polling)
     └── lib/              non-React helpers
         ├── commands.js   every way the bar runs something outside Zebar
+        ├── panelLink.js  drop-down panel windows: start, show, place and hide them, bar <-> panel events
         ├── glazewm.js    window/workspace helpers (find, focus, close)
         ├── monitorTree.js  keeps the window list current (the provider misses closes)
         ├── dwindle.js    Hyprland-style tiling: splits along the focused window's longer side
         ├── appIcons.js   real app icons for windows (useAppIcon)
+        ├── system.js     network and Bluetooth state for the start panel (bluetooth.ps1)
         ├── store.js      persistent key/value store (scripts/state.ps1)
         └── format.js     cx() class names, truncate()
 ```
@@ -46,23 +50,19 @@ glazewm-bar/
 
 | Widget | File | Click | Right-click | Other |
 |---|---|---|---|---|
-| Start button | `StartButton.jsx`, `PowerMenu.jsx` | power menu | Start menu; show/hide the Windows taskbar | |
+| Start button | `StartButton.jsx`, `startActions.js`, `src/start/` | the start panel | Windows Start menu | the panel drops down under the sigil like the tray's, drawn in the bar's own glyphs: lock, sleep, sign out, restart, shut down (the last three click twice); System: network (flyout; right-click settings), Bluetooth (settings; right-click radio on/off; `bluetooth.ps1` every 60 s and when the panel opens, paused while GlazeWM is paused), mic (mute; right-click sound settings) and quick settings; Windows: Start menu and taskbar toggle (only while `CapsEscSwap.ahk` runs), Settings and Task Manager. Uptime in its header, the hovered tile's hint at the bottom; closes like the tray panel, except after a toggle (mic, Bluetooth radio, taskbar) |
 | Workspaces | `Workspaces.jsx` | switch workspace | | scroll walks workspaces |
 | Open apps | `OpenApps.jsx` (blackletter initials) | focus window (restores if minimized) | Focus / Close / End task | middle-click closes |
 | Focused app | `FocusedApp.jsx` | | | name of the focused window's app |
 | Media | `Media.jsx` | prev / play-pause / next | | hidden when nothing plays; sits by the clock's left wing, and the two are centred together as one group |
 | Clock | `Clock.jsx` | notifications & calendar | | hover shows the date |
-| Tray | `systray/`, `src/tray/` | forwarded to the app (double-click too); the arrow opens the tray panel | forwarded to the app | only pinned icons sit on the bar, before network, Bluetooth, mic and settings; the arrow counts the rest. The panel is its own window under the arrow, sized to fit every icon (pinned ones too, in an "on the bar" section), with the hovered icon's tooltip at the bottom; it closes on focus loss, Escape, after a click, or 0.7 s after the mouse leaves. Shift+click pins/unpins; drag to reorder, onto the arrow or between the panel's sections to unpin/pin. Grey until hovered (`--tray-rest-filter`) |
+| Tray | `systray/`, `src/tray/` | forwarded to the app (double-click too); the arrow opens the tray panel | forwarded to the app | only pinned icons sit on the bar; the arrow counts the rest. The panel is its own window under the arrow, sized to fit every icon (pinned ones too, in an "on the bar" section), with the hovered icon's tooltip at the bottom; it closes on focus loss, Escape, after a click, or 0.7 s after the mouse leaves. Shift+click pins/unpins; drag to reorder, onto the arrow or between the panel's sections to unpin/pin. Grey until hovered (`--tray-rest-filter`) |
 | Binding modes | `BindingModes.jsx` | | | shown while a GlazeWM mode is active |
 | Memory, CPU | `SystemStats.jsx` | Task Manager | | skull and pierced heart; red above 90% / 85% |
 | GPU temp | `Gpu.jsx` | Task Manager | | votive flame; `nvidia-smi` every 10 s, red at 80 °C; paused while GlazeWM is paused |
 | Weather | `Weather.jsx` | | | sits with the date |
-| Network | `Network.jsx` | network flyout | network settings | this, Bluetooth, mic and quick settings sit in the tray, before the arrow |
-| Bluetooth | `Bluetooth.jsx` | Bluetooth settings | radio on/off | bright while connected, devices in the tooltip; `bluetooth.ps1` every 60 s, and on hover; paused while GlazeWM is paused |
 | Volume | `Volume.jsx` | mute | output device picker | scroll ±2% |
 | Brightness | `Brightness.jsx` | | | monitor brightness (DDC/CI) via `brightness.ahk` every 5 s; scroll ±5%; paused while GlazeWM is paused |
-| Mic | `Mic.jsx` | mute | sound settings | |
-| Quick settings | `QuickSettings.jsx` | quick settings panel | | |
 
 Every widget returns `null` when it has nothing to show, so `Bar.jsx` places them all
 unconditionally.
@@ -75,15 +75,19 @@ The right side never grows over the clock. If too many icons are pinned, the tra
 clips (the wheel scrolls it); the panel still shows them all. The clock's wings hang outside
 their island, so `.clock-island` reserves their width with a margin.
 
-## Tray panel
+## Panels
 
-The panel is the `tray` widget in `zpack.json`: a hidden window that the bar starts on its own
-(`startWidgetPreset`, ~1.5 s after the bar loads) and then only shows and hides, so it opens
-instantly. It sizes and places itself with Tauri's window API (`setSize`, `setPosition`) under
-the arrow. It has no providers or privileges of its own: the bar sends it the icons and runs
-whatever it asks for over Tauri events (`widgets/systray/trayLink.js` lists them), so there is one
-systray provider and one writer of the saved layout. Each build gets an id (`__TRAY_BUILD__` in
-`vite.config.js`); a panel from an older build reloads itself when a new bar says hello.
+The tray and start panels are the `tray` and `start` widgets in `zpack.json`, and both run on
+`lib/panelLink.js`. Each is a hidden window that the bar starts on its own (`startWidgetPreset`,
+~1.5 s after the bar loads) and then only shows and hides, so it opens instantly. It sizes and
+places itself with Tauri's window API (`setSize`, `setPosition`) under its button (the tray lines
+up with the arrow's right edge, the start panel with the sigil's left). It has no providers or
+privileges of its own: the bar sends it a state snapshot and runs whatever it asks for over Tauri
+events named `ritvik-<panel>:<event>`, so there is one systray provider and one writer of the
+saved layout. Each build gets an id (`__BAR_BUILD__` in `vite.config.js`); a panel from an older
+build reloads itself when a new bar says hello. A new panel needs a widget in `zpack.json`, an
+html entry in `vite.config.js`, `usePanel(name, ...)` on the bar side and `usePanelWindow(name)`
+in the panel, and a Zebar restart (Alt+F7).
 
 If a tray icon is missing from the panel too, Zebar never received it: some apps (seen with
 Flow Launcher and Ditto) don't re-register their icon after Zebar restarts, so they only show
@@ -128,7 +132,7 @@ All of this lives in `lib/commands.js`:
 | Script | Used by | Does |
 |---|---|---|
 | `appicon.ps1 <hwnd> <key>` | `lib/appIcons.js` | window icon as base64 PNG, looked up like the taskbar does; cached in `%APPDATA%\zebar\ritvik-bar-icons\` (delete it to refetch) |
-| `bluetooth.ps1 status\|toggle` | `Bluetooth.jsx` | radio state + connected devices as JSON |
+| `bluetooth.ps1 status\|toggle` | `lib/system.js` | radio state + connected devices as JSON |
 | `audiodevice.ps1 set <id>` | `Volume.jsx` | sets the default playback device (IPolicyConfig COM) |
 | `endtask.ps1 <hwnd>` | `OpenApps.jsx` | kills the process owning a window |
 | `windowvisible.ps1 <hwnd>` | `lib/glazewm.js` | whether a window closed on a hidden workspace is really gone from view |

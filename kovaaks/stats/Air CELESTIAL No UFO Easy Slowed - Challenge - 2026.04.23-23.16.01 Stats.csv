@@ -1,0 +1,56 @@
+Kill #,Timestamp,Bot,Weapon,TTK,Shots,Hits,Accuracy,Damage Done,Damage Possible,Efficiency,Cheated,OverShots
+1,23:14:02.478,air1_close_long,Track Master 100,13.176001s,1319,800,0.606520,800.000000,1319.000000,0.606520,0,24
+2,23:14:18.020,air1_far_long,Track Master 100,13.987000s,1400,800,0.571429,800.000000,1400.000000,0.571429,0,25
+3,23:14:35.196,air_close_short,Track Master 100,16.926001s,1567,800,0.510530,800.000000,1567.000000,0.510530,0,24
+4,23:14:54.568,air1_far_short,Track Master 100,18.217001s,1823,800,0.438837,800.000000,1823.000000,0.438837,0,25
+5,23:15:09.746,air1F_close_long,Track Master 100,14.915001s,1420,800,0.563380,800.000000,1420.000000,0.563380,0,26
+6,23:15:25.998,air1F_far_long,Track Master 100,15.987000s,1473,800,0.543109,800.000000,1473.000000,0.543109,0,25
+7,23:15:42.448,air1F_close_short,Track Master 100,16.187000s,1522,800,0.525624,800.000000,1522.000000,0.525624,0,25
+8,23:16:01.002,air1F_far_short,Track Master 100,17.805000s,1782,800,0.448934,800.000000,1782.000000,0.448934,0,0
+
+Weapon,Shots,Hits,Damage Done,Damage Possible,,Sens Scale,Horiz Sens,Vert Sens,FOV,Hide Gun,Crosshair,Crosshair Scale,Crosshair Color,ADS Sens,ADS Zoom Scale,Avg Target Scale,Avg Time Dilation
+Track Master 100,12306,6400,6400.0,12306.0,
+
+Kills:,8
+Deaths:,0
+Fight Time:,127.199997
+Time Remaining:,0.0
+Avg TTK:,16.507462
+Damage Done:,6400.0
+Total Overshots:,174
+Damage Taken:,0.0
+Hit Count:,6400
+Miss Count:,5906
+Midairs:,0
+Midaired:,0
+Directs:,0
+Directed:,0
+Reloads:,0
+Distance Traveled:,0.0
+MBS Points:,0.0
+Score:,867.917786
+Scenario:,Air CELESTIAL No UFO Easy Slowed
+Hash:,03b72801e5e60f541e4ef6b8713e5e11
+Game Version:,3.8.7.2026-03-03-13-18-29-7697ade12a30
+Challenge Start:,23:13:48.926
+Pause Count:,0
+Pause Duration:,0
+Avg Target Scale:,1.0
+Avg Time Dilation:,1.0
+
+Input Lag:,0
+Max FPS (config):,180.0
+Sens Scale:,cm/360
+Sens Increment:,0.544286
+Horiz Sens:,30.0
+Vert Sens:,30.0
+DPI:,800
+FOV:,103.0
+FOVScale:,Overwatch
+Hide Gun:,false
+Crosshair:,lmbDot.png
+Crosshair Scale:,1.0
+Crosshair Color:,010000FF
+Resolution:,1920x1080
+Avg FPS:,180.024658
+Resolution Scale:,100.0

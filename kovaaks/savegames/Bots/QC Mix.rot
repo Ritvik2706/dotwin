@@ -1,0 +1,4 @@
+Name=QC Mix
+ProfileNames=Tank QC Fast Strafes;Tank QC Long Strafes;Tiny QC Fast Strafes;Tiny QC Long Strafes
+ProfileWeights=0.35;0.15;0.35;0.15
+Randomized=true

@@ -1,0 +1,4 @@
+Name=Random Bot Watcher
+ProfileNames=McCoy Bot;Rocket Flyer Bot;Sergeant Bot;Shinji Bot;Racer Bot
+ProfileWeights=1.0;1.0;1.0;1.0;1.0
+Randomized=true

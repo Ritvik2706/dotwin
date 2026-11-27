@@ -1,0 +1,52 @@
+Kill #,Timestamp,Bot,Weapon,TTK,Shots,Hits,Accuracy,Damage Done,Damage Possible,Efficiency,Cheated,OverShots
+1,22:41:47.991,air_close_short,LG,11.171000s,895,461,0.515084,601.142456,1167.078735,0.515083,0,18
+2,22:42:01.996,air1_far_short,LG,12.820001s,1027,461,0.448880,601.142456,1339.200806,0.448882,0,20
+3,22:42:15.716,Bot Profile,LG,12.593000s,1004,461,0.459163,601.142456,1309.209839,0.459164,0,22
+4,22:42:28.871,air1F_close_long,LG,12.183001s,976,461,0.472336,601.142456,1272.699097,0.472337,0,21
+
+Weapon,Shots,Hits,Damage Done,Damage Possible,,Sens Scale,Horiz Sens,Vert Sens,FOV,Hide Gun,Crosshair,Crosshair Scale,Crosshair Color,ADS Sens,ADS Zoom Scale,Avg Target Scale,Avg Time Dilation
+LG,4121,1919,2502.328857,5373.876953,
+
+Kills:,4
+Deaths:,0
+Fight Time:,48.766998
+Time Remaining:,0.0
+Avg TTK:,14.060236
+Damage Done:,2502.328857
+Total Overshots:,81
+Damage Taken:,0.0
+Hit Count:,1919
+Miss Count:,2202
+Midairs:,0
+Midaired:,0
+Directs:,0
+Directed:,0
+Reloads:,0
+Distance Traveled:,0.0
+MBS Points:,0.0
+Score:,17516.302734
+Scenario:,Warzone High Ground Tracking
+Hash:,92f5913fa20485b0b9e13c4f71aaffaa
+Game Version:,3.9.14.2026-11-12-15-54-35-a2085c23b084
+Challenge Start:,22:41:36.098
+Pause Count:,0
+Pause Duration:,0
+Avg Target Scale:,1.0
+Avg Time Dilation:,1.0
+
+Input Lag:,0
+Max FPS (config):,180.0
+Sens Scale:,cm/360
+Sens Increment:,0.388775
+Horiz Sens:,42.0
+Vert Sens:,42.0
+DPI:,800
+FOV:,110.0
+FOVScale:,Overwatch
+Hide Gun:,false
+Crosshair:,RoundDot1.png
+Crosshair Scale:,1.0
+Crosshair Color:,000000FF
+Resolution:,1920x1080
+Avg FPS:,180.971359
+Resolution Scale:,100.0

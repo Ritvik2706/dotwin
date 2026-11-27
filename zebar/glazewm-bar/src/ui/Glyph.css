@@ -17,6 +17,11 @@
     stroke-width: 1.6;
 }
 
+/* A hole of the black background. */
+.glyph-hole {
+    fill: var(--bg-solid);
+}
+
 .glyph-line {
     fill: none;
     stroke: currentColor;

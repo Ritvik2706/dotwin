@@ -1,0 +1,51 @@
+Kill #,Timestamp,Bot,Weapon,TTK,Shots,Hits,Accuracy,Damage Done,Damage Possible,Efficiency,Cheated,OverShots
+1,22:43:55.447,air_close_short,LG,16.735001s,1340,461,0.344030,601.142456,1747.338745,0.344033,0,24
+2,22:44:11.089,air1_far_short,LG,14.338000s,1148,461,0.401568,601.142456,1496.979370,0.401570,0,25
+3,22:44:33.108,Bot Profile,LG,21.729000s,1665,461,0.276877,601.142456,2171.124268,0.276881,0,22
+
+Weapon,Shots,Hits,Damage Done,Damage Possible,,Sens Scale,Horiz Sens,Vert Sens,FOV,Hide Gun,Crosshair,Crosshair Scale,Crosshair Color,ADS Sens,ADS Zoom Scale,Avg Target Scale,Avg Time Dilation
+LG,4153,1383,1803.408813,5415.611328,
+
+Kills:,3
+Deaths:,0
+Fight Time:,52.801998
+Time Remaining:,0.0
+Avg TTK:,18.741316
+Damage Done:,1803.408813
+Total Overshots:,71
+Damage Taken:,0.0
+Hit Count:,1383
+Miss Count:,2770
+Midairs:,0
+Midaired:,0
+Directs:,0
+Directed:,0
+Reloads:,0
+Distance Traveled:,39.696655
+MBS Points:,0.0
+Score:,12623.861328
+Scenario:,Warzone High Ground Tracking
+Hash:,92f5913fa20485b0b9e13c4f71aaffaa
+Game Version:,3.8.7.2026-03-03-13-18-29-7697ade12a30
+Challenge Start:,22:43:37.339
+Pause Count:,0
+Pause Duration:,0
+Avg Target Scale:,1.0
+Avg Time Dilation:,1.0
+
+Input Lag:,0
+Max FPS (config):,360.0
+Sens Scale:,cm/360
+Sens Increment:,0.347416
+Horiz Sens:,47.0
+Vert Sens:,47.0
+DPI:,800
+FOV:,120.0
+FOVScale:,Call of Duty
+Hide Gun:,false
+Crosshair:,lmbDot.png
+Crosshair Scale:,1.0
+Crosshair Color:,010000FF
+Resolution:,1920x1080
+Avg FPS:,357.178772
+Resolution Scale:,100.0

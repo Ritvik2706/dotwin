@@ -1,0 +1,48 @@
+Kill #,Timestamp,Bot,Weapon,TTK,Shots,Hits,Accuracy,Damage Done,Damage Possible,Efficiency,Cheated,OverShots
+
+Weapon,Shots,Hits,Damage Done,Damage Possible,,Sens Scale,Horiz Sens,Vert Sens,FOV,Hide Gun,Crosshair,Crosshair Scale,Crosshair Color,ADS Sens,ADS Zoom Scale,Avg Target Scale,Avg Time Dilation
+LG,955,459,2754.0,5730.0,
+
+Kills:,0
+Deaths:,0
+Fight Time:,0.0
+Time Remaining:,0.0
+Avg TTK:,0.0
+Damage Done:,2754.0
+Total Overshots:,0
+Damage Taken:,0.0
+Hit Count:,459
+Miss Count:,496
+Midairs:,0
+Midaired:,0
+Directs:,0
+Directed:,0
+Reloads:,0
+Distance Traveled:,0.0
+MBS Points:,0.0
+Score:,2754.0
+Scenario:,SmoothBot Invincible Goated 75%
+Hash:,37699be7726050d3bf181507500bdd03
+Game Version:,3.8.7.2026-03-03-13-18-29-7697ade12a30
+Challenge Start:,01:28:38.406
+Pause Count:,0
+Pause Duration:,0
+Avg Target Scale:,1.0
+Avg Time Dilation:,1.0
+
+Input Lag:,0
+Max FPS (config):,360.0
+Sens Scale:,cm/360
+Sens Increment:,0.544286
+Horiz Sens:,30.0
+Vert Sens:,30.0
+DPI:,800
+FOV:,120.0
+FOVScale:,Call of Duty
+Hide Gun:,false
+Crosshair:,lmbSmolPlus.png
+Crosshair Scale:,1.0
+Crosshair Color:,010000FF
+Resolution:,1920x1080
+Avg FPS:,359.982269
+Resolution Scale:,100.0

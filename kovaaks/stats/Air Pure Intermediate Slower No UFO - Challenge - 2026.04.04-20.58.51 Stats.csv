@@ -1,0 +1,53 @@
+Kill #,Timestamp,Bot,Weapon,TTK,Shots,Hits,Accuracy,Damage Done,Damage Possible,Efficiency,Cheated,OverShots
+1,20:57:35.093,AIR1_Short_close,test1,15.110001s,1512,1000,0.661376,1000.000000,1512.000000,0.661376,0,25
+2,20:57:53.818,AIR1_Short_far,test1,18.468000s,1792,1000,0.558036,1000.000000,1792.000000,0.558036,0,24
+3,20:58:11.998,AIR2_Long3D_mid,test1,17.468000s,1748,1000,0.572082,1000.000000,1748.000000,0.572082,0,25
+4,20:58:30.679,AIR2_Short_close,test1,17.919001s,1793,1000,0.557724,1000.000000,1793.000000,0.557724,0,23
+5,20:58:51.680,AIR2_Short_far,test1,20.587002s,2060,1000,0.485437,1000.000000,2060.000000,0.485437,0,0
+
+Weapon,Shots,Hits,Damage Done,Damage Possible,,Sens Scale,Horiz Sens,Vert Sens,FOV,Hide Gun,Crosshair,Crosshair Scale,Crosshair Color,ADS Sens,ADS Zoom Scale,Avg Target Scale,Avg Time Dilation
+test1,8905,5000,5000.0,8905.0,
+
+Kills:,5
+Deaths:,0
+Fight Time:,89.552002
+Time Remaining:,0.0
+Avg TTK:,18.41856
+Damage Done:,5000.0
+Total Overshots:,97
+Damage Taken:,0.0
+Hit Count:,5000
+Miss Count:,3905
+Midairs:,0
+Midaired:,0
+Directs:,0
+Directed:,0
+Reloads:,0
+Distance Traveled:,0.0
+MBS Points:,0.0
+Score:,907.884766
+Scenario:,Air Pure Intermediate Slower No UFO
+Hash:,c95ae865e54616cce5ae51da892ee7ac
+Game Version:,3.8.7.2026-03-03-13-18-29-7697ade12a30
+Challenge Start:,20:57:19.573
+Pause Count:,0
+Pause Duration:,0
+Avg Target Scale:,1.0
+Avg Time Dilation:,1.0
+
+Input Lag:,0
+Max FPS (config):,360.0
+Sens Scale:,cm/360
+Sens Increment:,0.544286
+Horiz Sens:,30.0
+Vert Sens:,30.0
+DPI:,800
+FOV:,120.0
+FOVScale:,Call of Duty
+Hide Gun:,false
+Crosshair:,lmbDot.png
+Crosshair Scale:,1.0
+Crosshair Color:,010000FF
+Resolution:,1920x1080
+Avg FPS:,359.897858
+Resolution Scale:,100.0

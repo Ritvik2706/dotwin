@@ -1,0 +1,67 @@
+Name=Windowjumper
+MaxHealth=200.0
+WeaponProfileNames=Sniper Rifle;;;;;;;
+MinRespawnDelay=1.0
+MaxRespawnDelay=5.0
+StepUpHeight=75.0
+CrouchHeightModifier=0.5
+CrouchAnimationSpeed=5.0
+CameraOffset=X=0.000 Y=0.000 Z=0.000
+HeadshotOnly=false
+DamageKnockbackFactor=2.0
+MovementType=Base
+MaxSpeed=1000.0
+MaxCrouchSpeed=500.0
+Acceleration=24000.0
+AirAcceleration=16000.0
+Friction=8.0
+BrakingFrictionFactor=2.0
+JumpVelocity=800.0
+Gravity=3.0
+AirControl=0.125
+CanCrouch=true
+CanPogoJump=false
+CanCrouchInAir=false
+CanJumpFromCrouch=true
+EnemyBodyColor=X=0.774 Y=0.000 Z=0.000
+EnemyHeadColor=X=0.729 Y=0.537 Z=0.839
+TeamBodyColor=X=0.000 Y=0.000 Z=0.774
+TeamHeadColor=X=0.729 Y=0.537 Z=0.839
+BlockSelfDamage=true
+InvinciblePlayer=false
+InvincibleBots=false
+BlockTeamDamage=true
+AirJumpCount=0
+AirJumpVelocity=800.0
+MainBBType=Cylindrical
+MainBBHeight=210.0
+MainBBRadius=40.0
+MainBBHasHead=true
+MainBBHeadRadius=30.0
+MainBBHeadOffset=0.0
+MainBBHide=false
+ProjBBType=Cuboid
+ProjBBHeight=230.0
+ProjBBRadius=60.0
+ProjBBHasHead=true
+ProjBBHeadRadius=30.0
+ProjBBHeadOffset=0.0
+ProjBBHide=true
+HasJetpack=false
+JetpackActivationDelay=0.5
+JetpackFullFuelTime=1000.0
+JetpackFuelIncPerSec=100.0
+JetpackFuelRegensInAir=true
+JetpackThrust=6000.0
+JetpackMaxZVelocity=600.0
+JetpackAirControlWithThrust=0.25
+AbilityProfileNames=Jump.abilmov;;Melee.abilmelee;
+HideWeapon=false
+AerialFriction=0.0
+StrafeSpeedMult=1.0
+BackSpeedMult=0.9
+RespawnInvulnTime=0.0
+BlockedSpawnRadius=0.0
+BlockSpawnFOV=0.0
+BlockSpawnDistance=0.0
+RespawnAnimationDuration=0.5

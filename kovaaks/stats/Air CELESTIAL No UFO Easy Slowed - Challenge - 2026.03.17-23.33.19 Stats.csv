@@ -1,0 +1,56 @@
+Kill #,Timestamp,Bot,Weapon,TTK,Shots,Hits,Accuracy,Damage Done,Damage Possible,Efficiency,Cheated,OverShots
+1,23:31:18.756,air1_close_long,Track Master 100,11.179001s,1119,800,0.714924,800.000000,1119.000000,0.714924,0,25
+2,23:31:33.178,air1_far_long,Track Master 100,14.162001s,1371,800,0.583516,800.000000,1371.000000,0.583516,0,25
+3,23:31:48.358,air_close_short,Track Master 100,14.920001s,1444,800,0.554017,800.000000,1444.000000,0.554017,0,25
+4,23:32:08.299,air1_far_short,Track Master 100,19.682001s,1919,800,0.416884,800.000000,1919.000000,0.416884,0,25
+5,23:32:24.557,air1F_close_long,Track Master 100,16.014000s,1547,800,0.517130,800.000000,1547.000000,0.517130,0,23
+6,23:32:41.444,air1F_far_long,Track Master 100,16.049002s,1606,800,0.498132,800.000000,1606.000000,0.498132,0,25
+7,23:32:59.740,air1F_close_short,Track Master 100,17.438002s,1745,800,0.458453,800.000000,1745.000000,0.458453,0,24
+8,23:33:19.468,air1F_far_short,Track Master 100,19.148001s,1916,800,0.417537,800.000000,1916.000000,0.417537,0,0
+
+Weapon,Shots,Hits,Damage Done,Damage Possible,,Sens Scale,Horiz Sens,Vert Sens,FOV,Hide Gun,Crosshair,Crosshair Scale,Crosshair Color,ADS Sens,ADS Zoom Scale,Avg Target Scale,Avg Time Dilation
+Track Master 100,12667,6400,6400.0,12667.0,
+
+Kills:,8
+Deaths:,0
+Fight Time:,128.591995
+Time Remaining:,0.0
+Avg TTK:,16.538603
+Damage Done:,6400.0
+Total Overshots:,172
+Damage Taken:,0.0
+Hit Count:,6400
+Miss Count:,6267
+Midairs:,0
+Midaired:,0
+Directs:,0
+Directed:,0
+Reloads:,0
+Distance Traveled:,0.0
+MBS Points:,0.0
+Score:,867.671326
+Scenario:,Air CELESTIAL No UFO Easy Slowed
+Hash:,03b72801e5e60f541e4ef6b8713e5e11
+Game Version:,3.8.7.2026-03-03-13-18-29-7697ade12a30
+Challenge Start:,23:31:07.148
+Pause Count:,0
+Pause Duration:,0
+Avg Target Scale:,1.0
+Avg Time Dilation:,1.0
+
+Input Lag:,0
+Max FPS (config):,360.0
+Sens Scale:,cm/360
+Sens Increment:,0.544971
+Horiz Sens:,29.96225
+Vert Sens:,29.96225
+DPI:,800
+FOV:,120.0
+FOVScale:,Call of Duty
+Hide Gun:,false
+Crosshair:,RoundDot1.png
+Crosshair Scale:,1.0
+Crosshair Color:,010000FF
+Resolution:,1920x1080
+Avg FPS:,360.013794
+Resolution Scale:,100.0

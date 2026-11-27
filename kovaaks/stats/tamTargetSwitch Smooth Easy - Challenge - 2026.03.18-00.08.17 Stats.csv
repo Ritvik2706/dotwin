@@ -1,0 +1,65 @@
+Kill #,Timestamp,Bot,Weapon,TTK,Shots,Hits,Accuracy,Damage Done,Damage Possible,Efficiency,Cheated,OverShots
+1,00:07:19.256,regen_dot,Poke-Drill,1.472000s,113,64,0.566372,64.000000,113.000000,0.566372,0,19
+2,00:07:21.014,regen_dot,Poke-Drill,1.261000s,97,68,0.701031,68.000000,97.000000,0.701031,0,18
+3,00:07:23.910,regen_dot,Poke-Drill,2.158000s,165,102,0.618182,102.000000,165.000000,0.618182,0,22
+4,00:07:26.976,regen_dot,Poke-Drill,2.274000s,174,98,0.563218,98.000000,174.000000,0.563218,0,19
+5,00:07:28.421,regen_dot,Poke-Drill,0.880000s,68,50,0.735294,50.000000,68.000000,0.735294,0,19
+6,00:07:30.647,regen_dot,Poke-Drill,1.326000s,102,66,0.647059,66.000000,102.000000,0.647059,0,23
+7,00:07:36.814,regen_dot,Poke-Drill,5.681000s,433,279,0.644342,279.000000,433.000000,0.644342,0,22
+8,00:07:41.436,regen_dot,Poke-Drill,3.854000s,294,150,0.510204,150.000000,294.000000,0.510204,0,22
+9,00:07:45.914,regen_dot,Poke-Drill,3.432000s,262,146,0.557252,146.000000,262.000000,0.557252,0,22
+10,00:07:47.521,regen_dot,Poke-Drill,0.852000s,66,53,0.803030,53.000000,66.000000,0.803030,0,20
+11,00:07:50.008,regen_dot,Poke-Drill,2.023000s,155,93,0.600000,93.000000,155.000000,0.600000,0,21
+12,00:07:52.236,regen_dot,Poke-Drill,1.063000s,82,64,0.780488,64.000000,82.000000,0.780488,0,22
+13,00:07:58.040,regen_dot,Poke-Drill,5.023000s,383,213,0.556136,213.000000,383.000000,0.556136,0,22
+14,00:08:03.702,regen_dot,Poke-Drill,5.118000s,390,209,0.535897,209.000000,390.000000,0.535897,0,20
+15,00:08:06.860,regen_dot,Poke-Drill,2.090000s,160,94,0.587500,94.000000,160.000000,0.587500,0,20
+16,00:08:10.507,regen_dot,Poke-Drill,3.091000s,236,133,0.563559,133.000000,236.000000,0.563559,0,21
+17,00:08:15.326,regen_dot,Poke-Drill,4.224000s,281,147,0.523132,147.000000,281.000000,0.523132,0,22
+
+Weapon,Shots,Hits,Damage Done,Damage Possible,,Sens Scale,Horiz Sens,Vert Sens,FOV,Hide Gun,Crosshair,Crosshair Scale,Crosshair Color,ADS Sens,ADS Zoom Scale,Avg Target Scale,Avg Time Dilation
+Poke-Drill,3573,2082,2082.0,3573.0,
+
+Kills:,17
+Deaths:,0
+Fight Time:,45.821999
+Time Remaining:,0.0
+Avg TTK:,3.527733
+Damage Done:,2082.0
+Total Overshots:,354
+Damage Taken:,0.0
+Hit Count:,2082
+Miss Count:,1491
+Midairs:,0
+Midaired:,0
+Directs:,0
+Directed:,0
+Reloads:,0
+Distance Traveled:,0.0
+MBS Points:,0.0
+Score:,17.0
+Scenario:,tamTargetSwitch Smooth Easy
+Hash:,ec652a02944edf8ea184825c8a88b55b
+Game Version:,3.8.7.2026-03-03-13-18-29-7697ade12a30
+Challenge Start:,00:07:17.025
+Pause Count:,0
+Pause Duration:,0
+Avg Target Scale:,1.0
+Avg Time Dilation:,1.0
+
+Input Lag:,0
+Max FPS (config):,360.0
+Sens Scale:,cm/360
+Sens Increment:,0.544971
+Horiz Sens:,29.96225
+Vert Sens:,29.96225
+DPI:,800
+FOV:,120.0
+FOVScale:,Call of Duty
+Hide Gun:,false
+Crosshair:,RoundDot1.png
+Crosshair Scale:,1.0
+Crosshair Color:,010000FF
+Resolution:,1920x1080
+Avg FPS:,360.02124
+Resolution Scale:,100.0

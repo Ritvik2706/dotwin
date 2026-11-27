@@ -1,0 +1,77 @@
+Kill #,Timestamp,Bot,Weapon,TTK,Shots,Hits,Accuracy,Damage Done,Damage Possible,Efficiency,Cheated,OverShots
+1,22:21:34.775,Quaker Bot Long Strafes,dps,0.800000s,17,8,0.470588,238.000000,578.000000,0.411765,0,5
+2,22:21:36.763,Quaker Bot Long Strafes,dps,1.689000s,34,11,0.323529,374.000000,1156.000000,0.323529,0,5
+3,22:21:37.802,Quaker Bot Long Strafes,dps,0.739000s,15,8,0.533333,272.000000,510.000000,0.533333,0,5
+4,22:21:39.074,Quaker Bot Long Strafes,dps,0.899000s,19,10,0.526316,340.000000,646.000000,0.526316,0,5
+5,22:21:40.436,Quaker Bot Long Strafes,dps,1.061000s,13,6,0.461538,204.000000,442.000000,0.461538,0,5
+6,22:21:41.363,Quaker Bot Long Strafes,dps,0.629000s,12,6,0.500000,204.000000,408.000000,0.500000,0,5
+7,22:21:42.629,Quaker Bot Long Strafes,dps,0.967000s,12,9,0.750000,306.000000,408.000000,0.750000,0,5
+8,22:21:45.029,Quaker Bot Long Strafes,dps,2.100000s,43,20,0.465116,680.000000,1462.000000,0.465116,0,5
+9,22:21:45.729,Quaker Bot Long Strafes,dps,0.400000s,9,5,0.555556,170.000000,306.000000,0.555556,0,5
+10,22:21:46.629,Quaker Bot Long Strafes,dps,0.600000s,13,5,0.384615,170.000000,442.000000,0.384615,0,5
+11,22:21:47.323,Quaker Bot Long Strafes,dps,0.394000s,8,6,0.750000,204.000000,272.000000,0.750000,0,5
+12,22:21:49.095,Quaker Bot Long Strafes,dps,1.473000s,29,11,0.379310,374.000000,986.000000,0.379310,0,5
+13,22:21:54.777,Quaker Bot Long Strafes,dps,5.311000s,105,29,0.276190,986.000000,3570.000000,0.276190,0,5
+14,22:21:56.078,Quaker Bot Long Strafes,dps,1.000000s,21,9,0.428571,306.000000,714.000000,0.428571,0,5
+15,22:21:57.433,Quaker Bot Long Strafes,dps,0.550000s,12,5,0.416667,170.000000,408.000000,0.416667,0,4
+16,22:21:58.878,Quaker Bot Long Strafes,dps,1.189000s,24,12,0.500000,408.000000,816.000000,0.500000,0,5
+17,22:22:04.228,Quaker Bot Long Strafes,dps,5.050000s,102,40,0.392157,1360.000000,3468.000000,0.392157,0,5
+18,22:22:05.200,Quaker Bot Long Strafes,dps,0.878000s,17,5,0.294118,170.000000,578.000000,0.294118,0,0
+19,22:22:07.344,Quaker Bot Long Strafes,dps,1.889000s,38,10,0.263158,340.000000,1292.000000,0.263158,0,5
+20,22:22:09.593,Quaker Bot Long Strafes,dps,1.950000s,40,16,0.400000,544.000000,1360.000000,0.400000,0,5
+21,22:22:12.193,Quaker Bot Long Strafes,dps,2.300000s,47,15,0.319149,510.000000,1598.000000,0.319149,0,5
+22,22:22:13.821,Quaker Bot Long Strafes,dps,1.434000s,28,10,0.357143,340.000000,952.000000,0.357143,0,2
+23,22:22:15.920,Quaker Bot Long Strafes,dps,1.900000s,39,15,0.384615,510.000000,1326.000000,0.384615,0,3
+24,22:22:24.176,Quaker Bot Long Strafes,dps,7.999001s,161,49,0.304348,1666.000000,5474.000000,0.304348,0,5
+25,22:22:26.326,Quaker Bot Long Strafes,dps,1.851000s,30,11,0.366667,374.000000,1020.000000,0.366667,0,5
+26,22:22:27.503,Quaker Bot Long Strafes,dps,0.878000s,17,7,0.411765,238.000000,578.000000,0.411765,0,5
+27,22:22:29.325,Quaker Bot Long Strafes,dps,1.522000s,14,9,0.642857,306.000000,476.000000,0.642857,0,5
+28,22:22:32.025,Quaker Bot Long Strafes,dps,2.400000s,49,21,0.428571,714.000000,1666.000000,0.428571,0,5
+29,22:22:33.369,Quaker Bot Long Strafes,dps,0.950000s,20,7,0.350000,238.000000,680.000000,0.350000,0,5
+
+Weapon,Shots,Hits,Damage Done,Damage Possible,,Sens Scale,Horiz Sens,Vert Sens,FOV,Hide Gun,Crosshair,Crosshair Scale,Crosshair Color,ADS Sens,ADS Zoom Scale,Avg Target Scale,Avg Time Dilation
+dps,989,375,12716.0,33626.0,
+
+Kills:,29
+Deaths:,0
+Fight Time:,50.801998
+Time Remaining:,0.0
+Avg TTK:,2.068495
+Damage Done:,12716.0
+Total Overshots:,134
+Damage Taken:,0.0
+Hit Count:,375
+Miss Count:,614
+Midairs:,0
+Midaired:,0
+Directs:,0
+Directed:,0
+Reloads:,0
+Distance Traveled:,0.0
+MBS Points:,0.0
+Score:,35358.0
+Scenario:,180 Regen Warzone
+Hash:,fcd51178d9b8e4293e2913bdd0796cd3
+Game Version:,3.9.14.2026-11-12-15-54-35-a2085c23b084
+Challenge Start:,22:21:33.424
+Pause Count:,0
+Pause Duration:,0
+Avg Target Scale:,1.0
+Avg Time Dilation:,1.0
+
+Input Lag:,0
+Max FPS (config):,180.0
+Sens Scale:,cm/360
+Sens Increment:,0.388775
+Horiz Sens:,42.0
+Vert Sens:,42.0
+DPI:,800
+FOV:,110.0
+FOVScale:,Overwatch
+Hide Gun:,false
+Crosshair:,RoundDot1.png
+Crosshair Scale:,1.0
+Crosshair Color:,000000FF
+Resolution:,1920x1080
+Avg FPS:,180.907837
+Resolution Scale:,100.0

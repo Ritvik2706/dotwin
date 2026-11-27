@@ -1,0 +1,51 @@
+Kill #,Timestamp,Bot,Weapon,TTK,Shots,Hits,Accuracy,Damage Done,Damage Possible,Efficiency,Cheated,OverShots
+1,23:22:10.803,Bounce 1 Bot,Track Master 100,18.803001s,1801,755,0.419212,0.075501,0.180102,0.419210,0,0
+2,23:22:31.202,Bounce 2 Bot,Track Master 100,18.672001s,1825,809,0.443288,0.080901,0.182503,0.443286,0,0
+3,23:22:51.605,Float 3 Bot,Track Master 100,20.399000s,1923,1019,0.529901,0.101901,0.192303,0.529900,0,0
+
+Weapon,Shots,Hits,Damage Done,Damage Possible,,Sens Scale,Horiz Sens,Vert Sens,FOV,Hide Gun,Crosshair,Crosshair Scale,Crosshair Color,ADS Sens,ADS Zoom Scale,Avg Target Scale,Avg Time Dilation
+Track Master 100,5569,2583,0.258303,0.55688,
+
+Kills:,3
+Deaths:,0
+Fight Time:,57.874001
+Time Remaining:,0.0
+Avg TTK:,19.992525
+Damage Done:,0.258303
+Total Overshots:,0
+Damage Taken:,0.0
+Hit Count:,2583
+Miss Count:,2986
+Midairs:,0
+Midaired:,0
+Directs:,0
+Directed:,0
+Reloads:,0
+Distance Traveled:,0.0
+MBS Points:,0.0
+Score:,2583.0
+Scenario:,VT PGT Novice S5
+Hash:,9e7ff511d4632fc2aef1421ef2ce2996
+Game Version:,3.8.7.2026-03-03-13-18-29-7697ade12a30
+Challenge Start:,23:21:51.812
+Pause Count:,0
+Pause Duration:,0
+Avg Target Scale:,1.0
+Avg Time Dilation:,1.0
+
+Input Lag:,0
+Max FPS (config):,360.0
+Sens Scale:,cm/360
+Sens Increment:,0.302381
+Horiz Sens:,54.0
+Vert Sens:,54.0
+DPI:,800
+FOV:,120.0
+FOVScale:,Call of Duty
+Hide Gun:,false
+Crosshair:,lmbDot.png
+Crosshair Scale:,1.0
+Crosshair Color:,010000FF
+Resolution:,1920x1080
+Avg FPS:,360.084595
+Resolution Scale:,100.0

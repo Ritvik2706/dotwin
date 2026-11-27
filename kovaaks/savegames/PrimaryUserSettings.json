@@ -1,0 +1,295 @@
+{
+	"booleanSettings":
+	{
+		"EBooleanSettingId::AutoHideHealthbar": true,
+		"EBooleanSettingId::ChangeEnemyColorOnHit": false,
+		"EBooleanSettingId::ChangeEnemyColorOnLookAt": false,
+		"EBooleanSettingId::DeathCamSpin": false,
+		"EBooleanSettingId::DisableSpawnSoundInPlayerFOV": false,
+		"EBooleanSettingId::DiscordRichPresence": true,
+		"EBooleanSettingId::EnemyAttacksColoredByBody": false,
+		"EBooleanSettingId::FloatingCombatText": false,
+		"EBooleanSettingId::HasSeenKovaaKsPlusExplainer": true,
+		"EBooleanSettingId::HideGibs": true,
+		"EBooleanSettingId::HideGun": false,
+		"EBooleanSettingId::HumanoidFootstepsOnly": true,
+		"EBooleanSettingId::LatencyFlashIndicator": false,
+		"EBooleanSettingId::LeaderboardFriendsOnly": false,
+		"EBooleanSettingId::LeaderboardGlobalDontSubmit": false,
+		"EBooleanSettingId::LeaderboardHideInvalidScores": true,
+		"EBooleanSettingId::MissSoundSpatial": false,
+		"EBooleanSettingId::MissSoundSpatialSwap": false,
+		"EBooleanSettingId::OneFrameThreadLag": false,
+		"EBooleanSettingId::OverrideAllNewMapMaterials": true,
+		"EBooleanSettingId::OverrideEnemyBodyColor": true,
+		"EBooleanSettingId::OverrideEnemyHeadColor": true,
+		"EBooleanSettingId::OverrideMBSChangeNowSound": false,
+		"EBooleanSettingId::OverrideMissSound": false,
+		"EBooleanSettingId::OverrideTeamBodyColor": true,
+		"EBooleanSettingId::OverrideTeamHeadColor": true,
+		"EBooleanSettingId::PauseOnLossOfFocus": true,
+		"EBooleanSettingId::PredictEnemy": false,
+		"EBooleanSettingId::SaveStatistics": true,
+		"EBooleanSettingId::ShowBotProfileOnHealthbar": true,
+		"EBooleanSettingId::ShowHealthBars": true,
+		"EBooleanSettingId::ShowInfoBars": true,
+		"EBooleanSettingId::ShowSessionBestOnHighScoreBar": false,
+		"EBooleanSettingId::ShowSunInSkybox": false,
+		"EBooleanSettingId::ShowVersionDuringGameplay": true,
+		"EBooleanSettingId::SkipPlaylistChallengeResults": false,
+		"EBooleanSettingId::SolidSkyColor": false,
+		"EBooleanSettingId::SolidTextureSkyColor": false,
+		"EBooleanSettingId::TeamAttacksColoredByBody": false,
+		"EBooleanSettingId::TextureStreaming": false,
+		"EBooleanSettingId::TiledReflections": true,
+		"EBooleanSettingId::ToggleADS": false,
+		"EBooleanSettingId::UseMeshInstancesInKmc": false,
+		"EBooleanSettingId::YInvert": false
+	},
+	"integerSettings":
+	{
+		"EIntegerSettingId::Anisotropy": 4,
+		"EIntegerSettingId::AntiAliasing": 1,
+		"EIntegerSettingId::AntiAliasingQuality": 4,
+		"EIntegerSettingId::ChallengeHistogramStats": 3,
+		"EIntegerSettingId::ChallengeResultsDefaultTab": 0,
+		"EIntegerSettingId::ChallengeResultsLastUsedTab": 0,
+		"EIntegerSettingId::CloudCover": 0,
+		"EIntegerSettingId::DPI": 800,
+		"EIntegerSettingId::Effects": 0,
+		"EIntegerSettingId::FILMSCustomAspectX": 16,
+		"EIntegerSettingId::FILMSCustomAspectY": 9,
+		"EIntegerSettingId::FloorMat": 43,
+		"EIntegerSettingId::FOVScalarTargetEnum": 3,
+		"EIntegerSettingId::HiddenUiElementsMask": 131589,
+		"EIntegerSettingId::InputLagFrameCount": 0,
+		"EIntegerSettingId::LastAcceptedExperimentsAgreement": 0,
+		"EIntegerSettingId::LowLatencyMode": 2,
+		"EIntegerSettingId::PersistentPlayType": 0,
+		"EIntegerSettingId::PitchHitModifier": 1,
+		"EIntegerSettingId::PostProcessing": 3,
+		"EIntegerSettingId::SceneColorFormat": 3,
+		"EIntegerSettingId::ScoreGraphHistoryLength": 20,
+		"EIntegerSettingId::SensitivityScaleTargetEnum": 0,
+		"EIntegerSettingId::SessionStatsMode": 0,
+		"EIntegerSettingId::Shadows": 0,
+		"EIntegerSettingId::SkyPreset": 8,
+		"EIntegerSettingId::StatsExportLevel": 1,
+		"EIntegerSettingId::WallMat": 50
+	},
+	"floatSettings":
+	{
+		"EFloatSettingId::BarSize": 0.80000001192092896,
+		"EFloatSettingId::BaseIncrement": 0,
+		"EFloatSettingId::CacheDuration": 168,
+		"EFloatSettingId::CeilingFullBright": 0.4493127167224884,
+		"EFloatSettingId::CeilingMetallic": 1,
+		"EFloatSettingId::CeilingRoughness": 1,
+		"EFloatSettingId::CeilingTextureSaturation": 1,
+		"EFloatSettingId::CeilingTextureScale": 1,
+		"EFloatSettingId::CountDownBeforeChallengeStart": 0.30000001192092896,
+		"EFloatSettingId::CritPitch": 1,
+		"EFloatSettingId::CritVolume": 1,
+		"EFloatSettingId::CustomFOVYawMult": 0,
+		"EFloatSettingId::CustomYaw": 0,
+		"EFloatSettingId::DecalTime": 0,
+		"EFloatSettingId::EnemyFullBright": 1,
+		"EFloatSettingId::EnemyGlowUpBody": 15,
+		"EFloatSettingId::EnemyGlowUpBodyOnHit": 1,
+		"EFloatSettingId::EnemyGlowUpBodyOnLookAt": 1,
+		"EFloatSettingId::EnemyGlowUpHead": 15,
+		"EFloatSettingId::EnemyGlowUpHeadOnHit": 1,
+		"EFloatSettingId::EnemyGlowUpHeadOnLookAt": 1,
+		"EFloatSettingId::EnemyMetalic": 1,
+		"EFloatSettingId::EnemyOutlineGlow": 1,
+		"EFloatSettingId::EnemyOutlineSizeThreshold": 1,
+		"EFloatSettingId::EnemyOutlineWidth": 0,
+		"EFloatSettingId::EnemyPitch": 1,
+		"EFloatSettingId::EnemyRoughness": 1,
+		"EFloatSettingId::EnemyVolume": 1,
+		"EFloatSettingId::FloorFullBright": 0.91151201725006104,
+		"EFloatSettingId::FloorMetallic": 1,
+		"EFloatSettingId::FloorRoughness": 1,
+		"EFloatSettingId::FloorTextureSaturation": 1,
+		"EFloatSettingId::FloorTextureScale": 1,
+		"EFloatSettingId::FootstepVolume": 1,
+		"EFloatSettingId::FOV": 107,
+		"EFloatSettingId::Gamma": 2.2000000476837158,
+		"EFloatSettingId::HighScoreFadeout": 100,
+		"EFloatSettingId::HitPitch": 0.99000000953674316,
+		"EFloatSettingId::HitVolume": 1,
+		"EFloatSettingId::KillVolume": 1,
+		"EFloatSettingId::MasterVolume": 0.40047392249107361,
+		"EFloatSettingId::MaxFPS": 180,
+		"EFloatSettingId::MenuMaxFPS": 120,
+		"EFloatSettingId::MiscVolume": 1,
+		"EFloatSettingId::MissPitchShiftPerDegree": 0,
+		"EFloatSettingId::MissSoundCooldown": 0.079999998211860657,
+		"EFloatSettingId::MissVolume": 1,
+		"EFloatSettingId::MusicVolume": 0,
+		"EFloatSettingId::OnHitColorFadeIn": 0.039999999105930328,
+		"EFloatSettingId::OnHitColorFadeOut": 0.039999999105930328,
+		"EFloatSettingId::OnLookAtColorFadeIn": 0,
+		"EFloatSettingId::OnLookAtColorFadeOut": 0,
+		"EFloatSettingId::PlayerPitch": 1.0199999809265137,
+		"EFloatSettingId::PlayerVolume": 1,
+		"EFloatSettingId::ProjectileMarkerScale": 1,
+		"EFloatSettingId::RampFullBright": 1,
+		"EFloatSettingId::RampMetallic": 1,
+		"EFloatSettingId::RampRoughness": 1,
+		"EFloatSettingId::RampTextureSaturation": 1,
+		"EFloatSettingId::RampTextureScale": 1,
+		"EFloatSettingId::ReplayDuration": 60,
+		"EFloatSettingId::ResolutionScale": 100,
+		"EFloatSettingId::SFXVolume": 1,
+		"EFloatSettingId::TeamFullBright": 0,
+		"EFloatSettingId::TeamGlowUpBody": 1,
+		"EFloatSettingId::TeamGlowUpHead": 1,
+		"EFloatSettingId::TeammatePitch": 1,
+		"EFloatSettingId::TeammateVolume": 1,
+		"EFloatSettingId::TeamMetallic": 0.10000000149011612,
+		"EFloatSettingId::TeamRoughness": 0,
+		"EFloatSettingId::UIAnimationSpeed": 1,
+		"EFloatSettingId::WallFullBright": 1,
+		"EFloatSettingId::WallMetallic": 1,
+		"EFloatSettingId::WallRoughness": 1,
+		"EFloatSettingId::WallTextureSaturation": 1,
+		"EFloatSettingId::WallTextureScale": 1,
+		"EFloatSettingId::XSens": 42,
+		"EFloatSettingId::YSens": 42
+	},
+	"stringSettings":
+	{
+		"EStringSettingId::BoundingBoxStyle": "Default",
+		"EStringSettingId::CeilingMaterial": "WHITE WOOD BOARD",
+		"EStringSettingId::CurrentThemeName": "clotag",
+		"EStringSettingId::FILMSCustomFOV": "hML",
+		"EStringSettingId::FloorMaterial": "WHITE WOOD BOARD",
+		"EStringSettingId::FOVScaleString": "Overwatch",
+		"EStringSettingId::KillConfirmedSound": "kick-deep",
+		"EStringSettingId::LocalScenarioSortType": "TITLE (A-Z)",
+		"EStringSettingId::MBSBadSound": "None",
+		"EStringSettingId::MBSChangeNowSound": "spawn05",
+		"EStringSettingId::MBSGoodSound": "None",
+		"EStringSettingId::MBSOkaySound": "None",
+		"EStringSettingId::MissSound": "missRicochet_A;missRicochet_B;missRicochet_C;missRicochet_D;missRicochet_E;missRicochet_F",
+		"EStringSettingId::OnlineScenarioSortType": "HIGHEST RATED",
+		"EStringSettingId::PlaylistSortType": "TITLE (A-Z)",
+		"EStringSettingId::RampMaterial": "GRID 16",
+		"EStringSettingId::SensScaleString": "cm/360",
+		"EStringSettingId::SpawnSound": "808 perc",
+		"EStringSettingId::StartupMode": "sandbox",
+		"EStringSettingId::WallMaterial": "MARBLE POLISHED"
+	},
+	"vectorSettings":
+	{
+		"EVectorSettingId::CeilingColor":
+		{
+			"x": 0.41254261136054993,
+			"y": 0.41254261136054993,
+			"z": 0.41254261136054993
+		},
+		"EVectorSettingId::EnemyBodyColor":
+		{
+			"x": 0.51491767168045044,
+			"y": 0.11697066575288773,
+			"z": 0
+		},
+		"EVectorSettingId::EnemyBodyColorOnHit":
+		{
+			"x": 1,
+			"y": 1,
+			"z": 1
+		},
+		"EVectorSettingId::EnemyBodyColorOnLookAt":
+		{
+			"x": 1,
+			"y": 1,
+			"z": 0
+		},
+		"EVectorSettingId::EnemyHeadColor":
+		{
+			"x": 0.51491767168045044,
+			"y": 0.11697066575288773,
+			"z": 0
+		},
+		"EVectorSettingId::EnemyHeadColorOnHit":
+		{
+			"x": 1,
+			"y": 1,
+			"z": 1
+		},
+		"EVectorSettingId::EnemyHeadColorOnLookAt":
+		{
+			"x": 1,
+			"y": 1,
+			"z": 0
+		},
+		"EVectorSettingId::EnemyOutlineColor":
+		{
+			"x": 1,
+			"y": 0.18782077729701996,
+			"z": 0
+		},
+		"EVectorSettingId::FloorColor":
+		{
+			"x": 0.21223099529743195,
+			"y": 0.21223099529743195,
+			"z": 0.21223099529743195
+		},
+		"EVectorSettingId::RampColor":
+		{
+			"x": 0.13286831974983215,
+			"y": 0.13286831974983215,
+			"z": 0.13286831974983215
+		},
+		"EVectorSettingId::TeamBodyColor":
+		{
+			"x": 0,
+			"y": 0,
+			"z": 1
+		},
+		"EVectorSettingId::TeamHeadColor":
+		{
+			"x": 0,
+			"y": 0,
+			"z": 1
+		},
+		"EVectorSettingId::WallColor":
+		{
+			"x": 0.30946892499923706,
+			"y": 0.30946892499923706,
+			"z": 0.30946892499923706
+		}
+	},
+	"colorSettings":
+	{
+		"EColorSettingId::SkyColor":
+		{
+			"b": 188,
+			"g": 188,
+			"r": 188,
+			"a": 255
+		}
+	},
+	"version": 1,
+	"characterModelOverride":
+	{
+		"Cuboid":
+		{
+			"characterModel": "None",
+			"characterSkin": "None"
+		},
+		"Cylindrical":
+		{
+			"characterModel": "None",
+			"characterSkin": "None"
+		},
+		"Spheroid":
+		{
+			"characterModel": "None",
+			"characterSkin": "None"
+		}
+	},
+	"currentlySelectedBoundingBoxType": "Cuboid"
+}

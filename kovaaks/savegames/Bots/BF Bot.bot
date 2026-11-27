@@ -1,0 +1,10 @@
+Name=BF Bot
+DodgeProfileNames=Long Strafes Jumping;Short Strafes Jumping;Mimic;Circle Strafe
+DodgeProfileWeights=3.0;2.0;1.0;2.0
+DodgeProfileMaxChangeTime=3.0
+DodgeProfileMinChangeTime=0.1
+WeaponProfileWeights=1.0;1.0;1.0;1.0;1.0;1.0;1.0;1.0
+AimingProfileNames=Default;Default;Default;Default;Default;Default;Default;Default
+WeaponSwitchTime=3.0
+UseWeapons=false
+CharacterProfile=BFer

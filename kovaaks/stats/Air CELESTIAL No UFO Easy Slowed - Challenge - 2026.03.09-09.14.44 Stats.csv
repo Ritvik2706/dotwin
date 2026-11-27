@@ -1,0 +1,56 @@
+Kill #,Timestamp,Bot,Weapon,TTK,Shots,Hits,Accuracy,Damage Done,Damage Possible,Efficiency,Cheated,OverShots
+1,09:12:41.003,air1_close_long,Track Master 100,12.337001s,1235,800,0.647773,800.000000,1235.000000,0.647773,0,25
+2,09:12:55.752,air1_far_long,Track Master 100,14.518001s,1368,800,0.584795,800.000000,1368.000000,0.584795,0,22
+3,09:13:13.432,air_close_short,Track Master 100,16.579000s,1659,800,0.482218,800.000000,1659.000000,0.482218,0,25
+4,09:13:31.123,air1_far_short,Track Master 100,16.288000s,1630,800,0.490798,800.000000,1630.000000,0.490798,0,25
+5,09:13:46.704,air1F_close_long,Track Master 100,14.603001s,1454,800,0.550206,800.000000,1454.000000,0.550206,0,23
+6,09:14:02.434,air1F_far_long,Track Master 100,13.949000s,1396,800,0.573066,800.000000,1396.000000,0.573066,0,25
+7,09:14:21.448,air1F_close_short,Track Master 100,18.756001s,1768,800,0.452489,800.000000,1768.000000,0.452489,0,25
+8,09:14:44.637,air1F_far_short,Track Master 100,23.182001s,2168,800,0.369004,800.000000,2168.000000,0.369004,0,0
+
+Weapon,Shots,Hits,Damage Done,Damage Possible,,Sens Scale,Horiz Sens,Vert Sens,FOV,Hide Gun,Crosshair,Crosshair Scale,Crosshair Color,ADS Sens,ADS Zoom Scale,Avg Target Scale,Avg Time Dilation
+Track Master 100,12678,6400,6400.0,12678.0,
+
+Kills:,8
+Deaths:,0
+Fight Time:,130.212006
+Time Remaining:,0.0
+Avg TTK:,17.06229
+Damage Done:,6400.0
+Total Overshots:,170
+Damage Taken:,0.0
+Hit Count:,6400
+Miss Count:,6278
+Midairs:,0
+Midaired:,0
+Directs:,0
+Directed:,0
+Reloads:,0
+Distance Traveled:,0.0
+MBS Points:,0.0
+Score:,863.495544
+Scenario:,Air CELESTIAL No UFO Easy Slowed
+Hash:,03b72801e5e60f541e4ef6b8713e5e11
+Game Version:,3.8.7.2026-03-03-13-18-29-7697ade12a30
+Challenge Start:,09:12:28.134
+Pause Count:,0
+Pause Duration:,0
+Avg Target Scale:,1.0
+Avg Time Dilation:,1.0
+
+Input Lag:,0
+Max FPS (config):,360.0
+Sens Scale:,cm/360
+Sens Increment:,0.544971
+Horiz Sens:,29.96225
+Vert Sens:,29.96225
+DPI:,800
+FOV:,120.0
+FOVScale:,Call of Duty
+Hide Gun:,false
+Crosshair:,lmbSmolPlus.png
+Crosshair Scale:,1.0
+Crosshair Color:,010000FF
+Resolution:,1920x1080
+Avg FPS:,362.568573
+Resolution Scale:,100.0

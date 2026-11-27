@@ -1,0 +1,48 @@
+Kill #,Timestamp,Bot,Weapon,TTK,Shots,Hits,Accuracy,Damage Done,Damage Possible,Efficiency,Cheated,OverShots
+
+Weapon,Shots,Hits,Damage Done,Damage Possible,,Sens Scale,Horiz Sens,Vert Sens,FOV,Hide Gun,Crosshair,Crosshair Scale,Crosshair Color,ADS Sens,ADS Zoom Scale,Avg Target Scale,Avg Time Dilation
+LG,1295,1139,6834.0,7770.0,
+
+Kills:,0
+Deaths:,0
+Fight Time:,0.0
+Time Remaining:,0.0
+Avg TTK:,0.0
+Damage Done:,6834.0
+Total Overshots:,0
+Damage Taken:,0.0
+Hit Count:,1139
+Miss Count:,156
+Midairs:,0
+Midaired:,0
+Directs:,0
+Directed:,0
+Reloads:,0
+Distance Traveled:,0.0
+MBS Points:,0.0
+Score:,20502.0
+Scenario:,Smoothness Training 60
+Hash:,3dc86c9a634af13fcb35b87b46491b83
+Game Version:,3.8.7.2026-03-03-13-18-29-7697ade12a30
+Challenge Start:,18:37:15.777
+Pause Count:,0
+Pause Duration:,0
+Avg Target Scale:,1.0
+Avg Time Dilation:,1.0
+
+Input Lag:,0
+Max FPS (config):,100.0
+Sens Scale:,cm/360
+Sens Increment:,0.544872
+Horiz Sens:,29.967699
+Vert Sens:,29.967699
+DPI:,800
+FOV:,120.0
+FOVScale:,Call of Duty
+Hide Gun:,false
+Crosshair:,lmbSmolPlus.png
+Crosshair Scale:,1.0
+Crosshair Color:,010000FF
+Resolution:,1920x1080
+Avg FPS:,101.423721
+Resolution Scale:,100.0

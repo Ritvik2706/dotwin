@@ -35,6 +35,9 @@ Each top-level directory maps to a Windows config location:
 | `sioyek/` | `C:\Users\Ritvik\AppData\Local\Programs\sioyek\` |
 | `mpv/` | `C:\Program Files (x86)\mpv\portable_config\` |
 | `rawaccel/settings.json` (deploy also runs `writer.exe` to load it; mouse rotation −2°, no acceleration; the lookup-table curve (1.0× up to 8 counts/ms, smooth rise to 1.5× by 30) is kept in `data`, so setting `mode` back to `lut` re-enables it) | `C:\Program Files\RawAccel\settings.json` |
+| `kovaaks/config/` (engine settings: graphics, resolution, input) | `%LOCALAPPDATA%\FPSAimTrainer\Saved\Config\WindowsNoEditor\` |
+| `kovaaks/savegames/` (sens/FOV, crosshair, themes, playlists, scenarios, weapons; deploy skips while KovaaK's runs, since it rewrites them on exit) | `C:\Program Files (x86)\Steam\steamapps\common\FPSAimTrainer\FPSAimTrainer\Saved\SaveGames\` |
+| `kovaaks/stats/` (score history CSVs; sync only, never deployed) | `...\FPSAimTrainer\FPSAimTrainer\stats\` |
 | `cursors/` (not deployed: `generate.py` builds `reliquary/`, `install.ps1` installs it, `-Restore` undoes it) | `%LOCALAPPDATA%\Microsoft\Windows\Cursors\Reliquary\` |
 
 ## deploy.sh internals
@@ -68,7 +71,7 @@ The hook always exits 0 so a deploy failure never blocks a push.
 - `sync` only pulls back `zpack.json` and `scripts/`; the UI is generated, so edit it here.
 - Anything the bar runs through Zebar's `shellExec` (the scripts, `nvidia-smi`, `taskbar.ahk`, power commands) needs a `shellCommands` privilege in `zpack.json`; new privileges only take effect after Zebar restarts (Alt+F7).
 - Machine-specific paths are in `src/config.js`; colours and sizes in `src/styles/theme.css`.
-- The tray's overflow is a second widget window (`tray` in `zpack.json`, source `src/tray/`), started hidden by the bar and shown under the arrow. It has no providers of its own: the bar sends it the icons and runs its clicks over Tauri events (`widgets/systray/trayLink.js`). A new widget or `includeFiles` entry in `zpack.json` also needs a Zebar restart (Alt+F7).
+- The tray's overflow and the start button's menu are drop-down widget windows (`tray` and `start` in `zpack.json`, sources `src/tray/` and `src/start/`), both on `src/lib/panelLink.js`: started hidden by the bar and shown under their button. They have no providers of their own: the bar sends them a state snapshot and runs their clicks over Tauri events. A new widget or `includeFiles` entry in `zpack.json` also needs a Zebar restart (Alt+F7).
 - Zebar's glazewm provider misses windows opening and closing, so the window list comes from `src/lib/monitorTree.js`, which has its own GlazeWM connection. Zebar also never removes icons of crashed apps; `widgets/systray/useDeadIcons.js` finds them. Everything the bar launches goes through Zebar's shell API, not GlazeWM's `shell-exec`, which Zebar has deprecated for widgets.
 - GlazeWM has no automatic layouts, so `src/lib/dwindle.js` does Hyprland's dwindle: on each focus change it sets the tiling direction along the focused window's longer side. It needs Zebar running.
 - GlazeWM keeps a window that hides itself on a hidden workspace until its process exits, and its `ignore` is permanent, so it can't clear those. After closing a window on a hidden workspace, the bar checks `windowvisible.ps1` and drops it (`markWindowHidden`) until it takes focus again.

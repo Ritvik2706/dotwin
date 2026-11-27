@@ -1,0 +1,50 @@
+Kill #,Timestamp,Bot,Weapon,TTK,Shots,Hits,Accuracy,Damage Done,Damage Possible,Efficiency,Cheated,OverShots
+1,11:50:57.015,Quaker Bot Long Strafes,LG HS,36.859001s,716,8,0.011173,80.000000,7160.000000,0.011173,0,0
+2,11:51:00.016,Quaker Bot Long Strafes,LG HS,2.951000s,60,9,0.150000,90.000000,600.000000,0.150000,0,0
+
+Weapon,Shots,Hits,Damage Done,Damage Possible,,Sens Scale,Horiz Sens,Vert Sens,FOV,Hide Gun,Crosshair,Crosshair Scale,Crosshair Color,ADS Sens,ADS Zoom Scale,Avg Target Scale,Avg Time Dilation
+LG HS,1141,23,230.0,11410.0,
+
+Kills:,2
+Deaths:,0
+Fight Time:,39.810001
+Time Remaining:,0.0
+Avg TTK:,8.093432
+Damage Done:,230.0
+Total Overshots:,0
+Damage Taken:,0.0
+Hit Count:,23
+Miss Count:,1118
+Midairs:,0
+Midaired:,0
+Directs:,0
+Directed:,0
+Reloads:,0
+Distance Traveled:,45837.046875
+MBS Points:,5000.0
+Score:,5230.0
+Scenario:,4BK - Realistic Dodge HS Switch
+Hash:,09957660e7dd03584dbbd7be4f868201
+Game Version:,3.8.6.2026-02-18-11-40-40-e860b3550f1e
+Challenge Start:,11:50:19.447
+Pause Count:,1
+Pause Duration:,10
+Avg Target Scale:,1.0
+Avg Time Dilation:,1.0
+
+Input Lag:,0
+Max FPS (config):,100.0
+Sens Scale:,Call of Duty
+Sens Increment:,0.544971
+Horiz Sens:,5.78
+Vert Sens:,5.78
+DPI:,800
+FOV:,120.0
+FOVScale:,Call of Duty
+Hide Gun:,false
+Crosshair:,lmbSmolPlus.png
+Crosshair Scale:,1.0
+Crosshair Color:,010000FF
+Resolution:,1920x1080
+Avg FPS:,100.081146
+Resolution Scale:,100.0

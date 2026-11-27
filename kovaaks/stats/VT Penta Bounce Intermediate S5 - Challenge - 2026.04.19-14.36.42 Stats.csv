@@ -1,0 +1,79 @@
+Kill #,Timestamp,Bot,Weapon,TTK,Shots,Hits,Accuracy,Damage Done,Damage Possible,Efficiency,Cheated,OverShots
+1,14:35:44.334,Bouncer Bot,Track Master 100,1.150000s,116,50,0.431034,1.000000,2.321160,0.430819,0,0
+2,14:35:45.812,Bouncer Bot,Track Master 100,1.472000s,129,50,0.387597,1.000000,2.581290,0.387403,0,0
+3,14:35:47.100,Bouncer Bot,Track Master 100,1.277000s,122,50,0.409836,1.000000,2.441220,0.409631,0,0
+4,14:35:48.800,Bouncer Bot,Track Master 100,1.688000s,158,50,0.316456,1.000000,3.161579,0.316298,0,0
+5,14:35:50.506,Bouncer Bot,Track Master 100,1.694000s,160,56,0.350000,1.120060,3.201599,0.349844,0,0
+6,14:35:52.017,Bouncer Bot,Track Master 100,1.500000s,131,44,0.335878,0.879940,2.621310,0.335687,0,0
+7,14:35:53.889,Bouncer Bot,Track Master 100,1.861000s,176,50,0.284091,1.000000,3.521759,0.283949,0,0
+8,14:35:55.516,Bouncer Bot,Track Master 100,1.616000s,147,50,0.340136,1.000000,2.941469,0.339966,0,0
+9,14:35:56.544,Bouncer Bot,Track Master 100,1.017000s,93,50,0.537634,1.000000,1.860930,0.537366,0,0
+10,14:35:59.099,Bouncer Bot,Track Master 100,2.544000s,243,50,0.205761,1.000000,4.862429,0.205659,0,0
+11,14:36:02.232,Bouncer Bot,Track Master 100,3.122000s,298,50,0.167785,1.000000,5.962979,0.167701,0,0
+12,14:36:04.026,Bouncer Bot,Track Master 100,1.783000s,164,50,0.304878,1.000000,3.281639,0.304726,0,0
+13,14:36:05.171,Bouncer Bot,Track Master 100,1.139000s,110,50,0.454545,1.000000,2.201100,0.454318,0,0
+14,14:36:06.588,Bouncer Bot,Track Master 100,1.406000s,127,50,0.393701,1.000000,2.541270,0.393504,0,0
+15,14:36:08.710,Bouncer Bot,Track Master 100,2.112000s,176,50,0.284091,1.000000,3.521759,0.283949,0,0
+16,14:36:11.049,Bouncer Bot,Track Master 100,2.334000s,234,50,0.213675,1.000000,4.682339,0.213568,0,0
+17,14:36:12.548,Bouncer Bot,Track Master 100,1.489000s,139,50,0.359712,1.000000,2.781389,0.359533,0,0
+18,14:36:13.731,Bouncer Bot,Track Master 100,1.172000s,111,50,0.450450,1.000000,2.221110,0.450225,0,0
+19,14:36:15.775,Bouncer Bot,Track Master 100,2.033000s,193,50,0.259067,1.000000,3.861929,0.258938,0,0
+20,14:36:17.297,Bouncer Bot,Track Master 100,1.516000s,142,50,0.352113,1.000000,2.841419,0.351937,0,0
+21,14:36:20.797,Bouncer Bot,Track Master 100,3.489000s,316,76,0.240506,1.520260,6.323159,0.240427,0,0
+22,14:36:23.269,Bouncer Bot,Track Master 100,2.460000s,224,58,0.258929,1.160080,4.482239,0.258817,0,0
+23,14:36:24.875,Bouncer Bot,Track Master 100,1.600000s,153,50,0.326797,1.000000,3.061529,0.326634,0,0
+24,14:36:28.024,Bouncer Bot,Track Master 100,3.138000s,277,50,0.180505,1.000000,5.542769,0.180415,0,0
+25,14:36:29.830,Bouncer Bot,Track Master 100,1.795000s,164,46,0.280488,0.919960,3.281639,0.280336,0,0
+26,14:36:31.052,Bouncer Bot,Track Master 100,1.211000s,113,24,0.212389,0.479740,2.261130,0.212168,0,0
+27,14:36:32.552,Bouncer Bot,Track Master 100,1.489000s,141,50,0.354610,1.000000,2.821409,0.354433,0,0
+28,14:36:36.212,Bouncer Bot,Track Master 100,3.655000s,349,76,0.217765,1.520260,6.983489,0.217693,0,0
+29,14:36:37.823,Bouncer Bot,Track Master 100,1.600000s,152,50,0.328947,1.000000,3.041519,0.328783,0,0
+30,14:36:39.112,Bouncer Bot,Track Master 100,1.277000s,122,20,0.163934,0.399700,2.441220,0.163730,0,0
+31,14:36:40.846,Bouncer Bot,Track Master 100,1.723000s,163,50,0.306748,1.000000,3.261629,0.306595,0,0
+
+Weapon,Shots,Hits,Damage Done,Damage Possible,,Sens Scale,Horiz Sens,Vert Sens,FOV,Hide Gun,Crosshair,Crosshair Scale,Crosshair Color,ADS Sens,ADS Zoom Scale,Avg Target Scale,Avg Time Dilation
+Track Master 100,5489,1578,31.56028,109.842278,
+
+Kills:,31
+Deaths:,0
+Fight Time:,57.362
+Time Remaining:,0.0
+Avg TTK:,1.934335
+Damage Done:,31.56028
+Total Overshots:,0
+Damage Taken:,0.0
+Hit Count:,1578
+Miss Count:,3911
+Midairs:,0
+Midaired:,0
+Directs:,0
+Directed:,0
+Reloads:,0
+Distance Traveled:,0.0
+MBS Points:,0.0
+Score:,315.600006
+Scenario:,VT Penta Bounce Intermediate S5
+Hash:,7cd5eee66632ebec0c33218d218ebf95
+Game Version:,3.8.7.2026-03-03-13-18-29-7697ade12a30
+Challenge Start:,14:35:42.436
+Pause Count:,0
+Pause Duration:,0
+Avg Target Scale:,1.0
+Avg Time Dilation:,1.0
+
+Input Lag:,0
+Max FPS (config):,180.0
+Sens Scale:,cm/360
+Sens Increment:,0.347416
+Horiz Sens:,47.0
+Vert Sens:,47.0
+DPI:,800
+FOV:,103.0
+FOVScale:,Overwatch
+Hide Gun:,false
+Crosshair:,lmbDot.png
+Crosshair Scale:,1.0
+Crosshair Color:,010000FF
+Resolution:,1920x1080
+Avg FPS:,180.040237
+Resolution Scale:,100.0

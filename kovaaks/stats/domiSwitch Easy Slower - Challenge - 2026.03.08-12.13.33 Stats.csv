@@ -1,0 +1,72 @@
+Kill #,Timestamp,Bot,Weapon,TTK,Shots,Hits,Accuracy,Damage Done,Damage Possible,Efficiency,Cheated,OverShots
+1,12:12:40.012,regen_dot,Poke-Drill,5.649000s,566,254,0.448763,254.000000,566.000000,0.448763,0,23
+2,12:12:41.754,regen_dot,Poke-Drill,1.278000s,129,62,0.480620,62.000000,129.000000,0.480620,0,25
+3,12:12:43.719,regen_dot,Poke-Drill,1.568000s,158,74,0.468354,74.000000,158.000000,0.468354,0,24
+4,12:12:45.983,regen_dot,Poke-Drill,1.699000s,171,93,0.543860,93.000000,171.000000,0.543860,0,25
+5,12:12:48.319,regen_dot,Poke-Drill,2.100000s,196,93,0.474490,93.000000,196.000000,0.474490,0,22
+6,12:12:53.054,regen_dot,Poke-Drill,3.947000s,396,178,0.449495,178.000000,396.000000,0.449495,0,25
+7,12:12:54.932,regen_dot,Poke-Drill,1.616000s,145,87,0.600000,87.000000,145.000000,0.600000,0,25
+8,12:12:56.967,regen_dot,Poke-Drill,1.775000s,161,87,0.540373,87.000000,161.000000,0.540373,0,25
+9,12:12:59.372,regen_dot,Poke-Drill,2.146000s,179,83,0.463687,83.000000,179.000000,0.463687,0,25
+10,12:13:01.644,regen_dot,Poke-Drill,2.014000s,187,99,0.529412,99.000000,187.000000,0.529412,0,25
+11,12:13:02.947,regen_dot,Poke-Drill,0.869000s,88,58,0.659091,58.000000,88.000000,0.659091,0,25
+12,12:13:04.683,regen_dot,Poke-Drill,1.501000s,128,59,0.460938,59.000000,128.000000,0.460938,0,22
+13,12:13:07.834,regen_dot,Poke-Drill,2.757000s,277,149,0.537906,149.000000,277.000000,0.537906,0,24
+14,12:13:10.376,regen_dot,Poke-Drill,2.099000s,211,87,0.412322,87.000000,211.000000,0.412322,0,22
+15,12:13:12.212,regen_dot,Poke-Drill,1.427000s,144,70,0.486111,70.000000,144.000000,0.486111,0,25
+16,12:13:13.703,regen_dot,Poke-Drill,1.077000s,109,73,0.669725,73.000000,109.000000,0.669725,0,24
+17,12:13:16.239,regen_dot,Poke-Drill,2.078000s,209,93,0.444976,93.000000,209.000000,0.444976,0,23
+18,12:13:17.625,regen_dot,Poke-Drill,0.826000s,84,57,0.678571,57.000000,84.000000,0.678571,0,21
+19,12:13:18.985,regen_dot,Poke-Drill,0.909000s,92,69,0.750000,69.000000,92.000000,0.750000,0,25
+20,12:13:21.438,regen_dot,Poke-Drill,2.191000s,206,98,0.475728,98.000000,206.000000,0.475728,0,25
+21,12:13:23.529,regen_dot,Poke-Drill,1.700000s,171,83,0.485380,83.000000,171.000000,0.485380,0,25
+22,12:13:25.490,regen_dot,Poke-Drill,1.599000s,161,90,0.559006,90.000000,161.000000,0.559006,0,25
+23,12:13:27.769,regen_dot,Poke-Drill,2.029000s,192,71,0.369792,71.000000,192.000000,0.369792,0,24
+24,12:13:32.287,regen_dot,Poke-Drill,4.117000s,413,201,0.486683,201.000000,413.000000,0.486683,0,25
+
+Weapon,Shots,Hits,Damage Done,Damage Possible,,Sens Scale,Horiz Sens,Vert Sens,FOV,Hide Gun,Crosshair,Crosshair Scale,Crosshair Color,ADS Sens,ADS Zoom Scale,Avg Target Scale,Avg Time Dilation
+Poke-Drill,4899,2407,2407.0,4899.0,
+
+Kills:,24
+Deaths:,0
+Fight Time:,48.971001
+Time Remaining:,0.0
+Avg TTK:,2.499563
+Damage Done:,2407.0
+Total Overshots:,579
+Damage Taken:,0.0
+Hit Count:,2407
+Miss Count:,2492
+Midairs:,0
+Midaired:,0
+Directs:,0
+Directed:,0
+Reloads:,0
+Distance Traveled:,0.0
+MBS Points:,0.0
+Score:,4325.600098
+Scenario:,domiSwitch Easy Slower
+Hash:,ad7ea7a894a0c5fe1cd57afacb2b4a7c
+Game Version:,3.8.7.2026-03-03-13-18-29-7697ade12a30
+Challenge Start:,12:12:33.731
+Pause Count:,0
+Pause Duration:,0
+Avg Target Scale:,1.0
+Avg Time Dilation:,1.0
+
+Input Lag:,0
+Max FPS (config):,360.0
+Sens Scale:,cm/360
+Sens Increment:,0.544971
+Horiz Sens:,29.96225
+Vert Sens:,29.96225
+DPI:,800
+FOV:,120.0
+FOVScale:,Call of Duty
+Hide Gun:,false
+Crosshair:,OPDot.png
+Crosshair Scale:,1.0
+Crosshair Color:,010000FF
+Resolution:,1920x1080
+Avg FPS:,365.897217
+Resolution Scale:,100.0

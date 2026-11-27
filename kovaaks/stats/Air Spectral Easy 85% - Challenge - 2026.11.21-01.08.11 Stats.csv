@@ -1,0 +1,54 @@
+Kill #,Timestamp,Bot,Weapon,TTK,Shots,Hits,Accuracy,Damage Done,Damage Possible,Efficiency,Cheated,OverShots
+1,01:07:04.750,air_close_short,Track Master 100,10.154000s,1017,800,0.786627,800.000000,1017.000000,0.786627,0,0
+2,01:07:16.549,air1_far_long,Track Master 100,11.788000s,1133,800,0.706090,800.000000,1133.000000,0.706090,0,0
+3,01:07:30.864,air1F_close_short 7,Track Master 100,14.304001s,1350,800,0.592593,800.000000,1350.000000,0.592593,0,0
+4,01:07:44.885,air1_far_short,Track Master 100,14.015000s,1331,800,0.601052,800.000000,1331.000000,0.601052,0,0
+5,01:07:57.180,air1F_close_long,Track Master 100,12.284000s,1163,800,0.687876,800.000000,1163.000000,0.687876,0,0
+6,01:08:11.791,air1F_far_short,Track Master 100,14.599001s,1393,800,0.574300,800.000000,1393.000000,0.574300,0,0
+
+Weapon,Shots,Hits,Damage Done,Damage Possible,,Sens Scale,Horiz Sens,Vert Sens,FOV,Hide Gun,Crosshair,Crosshair Scale,Crosshair Color,ADS Sens,ADS Zoom Scale,Avg Target Scale,Avg Time Dilation
+Track Master 100,7387,4800,4800.0,7387.0,
+
+Kills:,6
+Deaths:,0
+Fight Time:,77.143997
+Time Remaining:,0.0
+Avg TTK:,12.869901
+Damage Done:,4800.0
+Total Overshots:,0
+Damage Taken:,0.0
+Hit Count:,4800
+Miss Count:,2587
+Midairs:,0
+Midaired:,0
+Directs:,0
+Directed:,0
+Reloads:,0
+Distance Traveled:,0.0
+MBS Points:,0.0
+Score:,922.757568
+Scenario:,Air Spectral Easy 85%
+Hash:,5ec5213363d0820daa696f0904ac1be4
+Game Version:,3.9.14.2026-11-12-15-54-35-a2085c23b084
+Challenge Start:,01:06:54.559
+Pause Count:,0
+Pause Duration:,0
+Avg Target Scale:,1.0
+Avg Time Dilation:,1.0
+
+Input Lag:,0
+Max FPS (config):,180.0
+Sens Scale:,cm/360
+Sens Increment:,0.388775
+Horiz Sens:,42.0
+Vert Sens:,42.0
+DPI:,800
+FOV:,107.0
+FOVScale:,Overwatch
+Hide Gun:,false
+Crosshair:,OPDot.png
+Crosshair Scale:,1.0
+Crosshair Color:,000000FF
+Resolution:,1920x1080
+Avg FPS:,180.705872
+Resolution Scale:,100.0

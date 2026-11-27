@@ -1,0 +1,51 @@
+Kill #,Timestamp,Bot,Weapon,TTK,Shots,Hits,Accuracy,Damage Done,Damage Possible,Efficiency,Cheated,OverShots
+1,21:13:51.803,Ground 1 Bot,Track Master 100,18.897001s,1873,765,0.408436,0.764994,1.873031,0.408425,0,0
+2,21:14:12.207,Ground 2 Bot,Track Master 100,20.392000s,1963,754,0.384106,0.753994,1.963036,0.384096,0,0
+3,21:14:32.610,Ground 3 Bot,Track Master 100,20.398001s,1930,728,0.377202,0.727994,1.930034,0.377192,0,0
+
+Weapon,Shots,Hits,Damage Done,Damage Possible,,Sens Scale,Horiz Sens,Vert Sens,FOV,Hide Gun,Crosshair,Crosshair Scale,Crosshair Color,ADS Sens,ADS Zoom Scale,Avg Target Scale,Avg Time Dilation
+Track Master 100,5786,2247,2.24702,5.785763,
+
+Kills:,3
+Deaths:,0
+Fight Time:,59.687
+Time Remaining:,0.0
+Avg TTK:,19.99159
+Damage Done:,2.24702
+Total Overshots:,0
+Damage Taken:,0.0
+Hit Count:,2247
+Miss Count:,3539
+Midairs:,0
+Midaired:,0
+Directs:,0
+Directed:,0
+Reloads:,0
+Distance Traveled:,0.0
+MBS Points:,0.0
+Score:,2247.0
+Scenario:,VT Ground Intermediate S5
+Hash:,489b27e681807e0212eef50241bb0769
+Game Version:,3.8.7.2026-03-03-13-18-29-7697ade12a30
+Challenge Start:,21:13:32.814
+Pause Count:,0
+Pause Duration:,0
+Avg Target Scale:,1.0
+Avg Time Dilation:,1.0
+
+Input Lag:,0
+Max FPS (config):,180.0
+Sens Scale:,cm/360
+Sens Increment:,0.343759
+Horiz Sens:,47.5
+Vert Sens:,47.5
+DPI:,800
+FOV:,103.0
+FOVScale:,Overwatch
+Hide Gun:,false
+Crosshair:,lmbDot.png
+Crosshair Scale:,1.0
+Crosshair Color:,010000FF
+Resolution:,1920x1080
+Avg FPS:,180.042358
+Resolution Scale:,100.0

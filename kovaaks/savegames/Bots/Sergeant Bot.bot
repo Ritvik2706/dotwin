@@ -1,0 +1,11 @@
+Name=Sergeant Bot
+DodgeProfileNames=Long Strafes Jumping;Short Strafes Jumping;ADAD
+DodgeProfileWeights=2.0;2.0;3.5
+DodgeProfileMaxChangeTime=3.0
+DodgeProfileMinChangeTime=0.1
+WeaponProfileWeights=1.0;1.0;1.0;1.0;1.0;1.0;1.0;1.0
+AimingProfileNames=Default;Default;Default;Default;Default;Default;Default;Default
+WeaponSwitchTime=3.0
+UseWeapons=false
+CharacterProfile=Sergeant 88
+SeeThroughWalls=false

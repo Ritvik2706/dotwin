@@ -1,0 +1,58 @@
+Kill #,Timestamp,Bot,Weapon,TTK,Shots,Hits,Accuracy,Damage Done,Damage Possible,Efficiency,Cheated,OverShots
+1,12:25:31.904,Pigeon3,pistol,4.945000s,4,1,0.250000,100.000000,800.000000,0.125000,0,0
+2,12:25:33.888,Pigeon2,pistol,1.882000s,2,1,0.500000,100.000000,400.000000,0.250000,0,0
+3,12:25:40.516,Pigeon5,pistol,6.068000s,4,1,0.250000,100.000000,800.000000,0.125000,0,0
+4,12:25:42.926,Pigeon4,pistol,0.000000s,1,1,1.000000,100.000000,200.000000,0.500000,0,0
+5,12:25:46.827,Pigeon5,pistol,2.048000s,2,1,0.500000,100.000000,400.000000,0.250000,0,0
+6,12:26:07.666,Pigeon,pistol,19.554001s,14,1,0.071429,100.000000,2800.000000,0.035714,0,0
+7,12:26:08.996,Pigeon2,pistol,0.000000s,1,1,1.000000,100.000000,200.000000,0.500000,0,0
+8,12:26:14.634,Pigeon,pistol,3.716000s,4,1,0.250000,100.000000,800.000000,0.125000,0,0
+9,12:26:20.213,Pigeon2,pistol,2.905000s,3,1,0.333333,100.000000,600.000000,0.166667,0,0
+10,12:26:22.287,Pigeon3,pistol,1.349000s,2,1,0.500000,100.000000,400.000000,0.250000,0,0
+
+Weapon,Shots,Hits,Damage Done,Damage Possible,,Sens Scale,Horiz Sens,Vert Sens,FOV,Hide Gun,Crosshair,Crosshair Scale,Crosshair Color,ADS Sens,ADS Zoom Scale,Avg Target Scale,Avg Time Dilation
+pistol,39,10,1000.0,7800.0,
+
+Kills:,10
+Deaths:,0
+Fight Time:,42.466999
+Time Remaining:,0.0
+Avg TTK:,5.998735
+Damage Done:,1000.0
+Total Overshots:,0
+Damage Taken:,0.0
+Hit Count:,10
+Miss Count:,29
+Midairs:,0
+Midaired:,0
+Directs:,0
+Directed:,0
+Reloads:,8
+Distance Traveled:,0.0
+MBS Points:,0.0
+Score:,100.0
+Scenario:,Popcorn MV Novice
+Hash:,0f218dd1b4901f4704aa5f417894c3b6
+Game Version:,3.8.7.2026-03-03-13-18-29-7697ade12a30
+Challenge Start:,12:25:25.568
+Pause Count:,0
+Pause Duration:,0
+Avg Target Scale:,1.0
+Avg Time Dilation:,1.0
+
+Input Lag:,0
+Max FPS (config):,360.0
+Sens Scale:,cm/360
+Sens Increment:,0.544971
+Horiz Sens:,29.96225
+Vert Sens:,29.96225
+DPI:,800
+FOV:,120.0
+FOVScale:,Call of Duty
+Hide Gun:,false
+Crosshair:,OPDot.png
+Crosshair Scale:,1.0
+Crosshair Color:,010000FF
+Resolution:,1920x1080
+Avg FPS:,365.893768
+Resolution Scale:,100.0

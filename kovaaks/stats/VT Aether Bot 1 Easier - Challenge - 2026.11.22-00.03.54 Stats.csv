@@ -1,0 +1,51 @@
+Kill #,Timestamp,Bot,Weapon,TTK,Shots,Hits,Accuracy,Damage Done,Damage Possible,Efficiency,Cheated,OverShots
+1,00:03:13.832,Aether 1 Bot,Track Master 100,18.904001s,1891,1038,0.548916,1.037992,1.891032,0.548903,0,0
+2,00:03:34.237,Aether 1 Bot,Track Master 100,20.400002s,1942,1033,0.531926,1.032992,1.942035,0.531912,0,0
+3,00:03:54.640,Aether 1 Bot,Track Master 100,20.398001s,1951,1038,0.532035,1.037992,1.951035,0.532021,0,0
+
+Weapon,Shots,Hits,Damage Done,Damage Possible,,Sens Scale,Horiz Sens,Vert Sens,FOV,Hide Gun,Crosshair,Crosshair Scale,Crosshair Color,ADS Sens,ADS Zoom Scale,Avg Target Scale,Avg Time Dilation
+Track Master 100,5803,3109,3.108957,5.802762,
+
+Kills:,3
+Deaths:,0
+Fight Time:,59.702
+Time Remaining:,0.0
+Avg TTK:,19.997435
+Damage Done:,3.108957
+Total Overshots:,0
+Damage Taken:,0.0
+Hit Count:,3109
+Miss Count:,2694
+Midairs:,0
+Midaired:,0
+Directs:,0
+Directed:,0
+Reloads:,0
+Distance Traveled:,0.0
+MBS Points:,0.0
+Score:,3109.0
+Scenario:,VT Aether Bot 1 Easier
+Hash:,df3190dd8ca2647fc93376a00782d989
+Game Version:,3.9.14.2026-11-12-15-54-35-a2085c23b084
+Challenge Start:,00:02:54.837
+Pause Count:,0
+Pause Duration:,0
+Avg Target Scale:,1.0
+Avg Time Dilation:,1.0
+
+Input Lag:,0
+Max FPS (config):,180.0
+Sens Scale:,cm/360
+Sens Increment:,0.388775
+Horiz Sens:,42.0
+Vert Sens:,42.0
+DPI:,800
+FOV:,107.0
+FOVScale:,Overwatch
+Hide Gun:,false
+Crosshair:,OPDot.png
+Crosshair Scale:,1.0
+Crosshair Color:,000000FF
+Resolution:,1920x1080
+Avg FPS:,180.889877
+Resolution Scale:,100.0

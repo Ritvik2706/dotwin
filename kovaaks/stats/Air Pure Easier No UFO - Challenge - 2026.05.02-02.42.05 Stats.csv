@@ -1,0 +1,52 @@
+Kill #,Timestamp,Bot,Weapon,TTK,Shots,Hits,Accuracy,Damage Done,Damage Possible,Efficiency,Cheated,OverShots
+1,02:41:13.822,AIR1_Short_close,test1,15.897000s,1591,1000,0.628536,1000.000000,1591.000000,0.628536,0,23
+2,02:41:30.448,AIR1_Short_far,test1,15.848001s,1586,1000,0.630517,1000.000000,1586.000000,0.630517,0,25
+3,02:41:48.840,AIR2_Long3D_mid,test1,18.131001s,1772,1000,0.564334,1000.000000,1772.000000,0.564334,0,25
+4,02:42:05.357,AIR2_Short_close,test1,16.511002s,1579,1000,0.633312,1000.000000,1579.000000,0.633312,0,0
+
+Weapon,Shots,Hits,Damage Done,Damage Possible,,Sens Scale,Horiz Sens,Vert Sens,FOV,Hide Gun,Crosshair,Crosshair Scale,Crosshair Color,ADS Sens,ADS Zoom Scale,Avg Target Scale,Avg Time Dilation
+test1,6528,4000,4000.0,6528.0,
+
+Kills:,4
+Deaths:,0
+Fight Time:,66.387001
+Time Remaining:,0.0
+Avg TTK:,16.94804
+Damage Done:,4000.0
+Total Overshots:,73
+Damage Taken:,0.0
+Hit Count:,4000
+Miss Count:,2528
+Midairs:,0
+Midaired:,0
+Directs:,0
+Directed:,0
+Reloads:,0
+Distance Traveled:,0.0
+MBS Points:,0.0
+Score:,932.184204
+Scenario:,Air Pure Easier No UFO
+Hash:,b084b3c448c9417a770afac883f6a1a2
+Game Version:,3.9.0.2026-04-27-18-43-07-15870d84c21e
+Challenge Start:,02:40:57.547
+Pause Count:,0
+Pause Duration:,0
+Avg Target Scale:,1.0
+Avg Time Dilation:,1.0
+
+Input Lag:,0
+Max FPS (config):,180.0
+Sens Scale:,cm/360
+Sens Increment:,0.466531
+Horiz Sens:,35.0
+Vert Sens:,35.0
+DPI:,800
+FOV:,103.0
+FOVScale:,Overwatch
+Hide Gun:,false
+Crosshair:,lmbDot.png
+Crosshair Scale:,1.0
+Crosshair Color:,010000FF
+Resolution:,1920x1080
+Avg FPS:,180.035568
+Resolution Scale:,100.0

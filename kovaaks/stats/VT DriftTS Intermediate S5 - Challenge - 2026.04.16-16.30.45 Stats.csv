@@ -1,0 +1,78 @@
+Kill #,Timestamp,Bot,Weapon,TTK,Shots,Hits,Accuracy,Damage Done,Damage Possible,Efficiency,Cheated,OverShots
+1,16:29:47.120,Drifter Bot,Track Master 100,1.488000s,150,50,0.333333,1.000000,3.001499,0.333167,0,0
+2,16:29:49.425,Drifter Bot,Track Master 100,2.294000s,215,50,0.232558,1.000000,4.302149,0.232442,0,0
+3,16:29:50.681,Drifter Bot,Track Master 100,1.245000s,114,50,0.438596,1.000000,2.281140,0.438377,0,0
+4,16:29:52.520,Drifter Bot,Track Master 100,1.833000s,176,50,0.284091,1.000000,3.521759,0.283949,0,0
+5,16:29:55.059,Drifter Bot,Track Master 100,2.528000s,243,50,0.205761,1.000000,4.862429,0.205659,0,0
+6,16:29:56.975,Drifter Bot,Track Master 100,1.905000s,179,50,0.279330,1.000000,3.581789,0.279190,0,0
+7,16:29:58.330,Drifter Bot,Track Master 100,1.349000s,136,50,0.367647,1.000000,2.721359,0.367463,0,0
+8,16:30:00.808,Drifter Bot,Track Master 100,2.467000s,220,50,0.227273,1.000000,4.402199,0.227159,0,0
+9,16:30:02.097,Drifter Bot,Track Master 100,1.278000s,108,50,0.462963,1.000000,2.161080,0.462732,0,0
+10,16:30:04.252,Drifter Bot,Track Master 100,2.145000s,199,50,0.251256,1.000000,3.981989,0.251131,0,0
+11,16:30:07.290,Drifter Bot,Track Master 100,3.027000s,272,50,0.183824,1.000000,5.442719,0.183732,0,0
+12,16:30:09.407,Drifter Bot,Track Master 100,2.105000s,184,50,0.271739,1.000000,3.681839,0.271603,0,0
+13,16:30:11.940,Drifter Bot,Track Master 100,2.528000s,242,65,0.268595,1.300150,4.842419,0.268492,0,0
+14,16:30:13.602,Drifter Bot,Track Master 100,1.651000s,153,35,0.228758,0.699850,3.061529,0.228595,0,0
+15,16:30:15.739,Drifter Bot,Track Master 100,2.127000s,193,50,0.259067,1.000000,3.861929,0.258938,0,0
+16,16:30:18.462,Drifter Bot,Track Master 100,2.711000s,265,76,0.286792,1.520260,5.302649,0.286698,0,0
+17,16:30:19.428,Drifter Bot,Track Master 100,0.961000s,97,24,0.247423,0.479740,1.940970,0.247165,0,0
+18,16:30:20.912,Drifter Bot,Track Master 100,1.474000s,148,50,0.337838,1.000000,2.961479,0.337669,0,0
+19,16:30:22.916,Drifter Bot,Track Master 100,1.999000s,177,50,0.282486,1.000000,3.541769,0.282345,0,0
+20,16:30:25.344,Drifter Bot,Track Master 100,2.416000s,209,50,0.239234,1.000000,4.182089,0.239115,0,0
+21,16:30:27.499,Drifter Bot,Track Master 100,2.144000s,204,50,0.245098,1.000000,4.082039,0.244976,0,0
+22,16:30:29.367,Drifter Bot,Track Master 100,1.862000s,165,52,0.315152,1.040020,3.301649,0.315000,0,0
+23,16:30:30.977,Drifter Bot,Track Master 100,1.600000s,161,48,0.298137,0.959980,3.221609,0.297982,0,0
+24,16:30:32.876,Drifter Bot,Track Master 100,1.887000s,161,50,0.310559,1.000000,3.221609,0.310404,0,0
+25,16:30:34.926,Drifter Bot,Track Master 100,2.039000s,192,58,0.302083,1.160080,3.841919,0.301953,0,0
+26,16:30:36.265,Drifter Bot,Track Master 100,1.328000s,119,42,0.352941,0.839920,2.381190,0.352731,0,0
+27,16:30:38.165,Drifter Bot,Track Master 100,1.888000s,172,50,0.290698,1.000000,3.441719,0.290552,0,0
+28,16:30:39.966,Drifter Bot,Track Master 100,1.790000s,153,50,0.326797,1.000000,3.061529,0.326634,0,0
+29,16:30:42.131,Drifter Bot,Track Master 100,2.155000s,198,50,0.252525,1.000000,3.961979,0.252399,0,0
+30,16:30:43.814,Drifter Bot,Track Master 100,1.671000s,165,50,0.303030,1.000000,3.301649,0.302879,0,0
+
+Weapon,Shots,Hits,Damage Done,Damage Possible,,Sens Scale,Horiz Sens,Vert Sens,FOV,Hide Gun,Crosshair,Crosshair Scale,Crosshair Color,ADS Sens,ADS Zoom Scale,Avg Target Scale,Avg Time Dilation
+Track Master 100,5481,1512,30.24012,109.682182,
+
+Kills:,30
+Deaths:,0
+Fight Time:,57.895
+Time Remaining:,0.0
+Avg TTK:,1.998981
+Damage Done:,30.24012
+Total Overshots:,0
+Damage Taken:,0.0
+Hit Count:,1512
+Miss Count:,3969
+Midairs:,0
+Midaired:,0
+Directs:,0
+Directed:,0
+Reloads:,0
+Distance Traveled:,0.0
+MBS Points:,0.0
+Score:,302.399994
+Scenario:,VT DriftTS Intermediate S5
+Hash:,ff777f42a21d6ddcf8791caf2821a2bd
+Game Version:,3.8.7.2026-03-03-13-18-29-7697ade12a30
+Challenge Start:,16:29:45.187
+Pause Count:,0
+Pause Duration:,0
+Avg Target Scale:,1.0
+Avg Time Dilation:,1.0
+
+Input Lag:,0
+Max FPS (config):,180.0
+Sens Scale:,cm/360
+Sens Increment:,0.343759
+Horiz Sens:,47.5
+Vert Sens:,47.5
+DPI:,800
+FOV:,103.0
+FOVScale:,Overwatch
+Hide Gun:,false
+Crosshair:,lmbDot.png
+Crosshair Scale:,1.0
+Crosshair Color:,010000FF
+Resolution:,1920x1080
+Avg FPS:,180.041718
+Resolution Scale:,100.0

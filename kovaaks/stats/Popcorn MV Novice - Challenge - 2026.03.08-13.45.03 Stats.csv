@@ -1,0 +1,65 @@
+Kill #,Timestamp,Bot,Weapon,TTK,Shots,Hits,Accuracy,Damage Done,Damage Possible,Efficiency,Cheated,OverShots
+1,13:44:04.660,Pigeon2,pistol,0.289000s,2,1,0.500000,100.000000,400.000000,0.250000,0,0
+2,13:44:06.494,Pigeon3,pistol,0.000000s,1,1,1.000000,100.000000,200.000000,0.500000,0,0
+3,13:44:08.821,Pigeon,pistol,0.000000s,1,1,1.000000,100.000000,200.000000,0.500000,0,0
+4,13:44:11.124,Pigeon4,pistol,0.280000s,2,1,0.500000,100.000000,400.000000,0.250000,0,0
+5,13:44:12.254,Pigeon5,pistol,0.000000s,1,1,1.000000,100.000000,200.000000,0.500000,0,0
+6,13:44:14.145,Pigeon,pistol,0.000000s,1,1,1.000000,100.000000,200.000000,0.500000,0,0
+7,13:44:16.067,Pigeon3,pistol,0.000000s,1,1,1.000000,100.000000,200.000000,0.500000,0,0
+8,13:44:17.395,Pigeon5,pistol,0.000000s,1,1,1.000000,100.000000,200.000000,0.500000,0,0
+9,13:44:19.671,Pigeon4,pistol,1.740000s,2,1,0.500000,100.000000,400.000000,0.250000,0,0
+10,13:44:21.334,Pigeon4,pistol,0.000000s,1,1,1.000000,100.000000,200.000000,0.500000,0,0
+11,13:44:27.660,Pigeon5,pistol,4.618000s,4,1,0.250000,100.000000,800.000000,0.125000,0,0
+12,13:44:33.798,Pigeon,pistol,3.979000s,4,1,0.250000,100.000000,800.000000,0.125000,0,0
+13,13:44:34.717,Pigeon,pistol,0.000000s,1,1,1.000000,100.000000,200.000000,0.500000,0,0
+14,13:44:38.046,Pigeon2,pistol,2.072000s,3,1,0.333333,100.000000,600.000000,0.166667,0,0
+15,13:44:43.334,Pigeon2,pistol,4.124000s,4,1,0.250000,100.000000,800.000000,0.125000,0,0
+16,13:44:47.157,Pigeon2,pistol,2.164000s,3,1,0.333333,100.000000,600.000000,0.166667,0,0
+17,13:45:00.804,Pigeon2,pistol,12.402000s,9,1,0.111111,100.000000,1800.000000,0.055556,0,0
+
+Weapon,Shots,Hits,Damage Done,Damage Possible,,Sens Scale,Horiz Sens,Vert Sens,FOV,Hide Gun,Crosshair,Crosshair Scale,Crosshair Color,ADS Sens,ADS Zoom Scale,Avg Target Scale,Avg Time Dilation
+pistol,42,17,1700.0,8400.0,
+
+Kills:,17
+Deaths:,0
+Fight Time:,31.667999
+Time Remaining:,0.0
+Avg TTK:,3.52867
+Damage Done:,1700.0
+Total Overshots:,0
+Damage Taken:,0.0
+Hit Count:,17
+Miss Count:,25
+Midairs:,0
+Midaired:,0
+Directs:,0
+Directed:,0
+Reloads:,6
+Distance Traveled:,0.0
+MBS Points:,0.0
+Score:,170.0
+Scenario:,Popcorn MV Novice
+Hash:,0f218dd1b4901f4704aa5f417894c3b6
+Game Version:,3.8.7.2026-03-03-13-18-29-7697ade12a30
+Challenge Start:,13:44:03.396
+Pause Count:,0
+Pause Duration:,0
+Avg Target Scale:,1.0
+Avg Time Dilation:,1.0
+
+Input Lag:,0
+Max FPS (config):,360.0
+Sens Scale:,cm/360
+Sens Increment:,0.544971
+Horiz Sens:,29.96225
+Vert Sens:,29.96225
+DPI:,800
+FOV:,120.0
+FOVScale:,Call of Duty
+Hide Gun:,false
+Crosshair:,OPDot.png
+Crosshair Scale:,1.0
+Crosshair Color:,010000FF
+Resolution:,1920x1080
+Avg FPS:,365.460175
+Resolution Scale:,100.0

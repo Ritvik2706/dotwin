@@ -1,0 +1,55 @@
+Kill #,Timestamp,Bot,Weapon,TTK,Shots,Hits,Accuracy,Damage Done,Damage Possible,Efficiency,Cheated,OverShots
+1,17:13:58.370,Quaker LS C,LG,5.366000s,113,50,0.442478,300.000000,678.000000,0.442478,0,5
+2,17:14:06.664,Quaker LS SS 0205,LG,8.011001s,161,50,0.310559,300.000000,966.000000,0.310559,0,5
+3,17:14:15.552,Quaker MS SS 0205,LG,7.665000s,161,50,0.310559,300.000000,966.000000,0.310559,0,5
+4,17:14:24.484,Quaker SS 0306 VSS,LG,8.049001s,169,50,0.295858,300.000000,1014.000000,0.295858,0,5
+5,17:14:32.150,Quaker MS 0407,LG,7.383000s,144,50,0.347222,300.000000,864.000000,0.347222,0,5
+6,17:14:40.693,Quaker SS 0306,LG,7.182000s,151,50,0.331126,300.000000,906.000000,0.331126,0,5
+7,17:14:49.859,Quaker SS 0306 VSS,LG,8.877001s,175,50,0.285714,300.000000,1050.000000,0.285714,0,5
+
+Weapon,Shots,Hits,Damage Done,Damage Possible,,Sens Scale,Horiz Sens,Vert Sens,FOV,Hide Gun,Crosshair,Crosshair Scale,Crosshair Color,ADS Sens,ADS Zoom Scale,Avg Target Scale,Avg Time Dilation
+LG,1105,359,2154.0,6630.0,
+
+Kills:,7
+Deaths:,0
+Fight Time:,52.533001
+Time Remaining:,0.0
+Avg TTK:,8.570165
+Damage Done:,2154.0
+Total Overshots:,35
+Damage Taken:,0.0
+Hit Count:,359
+Miss Count:,746
+Midairs:,0
+Midaired:,0
+Directs:,0
+Directed:,0
+Reloads:,0
+Distance Traveled:,24479.980469
+MBS Points:,0.0
+Score:,2158.991211
+Scenario:,VT PatStrafe Intermediate
+Hash:,73539760c5c49c16266c2976edd8ba85
+Game Version:,3.9.9.2026-09-08-13-49-08-01c79144c86c
+Challenge Start:,17:13:52.098
+Pause Count:,0
+Pause Duration:,0
+Avg Target Scale:,1.0
+Avg Time Dilation:,1.0
+
+Input Lag:,0
+Max FPS (config):,180.0
+Sens Scale:,cm/360
+Sens Increment:,0.388775
+Horiz Sens:,42.0
+Vert Sens:,42.0
+DPI:,800
+FOV:,110.0
+FOVScale:,Overwatch
+Hide Gun:,false
+Crosshair:,RoundDot1.png
+Crosshair Scale:,1.0
+Crosshair Color:,000000FF
+Resolution:,1920x1080
+Avg FPS:,180.860001
+Resolution Scale:,100.0

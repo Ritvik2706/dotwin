@@ -1,0 +1,59 @@
+Kill #,Timestamp,Bot,Weapon,TTK,Shots,Hits,Accuracy,Damage Done,Damage Possible,Efficiency,Cheated,OverShots
+1,12:27:40.493,Pigeon5,pistol,4.605000s,4,1,0.250000,100.000000,800.000000,0.125000,0,0
+2,12:27:43.767,Pigeon,pistol,1.089000s,2,1,0.500000,100.000000,400.000000,0.250000,0,0
+3,12:27:45.340,Pigeon4,pistol,0.000000s,1,1,1.000000,100.000000,200.000000,0.500000,0,0
+4,12:27:46.371,Pigeon2,pistol,0.000000s,1,1,1.000000,100.000000,200.000000,0.500000,0,0
+5,12:27:56.119,Pigeon2,pistol,8.579000s,7,1,0.142857,100.000000,1400.000000,0.071429,0,0
+6,12:28:02.875,Pigeon,pistol,5.282000s,4,1,0.250000,100.000000,800.000000,0.125000,0,0
+7,12:28:13.521,Pigeon3,pistol,8.748000s,6,1,0.166667,100.000000,1200.000000,0.083333,0,0
+8,12:28:24.719,Pigeon5,pistol,9.591001s,6,1,0.166667,100.000000,1200.000000,0.083333,0,0
+9,12:28:26.690,Pigeon3,pistol,0.000000s,1,1,1.000000,100.000000,200.000000,0.500000,0,0
+10,12:28:28.426,Pigeon4,pistol,0.000000s,1,1,1.000000,100.000000,200.000000,0.500000,0,0
+11,12:28:30.509,Pigeon,pistol,0.969000s,2,1,0.500000,100.000000,400.000000,0.250000,0,0
+
+Weapon,Shots,Hits,Damage Done,Damage Possible,,Sens Scale,Horiz Sens,Vert Sens,FOV,Hide Gun,Crosshair,Crosshair Scale,Crosshair Color,ADS Sens,ADS Zoom Scale,Avg Target Scale,Avg Time Dilation
+pistol,37,11,1100.0,7400.0,
+
+Kills:,11
+Deaths:,0
+Fight Time:,38.862999
+Time Remaining:,0.0
+Avg TTK:,5.453483
+Damage Done:,1100.0
+Total Overshots:,0
+Damage Taken:,0.0
+Hit Count:,11
+Miss Count:,26
+Midairs:,0
+Midaired:,0
+Directs:,0
+Directed:,0
+Reloads:,7
+Distance Traveled:,0.0
+MBS Points:,0.0
+Score:,110.0
+Scenario:,Popcorn MV Novice
+Hash:,0f218dd1b4901f4704aa5f417894c3b6
+Game Version:,3.8.7.2026-03-03-13-18-29-7697ade12a30
+Challenge Start:,12:27:34.328
+Pause Count:,0
+Pause Duration:,0
+Avg Target Scale:,1.0
+Avg Time Dilation:,1.0
+
+Input Lag:,0
+Max FPS (config):,360.0
+Sens Scale:,cm/360
+Sens Increment:,0.544971
+Horiz Sens:,29.96225
+Vert Sens:,29.96225
+DPI:,800
+FOV:,120.0
+FOVScale:,Call of Duty
+Hide Gun:,false
+Crosshair:,OPDot.png
+Crosshair Scale:,1.0
+Crosshair Color:,010000FF
+Resolution:,1920x1080
+Avg FPS:,365.687866
+Resolution Scale:,100.0

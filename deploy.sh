@@ -14,6 +14,8 @@ ZEBAR_PACK_DIR="$WIN_ROAMING/zebar/downloads/ritvik.glazewm-bar@1.0.0"
 SIOYEK_DIR="$WIN_LOCAL/Programs/sioyek"
 MPV_DIR="/mnt/c/Program Files (x86)/mpv/portable_config"
 RAWACCEL_DIR="/mnt/c/Program Files/RawAccel"
+KOVAAKS_DIR="/mnt/c/Program Files (x86)/Steam/steamapps/common/FPSAimTrainer/FPSAimTrainer"
+KOVAAKS_CONFIG_DIR="$WIN_LOCAL/FPSAimTrainer/Saved/Config/WindowsNoEditor"
 
 # Copy contents of src/ into dest/ (creating dest if needed).
 # Additional args are names to remove from dest after copying.
@@ -163,6 +165,18 @@ deploy() {
         echo "    copied, but writer.exe failed (is the driver installed?)"
     fi
 
+    # KovaaK's rewrites its settings when it exits, so a deploy while it runs
+    # would be lost. Stats are history: they only come back with sync.
+    echo "  kovaaks"
+    if [[ ! -d "$KOVAAKS_DIR" ]]; then
+        echo "    SKIPPED — KovaaK's isn't installed"
+    elif tasklist.exe 2>/dev/null | grep -qi '^FPSAimTrainer'; then
+        echo "    SKIPPED — KovaaK's is running; close it and deploy again"
+    else
+        copy_dir "$REPO_DIR/kovaaks/config"    "$KOVAAKS_CONFIG_DIR"
+        copy_dir "$REPO_DIR/kovaaks/savegames" "$KOVAAKS_DIR/Saved/SaveGames"
+    fi
+
     echo "=== Done ==="
 }
 
@@ -215,6 +229,11 @@ sync() {
 
     echo "  rawaccel"
     cp "$RAWACCEL_DIR/settings.json" "$REPO_DIR/rawaccel/settings.json"
+
+    echo "  kovaaks"
+    copy_dir "$KOVAAKS_CONFIG_DIR"            "$REPO_DIR/kovaaks/config"
+    copy_dir "$KOVAAKS_DIR/Saved/SaveGames"   "$REPO_DIR/kovaaks/savegames"
+    copy_dir "$KOVAAKS_DIR/stats"             "$REPO_DIR/kovaaks/stats"
 
     echo "=== Done ==="
 }

@@ -1,0 +1,75 @@
+Kill #,Timestamp,Bot,Weapon,TTK,Shots,Hits,Accuracy,Damage Done,Damage Possible,Efficiency,Cheated,OverShots
+1,12:23:33.207,regen_dot,pistol,0.000000s,1,1,1.000000,1.000000,2.000000,0.500000,0,0
+2,12:23:41.704,regen_dot,pistol,7.791000s,9,1,0.111111,1.000000,18.000000,0.055556,0,0
+3,12:23:46.279,regen_dot,pistol,3.207000s,4,1,0.250000,1.000000,8.000000,0.125000,0,0
+4,12:23:49.603,regen_dot,pistol,1.610000s,2,1,0.500000,1.000000,4.000000,0.250000,0,0
+5,12:23:50.356,regen_dot,pistol,0.000000s,1,1,1.000000,1.000000,2.000000,0.500000,0,0
+6,12:23:55.288,regen_dot,pistol,4.299000s,5,1,0.200000,1.000000,10.000000,0.100000,0,0
+7,12:23:56.071,regen_dot,pistol,0.000000s,1,1,1.000000,1.000000,2.000000,0.500000,0,0
+8,12:23:57.279,regen_dot,pistol,0.381000s,2,1,0.500000,1.000000,4.000000,0.250000,0,0
+9,12:24:00.945,regen_dot,pistol,2.744000s,4,1,0.250000,1.000000,8.000000,0.125000,0,0
+10,12:24:01.765,regen_dot,pistol,0.000000s,1,1,1.000000,1.000000,2.000000,0.500000,0,0
+11,12:24:02.992,regen_dot,pistol,0.381000s,2,1,0.500000,1.000000,4.000000,0.250000,0,0
+12,12:24:05.111,regen_dot,pistol,0.511000s,2,1,0.500000,1.000000,4.000000,0.250000,0,0
+13,12:24:05.910,regen_dot,pistol,0.000000s,1,1,1.000000,1.000000,2.000000,0.500000,0,0
+14,12:24:08.223,regen_dot,pistol,1.480000s,3,1,0.333333,1.000000,6.000000,0.166667,0,0
+15,12:24:10.202,regen_dot,pistol,0.000000s,1,1,1.000000,1.000000,2.000000,0.500000,0,0
+16,12:24:11.545,regen_dot,pistol,0.000000s,1,1,1.000000,1.000000,2.000000,0.500000,0,0
+17,12:24:13.903,regen_dot,pistol,1.147000s,3,1,0.333333,1.000000,6.000000,0.166667,0,0
+18,12:24:16.311,regen_dot,pistol,0.939000s,2,1,0.500000,1.000000,4.000000,0.250000,0,0
+19,12:24:17.413,regen_dot,pistol,0.000000s,1,1,1.000000,1.000000,2.000000,0.500000,0,0
+20,12:24:19.171,regen_dot,pistol,0.861000s,3,1,0.333333,1.000000,6.000000,0.166667,0,0
+21,12:24:19.971,regen_dot,pistol,0.000000s,1,1,1.000000,1.000000,2.000000,0.500000,0,0
+22,12:24:21.793,regen_dot,pistol,0.399000s,2,1,0.500000,1.000000,4.000000,0.250000,0,0
+23,12:24:22.317,regen_dot,pistol,0.000000s,1,1,1.000000,1.000000,2.000000,0.500000,0,0
+24,12:24:23.245,regen_dot,pistol,0.000000s,1,1,1.000000,1.000000,2.000000,0.500000,0,0
+25,12:24:23.797,regen_dot,pistol,0.000000s,1,1,1.000000,1.000000,2.000000,0.500000,0,0
+26,12:24:27.061,regen_dot,pistol,2.569000s,4,1,0.250000,1.000000,8.000000,0.125000,0,0
+27,12:24:31.749,regen_dot,pistol,3.472000s,6,1,0.166667,1.000000,12.000000,0.083333,0,0
+
+Weapon,Shots,Hits,Damage Done,Damage Possible,,Sens Scale,Horiz Sens,Vert Sens,FOV,Hide Gun,Crosshair,Crosshair Scale,Crosshair Color,ADS Sens,ADS Zoom Scale,Avg Target Scale,Avg Time Dilation
+pistol,65,27,27.0,130.0,
+
+Kills:,27
+Deaths:,0
+Fight Time:,31.791
+Time Remaining:,0.0
+Avg TTK:,2.221748
+Damage Done:,27.0
+Total Overshots:,0
+Damage Taken:,0.0
+Hit Count:,27
+Miss Count:,38
+Midairs:,0
+Midaired:,0
+Directs:,0
+Directed:,0
+Reloads:,7
+Distance Traveled:,0.0
+MBS Points:,0.0
+Score:,27.0
+Scenario:,Controlsphere Click Easy
+Hash:,50f3333e3c4a0300e6f423332c196c37
+Game Version:,3.8.7.2026-03-03-13-18-29-7697ade12a30
+Challenge Start:,12:23:32.295
+Pause Count:,0
+Pause Duration:,0
+Avg Target Scale:,1.0
+Avg Time Dilation:,1.0
+
+Input Lag:,0
+Max FPS (config):,360.0
+Sens Scale:,cm/360
+Sens Increment:,0.544971
+Horiz Sens:,29.96225
+Vert Sens:,29.96225
+DPI:,800
+FOV:,120.0
+FOVScale:,Call of Duty
+Hide Gun:,false
+Crosshair:,OPDot.png
+Crosshair Scale:,1.0
+Crosshair Color:,010000FF
+Resolution:,1920x1080
+Avg FPS:,365.911346
+Resolution Scale:,100.0

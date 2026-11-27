@@ -1,0 +1,51 @@
+Kill #,Timestamp,Bot,Weapon,TTK,Shots,Hits,Accuracy,Damage Done,Damage Possible,Efficiency,Cheated,OverShots
+1,02:29:53.230,Palace 1,LG,18.880001s,1889,945,0.500265,0.009450,0.018890,0.500266,0,32
+2,02:30:13.700,Palace 2,LG,19.526001s,1954,896,0.458547,0.008960,0.019540,0.458548,0,28
+3,02:30:33.904,Palace 3,LG,19.525002s,1954,912,0.466735,0.009120,0.019540,0.466736,0,9
+
+Weapon,Shots,Hits,Damage Done,Damage Possible,,Sens Scale,Horiz Sens,Vert Sens,FOV,Hide Gun,Crosshair,Crosshair Scale,Crosshair Color,ADS Sens,ADS Zoom Scale,Avg Target Scale,Avg Time Dilation
+LG,5797,2753,0.02753,0.057967,
+
+Kills:,3
+Deaths:,0
+Fight Time:,57.931
+Time Remaining:,0.0
+Avg TTK:,19.991589
+Damage Done:,0.02753
+Total Overshots:,69
+Damage Taken:,0.0
+Hit Count:,2753
+Miss Count:,3044
+Midairs:,0
+Midaired:,0
+Directs:,0
+Directed:,0
+Reloads:,0
+Distance Traveled:,0.0
+MBS Points:,0.0
+Score:,2753.0
+Scenario:,Plink Palace Easy Less Blinks
+Hash:,6fca3ee11e3b9b8355af790c5b1e290e
+Game Version:,3.9.0.2026-04-27-18-43-07-15870d84c21e
+Challenge Start:,02:29:33.913
+Pause Count:,0
+Pause Duration:,0
+Avg Target Scale:,1.0
+Avg Time Dilation:,1.0
+
+Input Lag:,0
+Max FPS (config):,180.0
+Sens Scale:,cm/360
+Sens Increment:,0.544286
+Horiz Sens:,30.0
+Vert Sens:,30.0
+DPI:,800
+FOV:,103.0
+FOVScale:,Overwatch
+Hide Gun:,false
+Crosshair:,lmbDot.png
+Crosshair Scale:,1.0
+Crosshair Color:,010000FF
+Resolution:,1920x1080
+Avg FPS:,180.042389
+Resolution Scale:,100.0
